@@ -1,0 +1,58 @@
+version: "3"
+services:
+  db:
+    build:
+      context: ./
+      dockerfile: ./docker/db/Dockerfile
+    container_name: canal_db
+    volumes:
+      - ./commands:/suez/commands
+      - ./fixtures:/suez/fixtures
+    ports:
+      - "3306:3306"
+#  redis:
+#    build:
+#      context: ./
+#      dockerfile: ./docker/redis/Dockerfile
+#    container_name: canal_redis
+#    ports:
+#      - 6379:6379
+  server:
+    build:
+      context: ./
+      dockerfile: ./docker/server/Dockerfile
+    container_name: canal_server
+    depends_on:
+      - db
+    volumes:
+      - ./commands:/suez/commands
+      - ./config:/suez/config
+      - ./product_data:/suez/product_data
+      - ./src:/suez/src
+      - ./svg:/suez/svg
+      - ./static_in_env:/suez/static_in_env
+    ports:
+      - "8000:8000"
+    restart: always
+    env_file:
+      - ./docker/server/variables.env
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./docker/frontend/Dockerfile
+    container_name: canal_frontend
+    volumes:
+      - ./src:/suez/src/
+      - ./src/frontend:/suez/src/frontend
+      - /var/run/docker.sock:/var/run/docker.sock
+#  celery_worker:
+#    build:
+#      context: ./
+#      dockerfile: ./docker/celery/Dockerfile
+#    depends_on:
+#      - redis
+#    volumes:
+#      - ./src:/suez/src
+#    restart: on-failure:5
+#    env_file:
+#      - ./docker/celery/variables.env
