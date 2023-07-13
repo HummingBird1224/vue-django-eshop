@@ -1,0 +1,155 @@
+import json
+
+data = {
+    'contact_required': {
+        'name': 'お問い合わせ',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'sample_order': {
+        'name': 'サンプル注文',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'small_lot_availability': {
+        'name': '小ロット対応',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'min_ordering_quantity': {
+        'name': '最小注文数',
+        'value': -1,
+        'extra': '',
+        'image': '',
+    },
+    'max_ordering_quantity': {
+        'name': '最大注文数',
+        'value': -1,
+        'extra': '',
+        'image': '',
+    },
+    'estimated_shipping_date': {
+        'name': '納期',
+        'value': {
+            'first': 14,
+            'repeat': 7
+        },
+        'extra': {
+            'first': 'データ確定後2週間',
+            'repeat': '1週間',
+        },
+        'image': '',
+    },
+    'can_select_original_size': {
+        'name': 'オリジナルサイズ',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'is_design_unnecessary': {
+        'name': 'デザイン不要',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'is_easy_draft_available': {
+        'name': 'カンタン入稿可能',
+        'value': False,
+    },
+    'notes': {
+        'name': '備考',
+        'value': '',
+        'extra': '',
+        'image': '',
+    },
+    'size': {
+        'name': 'サイズ',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'options': {
+            '1': {
+                'name': 'A6',
+                'value': [
+                    {'name': 'height', 'value': 155},
+                    {'name': 'width', 'value': 110},
+                ],
+                'extra': '横110mm 縦155mm',
+                'data': 'design_templates/',
+                'image': 'img/external/base/size/tape_A6.jpg'
+            },
+            '2': {
+                'name': 'A5',
+                'value': [
+                    {'name': 'height', 'value': 220},
+                    {'name': 'width', 'value': 160},
+                ],
+                'extra': '横160mm 縦220mm',
+                'data': 'design_templates/',
+                'image': 'img/external/base/size/tape_A5.jpg'
+            },
+            '3': {
+                'name': 'A4',
+                'value': [
+                    {'name': 'height', 'value': 305},
+                    {'name': 'width', 'value': 225},
+                ],
+                'extra': '横225mm 縦305mm',
+                'data': 'design_templates/',
+                'image': 'img/external/base/size/tape_A4.jpg'
+            },
+        }
+    },
+    'quantity': {
+        'name': 'ロット数',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'unit': '袋',
+        'options': {
+            '1': {'name': '100', 'value': 100},
+            '2': {'name': '200', 'value': 200},
+            '3': {'name': '300', 'value': 300},
+            '4': {'name': '500', 'value': 500},
+            '5': {'name': '700', 'value': 700},
+            '6': {'name': '1,000', 'value': 1000},
+            '7': {'name': '1,500', 'value': 1500},
+            '8': {'name': '2,000', 'value': 2000},
+            '9': {'name': '2,500', 'value': 2500},
+            '10': {'name': '3,000', 'value': 3000},
+        },
+    },
+    'color_num': {
+        'name': '印刷カラー',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'options': {
+            '1': {
+                'name': '１色',
+                'value': 1,
+                'extra': '',
+                'image': ''
+            },
+            '2': {
+                'name': '２色',
+                'value': 2,
+                'extra': '',
+                'image': ''
+            },
+        },
+    },
+    'shipping_area': {
+        'exclude': True,
+        'prefectures': [
+        ]
+    }
+}
+
+print(json.dumps(data, indent=2, ensure_ascii=False))

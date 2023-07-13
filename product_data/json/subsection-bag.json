@@ -1,0 +1,310 @@
+{
+  "contact_required": {
+    "name": "お問い合わせ",
+    "value": true,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "sample_order": {
+    "name": "サンプル注文",
+    "value": true,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "small_lot_availability": {
+    "name": "小ロット対応",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "min_ordering_quantity": {
+    "name": "最小注文数",
+    "value": 5000,
+    "extra": "",
+    "image": ""
+  },
+  "max_ordering_quantity": {
+    "name": "最大注文数",
+    "value": 500000,
+    "extra": "",
+    "image": ""
+  },
+  "estimated_shipping_date": {
+    "name": "納期",
+    "value": {
+      "first": 30,
+      "repeat": 21
+    },
+    "extra": {
+      "first": "データ確定後1ヶ月",
+      "repeat": "3週間"
+    },
+    "image": ""
+  },
+  "can_select_original_size": {
+    "name": "オリジナルサイズ",
+    "value": true,
+    "extra": "",
+    "image": ""
+  },
+  "print_area": {
+    "name": "印刷可能範囲",
+    "value": 0,
+    "extra": "袋全体",
+    "image": ""
+  },
+  "is_design_unnecessary": {
+    "name": "デザイン不要",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "is_easy_draft_available": {
+    "name": "カンタン入稿可能",
+    "value": false
+  },
+  "notes": {
+    "name": "備考",
+    "value": "",
+    "extra": [
+      {
+        "key": "基材構成",
+        "value": "PET12/PE/AL7/PE/LLDPE30"
+      }
+    ],
+    "image": ""
+  },
+  "choosable_color": {
+    "name": "印刷色",
+    "value": "フルカラー",
+    "extra": "",
+    "image": ""
+  },
+  "example": {},
+  "size_limit": {
+    "height": {
+      "min": 60,
+      "max": 100
+    },
+    "width": {
+      "min": 40,
+      "max": 100
+    }
+  },
+  "shipping_area": {
+    "exclude": false,
+    "prefectures": [
+      "東京",
+      "神奈川",
+      "静岡",
+      "埼玉",
+      "千葉"
+    ]
+  },
+  "required_fields": {},
+  "option_order": [],
+  "quantity": {
+    "name": "注文数",
+    "extra": "",
+    "required": true,
+    "default": "-1",
+    "image": "",
+    "unit": "袋",
+    "widget_type": "radio",
+    "options": {}
+  },
+  "size": {
+    "name": "サイズ",
+    "extra": "サイズを選択してください",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "modal-radio",
+    "options": {
+      "1": {
+        "name": "錠剤形サプリメント用",
+        "value": [
+          {
+            "name": "高さ",
+            "value": 80
+          },
+          {
+            "name": "幅",
+            "value": 60
+          }
+        ],
+        "extra": "高さ80mm 幅60mm",
+        "data": "design_templates/flatbag/subsection_bag/subsection_bag_supplement.ai"
+      },
+      "2": {
+        "name": "粉末状健康食品用",
+        "value": [
+          {
+            "name": "高さ",
+            "value": 80
+          },
+          {
+            "name": "幅",
+            "value": 40
+          }
+        ],
+        "extra": "高さ80mm 幅40mm",
+        "data": "design_templates/flatbag/subsection_bag/subsection_bag_powder.ai"
+      }
+    }
+  },
+  "color_num": {
+    "name": "印刷に使用する色数",
+    "extra": "",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-sm",
+    "options": {
+      "1": {
+        "name": "１色",
+        "value": 1,
+        "extra": "印刷するデザインに使用する色数が１色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_01.png"
+      },
+      "2": {
+        "name": "２色",
+        "value": 2,
+        "extra": "印刷するデザインに使用する色数が２色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_02.png"
+      },
+      "3": {
+        "name": "３色",
+        "value": 3,
+        "extra": "印刷するデザインに使用する色数が３色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_03.png"
+      },
+      "4": {
+        "name": "４色",
+        "value": 4,
+        "extra": "印刷するデザインに使用する色数が４色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_04.png"
+      },
+      "5": {
+        "name": "フルカラー",
+        "value": -1,
+        "extra": "印刷するデザインに使用する色数が５色以上の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_full.png"
+      }
+    },
+    "note": {
+      "title": "印刷と色について",
+      "sections": [
+        {
+          "title": "印刷と料金について",
+          "layout_type": "horizontal-list-sm",
+          "summary": {
+            "title": "印刷に使用する色数で料金が変化します",
+            "body": [
+              "印刷に利用する色は<span class=\"js-external-link\" data-link=\"https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a\">『PANTONEの見本からお選びください』</span>をご覧ください",
+              "色数が増えると基本的に料金が上がります",
+              "５色以上扱う場合、写真はフルカラーに該当します。"
+            ]
+          },
+          "contents": [
+            {
+              "title": "１色",
+              "image": "img/product_detail/common/color_num/color_num_01.png"
+            },
+            {
+              "title": "２色",
+              "image": "img/product_detail/common/color_num/color_num_02.png"
+            },
+            {
+              "title": "３色",
+              "image": "img/product_detail/common/color_num/color_num_03.png"
+            },
+            {
+              "title": "４色",
+              "image": "img/product_detail/common/color_num/color_num_04.png"
+            },
+            {
+              "title": "フルカラー",
+              "image": "img/product_detail/common/color_num/color_num_full.png"
+            }
+          ]
+        },
+        {
+          "title": "印刷可能な範囲",
+          "layout_type": "vertical-list-lg",
+          "contents": [
+            {
+              "image": "img/product_detail/film/print_area/full.jpg",
+              "body": [
+                "端から5mmの余白を開ける必要があり、その部分は印刷ができません。"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "material": {
+    "name": "材質",
+    "extra": "手触りや光沢の違いで、高級感の違いが生まれます",
+    "required": false,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-lg",
+    "options": {
+      "1": {
+        "name": "通常",
+        "value": "normal",
+        "extra": "光沢のあるアルミ素材。ガシガシした手触りに。",
+        "image": "img/product_detail/film/material/normal.jpg"
+      },
+      "2": {
+        "name": "マットPET",
+        "value": "mattepet",
+        "extra": "コシがあるがさらさらした手触りが特徴で、やや光沢があります。",
+        "image": "img/product_detail/film/material/mattepet.jpg"
+      },
+      "3": {
+        "name": "ハイマット",
+        "value": "highmatte",
+        "extra": "しっとりとした手触りで、光沢がほぼないのが特徴です。落ち着いた高級感を出します。",
+        "image": "img/product_detail/film/material/highmatte.jpg"
+      }
+    },
+    "note": {
+      "title": "材質について",
+      "sections": [
+        {
+          "title": "材質の選択",
+          "layout_type": "horizontal-list-md",
+          "summary": {
+            "title": "手触りや光沢の違いで、高級感の違いが生まれます"
+          },
+          "contents": [
+            {
+              "title": "通常",
+              "image": "img/product_detail/film/material/normal.jpg",
+              "body": [
+                "光沢のあるアルミ素材。ガシガシした手触りに。"
+              ]
+            },
+            {
+              "title": "マットPET",
+              "image": "img/product_detail/film/material/mattepet.jpg",
+              "body": [
+                "コシがあるがさらさらした手触りが特徴で、やや光沢があります。"
+              ]
+            },
+            {
+              "title": "ハイマット",
+              "image": "img/product_detail/film/material/highmatte.jpg",
+              "body": [
+                "しっとりとした手触りで、光沢がほぼないのが特徴です。落ち着いた高級感を出します。"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

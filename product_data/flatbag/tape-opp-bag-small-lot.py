@@ -1,0 +1,455 @@
+import json
+
+data = {
+    'contact_required': {
+        'name': 'お問い合わせ',
+        'value': False,
+        "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+        'image': '',
+    },
+    'sample_order': {
+        'name': 'サンプル注文',
+        'value': True,
+        "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+        'image': '',
+    },
+    'small_lot_availability': {
+        'name': '小ロット対応',
+        'value': True,
+        'extra': '',
+        'image': '',
+    },
+    'min_ordering_quantity': {
+        'name': '最小注文数',
+        'value': 100,
+        'extra': '',
+        'image': '',
+    },
+    'max_ordering_quantity': {
+        'name': '最大注文数',
+        'value': 3000,
+        'extra': '',
+        'image': '',
+    },
+    'estimated_shipping_date': {
+        'name': '納期',
+        'value': {
+            'first': 14,
+            'repeat': 7
+        },
+        'extra': {
+            'first': 'データ確定後2週間',
+            'repeat': '1週間',
+        },
+        'image': '',
+    },
+    'can_select_original_size': {
+        'name': 'オリジナルサイズ',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'notes': {
+        'name': '備考',
+        'value': '',
+        'extra': [
+            {'key': '基材構成', 'value': 'OPP#40-50 (※袋のサイズによって変わります)'},
+            {'key': 'フタの長さ', 'value': '30 ~ 40mm (※袋のサイズによって変わります)'},
+        ],
+        'image': '',
+    },
+    'choosable_color': {
+        'name': '印刷色',
+        'value': "1色, 2色 ※1色の場合、100-1000はモノクロのみ)",
+        'extra': '',
+        'image': '',
+    },
+    'is_design_unnecessary': {
+        'name': 'デザイン不要',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'is_easy_draft_available': {
+        'name': 'カンタン入稿可能',
+        'value': True,
+    },
+    'print_area': {
+        'name': '印刷可能範囲',
+        'value': 5,
+        'extra': '端から5mmの余白を開ける必要があり、その部分は印刷ができません。',
+        'image': 'img/product_detail/film/print_area/5mm.jpg',
+    },
+    'example': {
+        'value': 17,
+        'suffix': '円',
+        'unit': '枚',
+        'lot': 1000
+    },
+    'size_limit': {
+        'height': {
+            'min': 110,
+            'max': 550,
+        },
+        'width': {
+            'min': 80,
+            'max': 400,
+        },
+    },
+    'shipping_area': {
+        'exclude': False,
+        'prefectures': [
+            '東京',
+            '神奈川',
+            '静岡',
+            '埼玉',
+            '千葉',
+        ]
+    },
+    'required_fields': {
+        'size': [
+            "height",
+            "width",
+        ],
+        "color_num": None,
+        "quantity": None,
+        "design_num": None,
+        "print_area_num": None,
+    },
+    'option_order': [
+        'color_num',
+        'print_area_num',
+        'design_num',
+        'size',
+        'quantity'
+    ],
+    'quantity': {
+        'name': '注文数',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'unit': '袋',
+        'widget_type': 'radio',
+        'options': {
+            '1': {'name': '100', 'value': 100},
+            '2': {'name': '200', 'value': 200},
+            '3': {'name': '300', 'value': 300},
+            '5': {'name': '500', 'value': 500},
+            '10': {'name': '1,000', 'value': 1000},
+            '15': {'name': '1,500', 'value': 1500},
+            '20': {'name': '2,000', 'value': 2000},
+            '30': {'name': '3,000', 'value': 3000},
+        },
+    },
+    'size': {
+        'name': 'サイズ',
+        'extra': 'サイズを選択してください',
+        'required': True,
+        'default': '1',
+        'image': 'img/product_detail/film/size/tape-opp-bag-small-lot/tape-opp-bag_original.jpg',
+        'widget_type': 'modal-radio',
+        'options': {
+            '1': {
+                'name': 'A4サイズ',
+                'value': [
+                    {'name': 'height', 'value': 305},
+                    {'name': 'width', 'value': 225},
+                    {'name': 'lip', 'value': 40},
+                ],
+                'extra': '高さ305mm 幅225mm',
+                'image': 'img/product_detail/film/size/tape-opp-bag-small-lot/tape-opp-bag_a4.jpg',
+                'data': 'design_templates/flatbag/tape_opp_bag_small_lot/tape_opp_bag_a4.ai'
+            },
+            '2': {
+                'name': ' A5サイズ',
+                'value': [
+                    {'name': 'height', 'value': 220},
+                    {'name': 'width', 'value': 160},
+                    {'name': 'lip', 'value': 30},
+                ],
+                'extra': '高さ220mm 幅160mm',
+                'image': 'img/product_detail/film/size/tape-opp-bag-small-lot/tape-opp-bag_a5.jpg',
+                'data': 'design_templates/flatbag/tape_opp_bag_small_lot/tape_opp_bag_a5.ai'
+            },
+            '3': {
+                'name': 'A6サイズ',
+                'value': [
+                    {'name': 'height', 'value': 155},
+                    {'name': 'width', 'value': 110},
+                    {'name': 'lip', 'value': 30},
+                ],
+                'extra': '高さ155mm 幅110mm',
+                'image': 'img/product_detail/film/size/tape-opp-bag-small-lot/tape-opp-bag_a6.jpg',
+                'data': 'design_templates/flatbag/tape_opp_bag_small_lot/tape_opp_bag_a6.ai'
+            },
+        }
+    },
+    'color_num': {
+        'name': '印刷に使用する色数',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'widget_type': 'slider-sm',
+        'options': {
+            '1': {
+                'name': '１色',
+                'value': 1,
+                'extra': '印刷するデザインに使用する色数が１色の場合です。 生地や材質の色は含みません。',
+                'image': 'img/product_detail/common/color_num/color_num_01.png'
+            },
+            '2': {
+                'name': '２色',
+                'value': 2,
+                'extra': '印刷するデザインに使用する色数が２色の場合です。 生地や材質の色は含みません。',
+                'image': 'img/product_detail/common/color_num/color_num_02.png'
+            },
+        },
+        'note': {
+            "title": "印刷と色について",
+            "sections": [
+                {
+                    "title": "印刷と料金について",
+                    "layout_type": "horizontal-list-sm",
+                    "summary": {
+                        "title": "印刷に使用する色数で料金が変化します",
+                        "body": [
+                            '印刷に利用する色は<span class="js-external-link" data-link="https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a">『PANTONEの見本からお選びください』</span>をご覧ください',
+                            "色数が増えると基本的に料金が上がります",
+                            "５色以上扱う場合、写真はフルカラーに該当します。"
+                        ]
+                    },
+                    "contents": [
+                        {
+                            'title': '１色',
+                            'image': 'img/product_detail/common/color_num/color_num_01.png',
+                        },
+                        {
+                            'title': '２色',
+                            'image': 'img/product_detail/common/color_num/color_num_02.png'
+                        },
+                        {
+                            'title': '３色',
+                            'image': 'img/product_detail/common/color_num/color_num_03.png'
+                        },
+                        {
+                            'title': '４色',
+                            'image': 'img/product_detail/common/color_num/color_num_04.png'
+                        },
+                        {
+                            'title': 'フルカラー',
+                            'image': 'img/product_detail/common/color_num/color_num_full.png'
+                        }
+                    ]
+                },
+                {
+                    "title": "印刷可能な範囲",
+                    "layout_type": "vertical-list-lg",
+                    "contents": [
+                        {
+                            "image": "img/product_detail/film/print_area/full.jpg",
+                            "body": [
+                                "端から5mmの余白を開ける必要があり、その部分は印刷ができません。",
+                            ]
+                        },
+                    ]
+                },
+            ]
+        }
+    },
+    'design_num': {
+        'name': '印刷するデザインの数',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'widget_type': 'slider-sm',
+        'options': {
+            '1': {
+                'name': '１つ',
+                'value': 1,
+                'extra': '',
+                'image': ''
+            },
+        },
+    },
+    'print_area_num': {
+        'name': '印刷する面数',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'widget_type': 'slider-sm',
+        'options': {
+            '1': {
+                'name': '１面',
+                'value': 1,
+                'extra': '',
+                'image': ''
+            },
+        },
+    },
+    # EASY DRAFT
+    'easy_draft': {
+        # height_width_depth
+        '305_225_1': {  # a4
+            'pdf_size': {  # unit mm
+                'height': 260,
+                'width': 650,
+            },
+            'pdf_color': {
+                'background': "#FFFFFF",
+                'border': '#000000',
+            },
+            "image_size": {
+                "width": 1660,
+                "height": 1040,
+            },
+            'print_area': [
+                {
+                    "name": "前面",
+                    "id": "A",
+                    "is_printable": True,
+                    "image": "img/easy_draft/products/tape-opp-bag-small-lot/a4/01.png",
+                    "thumbnail": "img/easy_draft/products/tape-opp-bag-small-lot/a4/thumbnail/01.png",
+                    "position": {
+                        "image": {  # unit px
+                            "start": {  # upper left
+                                "x": 669,
+                                "y": 441,
+                            },
+                            "end": {  # bottom right
+                                "x": 997,
+                                "y": 769,
+                            },
+                        },
+                        "pdf": {  # unit mm
+                            "start": {  # upper left
+                                "x": 20,
+                                "y": 20,
+                            },
+                            "end": {  # bottom right
+                                "x": 170,
+                                "y": 170,
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "背面",
+                    "id": "B",
+                    "is_printable": False,
+                    "image": 'img/easy_draft/products/tape-opp-bag-small-lot/a4/02.png',
+                    "thumbnail": "img/easy_draft/products/tape-opp-bag-small-lot/a4/thumbnail/02.png",
+                },
+            ],
+        },
+        '220_160_1': {  # a5
+            'pdf_size': {  # unit mm
+                'height': 260,
+                'width': 650,
+            },
+            'pdf_color': {
+                'background': "#FFFFFF",
+                'border': '#000000',
+            },
+            "image_size": {
+                "width": 1660,
+                "height": 1040,
+            },
+            'print_area': [
+                {
+                    "name": "前面",
+                    "id": "A",
+                    "is_printable": True,
+                    "image": "img/easy_draft/products/tape-opp-bag-small-lot/a5/01.png",
+                    "thumbnail": "img/easy_draft/products/tape-opp-bag-small-lot/a5/thumbnail/01.png",
+                    "position": {
+                        "image": {  # unit px
+                            "start": {  # upper left
+                                "x": 609,
+                                "y": 369,
+                            },
+                            "end": {  # bottom right
+                                "x": 1060,
+                                "y": 820,
+                            },
+                        },
+                        "pdf": {  # unit mm
+                            "start": {  # upper left
+                                "x": 20,
+                                "y": 20,
+                            },
+                            "end": {  # bottom right
+                                "x": 170,
+                                "y": 170,
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "背面",
+                    "id": "B",
+                    "is_printable": False,
+                    "image": 'img/easy_draft/products/tape-opp-bag-small-lot/a5/02.png',
+                    "thumbnail": "img/easy_draft/products/tape-opp-bag-small-lot/a5/thumbnail/02.png",
+                },
+            ],
+        },
+        '155_110_1': {  # a6
+            'pdf_size': {  # unit mm
+                'height': 260,
+                'width': 650,
+            },
+            'pdf_color': {
+                'background': "#FFFFFF",
+                'border': '#000000',
+            },
+            "image_size": {
+                "width": 1660,
+                "height": 1040,
+            },
+            'print_area': [
+                {
+                    "name": "前面",
+                    "id": "A",
+                    "is_printable": True,
+                    "image": "img/easy_draft/products/tape-opp-bag-small-lot/a6/01.png",
+                    "thumbnail": "img/easy_draft/products/tape-opp-bag-small-lot/a6/thumbnail/01.png",
+                    "position": {
+                        "image": {  # unit px
+                            "start": {  # upper left
+                                "x": 617,
+                                "y": 398,
+                            },
+                            "end": {  # bottom right
+                                "x": 1047,
+                                "y": 828,
+                            },
+                        },
+                        "pdf": {  # unit mm
+                            "start": {  # upper left
+                                "x": 20,
+                                "y": 20,
+                            },
+                            "end": {  # bottom right
+                                "x": 120,
+                                "y": 120,
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "背面",
+                    "id": "B",
+                    "is_printable": False,
+                    "image": 'img/easy_draft/products/tape-opp-bag-small-lot/a6/02.png',
+                    "thumbnail": "img/easy_draft/products/tape-opp-bag-small-lot/a6/thumbnail/02.png",
+                },
+            ],
+        },
+    }
+}
+
+print(json.dumps(data, indent=2, ensure_ascii=False))

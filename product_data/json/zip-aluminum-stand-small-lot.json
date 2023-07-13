@@ -1,0 +1,516 @@
+{
+  "contact_required": {
+    "name": "お問い合わせ",
+    "value": false,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "sample_order": {
+    "name": "サンプル注文",
+    "value": true,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "small_lot_availability": {
+    "name": "小ロット対応",
+    "value": true,
+    "extra": "",
+    "image": ""
+  },
+  "min_ordering_quantity": {
+    "name": "最小注文数",
+    "value": 1000,
+    "extra": "",
+    "image": ""
+  },
+  "max_ordering_quantity": {
+    "name": "最大注文数",
+    "value": 3000,
+    "extra": "",
+    "image": ""
+  },
+  "estimated_shipping_date": {
+    "name": "納期",
+    "value": {
+      "first": 30,
+      "repeat": 21
+    },
+    "extra": {
+      "first": "データ確定後1ヶ月",
+      "repeat": "3週間"
+    },
+    "image": ""
+  },
+  "can_select_original_size": {
+    "name": "オリジナルサイズ",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "print_area": {
+    "name": "印刷可能範囲",
+    "value": 0,
+    "extra": "袋全体",
+    "image": ""
+  },
+  "is_design_unnecessary": {
+    "name": "デザイン不要",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "is_easy_draft_available": {
+    "name": "カンタン入稿可能",
+    "value": true
+  },
+  "notes": {
+    "name": "備考",
+    "value": "",
+    "extra": [
+      {
+        "key": "ジップ上の高さ",
+        "value": "35mm"
+      },
+      {
+        "key": "ノッチ上の高さ",
+        "value": "20mm"
+      },
+      {
+        "key": "加工",
+        "value": "角丸加工、ノッチ付き"
+      },
+      {
+        "key": "基材構成",
+        "value": "PET#12//AL#7//NY#15//LLDPE#40"
+      }
+    ],
+    "image": ""
+  },
+  "choosable_color": {
+    "name": "印刷色",
+    "value": "フルカラー",
+    "extra": "",
+    "image": ""
+  },
+  "example": {
+    "value": 54,
+    "suffix": "円〜",
+    "unit": "袋"
+  },
+  "size_limit": {
+    "height": {
+      "min": 140,
+      "max": 500
+    },
+    "width": {
+      "min": 80,
+      "max": 400
+    },
+    "depth": {
+      "min": 0,
+      "max": 1000
+    }
+  },
+  "shipping_area": {
+    "exclude": false,
+    "prefectures": [
+      "東京",
+      "神奈川",
+      "静岡",
+      "埼玉",
+      "千葉"
+    ]
+  },
+  "required_fields": {
+    "size": [
+      "height",
+      "depth",
+      "width"
+    ],
+    "color_num": null,
+    "quantity": null,
+    "design_num": null,
+    "print_area_num": null
+  },
+  "option_order": [
+    "color_num",
+    "print_area_num",
+    "design_num",
+    "size",
+    "quantity"
+  ],
+  "quantity": {
+    "name": "注文数",
+    "extra": "",
+    "required": true,
+    "default": "10",
+    "image": "",
+    "unit": "袋",
+    "widget_type": "radio",
+    "options": {
+      "10": {
+        "name": "1,000",
+        "value": 1000
+      },
+      "20": {
+        "name": "2,000",
+        "value": 2000
+      },
+      "30": {
+        "name": "3,000",
+        "value": 3000
+      }
+    }
+  },
+  "size": {
+    "name": "サイズ",
+    "extra": "サイズを選択してください",
+    "required": true,
+    "default": "1",
+    "image": "img/product_detail/film/size/zip-aluminum-stand/zip-aluminum-stand_original.jpg",
+    "widget_type": "modal-radio",
+    "options": {
+      "1": {
+        "name": "粉末100g用",
+        "value": [
+          {
+            "name": "height",
+            "value": 125
+          },
+          {
+            "name": "width",
+            "value": 100
+          },
+          {
+            "name": "depth",
+            "value": 56
+          }
+        ],
+        "extra": "高さ125mm 幅100mm 奥行き56mm",
+        "image": "img/product_detail/film/size/zip-aluminum-stand-small-lot/zip-aluminum-stand_100g.jpg",
+        "data": "design_templates/flatbag/zip_aluminum_stand_small_lot/zip_aluminum_stand_100g.ai"
+      },
+      "2": {
+        "name": "粉末200g用 ",
+        "value": [
+          {
+            "name": "height",
+            "value": 145
+          },
+          {
+            "name": "width",
+            "value": 110
+          },
+          {
+            "name": "depth",
+            "value": 65
+          }
+        ],
+        "extra": "高さ145mm 幅110mm 奥行き65mm",
+        "image": "img/product_detail/film/size/zip-aluminum-stand-small-lot/zip-aluminum-stand_200g.jpg",
+        "data": "design_templates/flatbag/zip_aluminum_stand_small_lot/zip_aluminum_stand_200g.ai"
+      },
+      "3": {
+        "name": "粉末250g用",
+        "value": [
+          {
+            "name": "height",
+            "value": 155
+          },
+          {
+            "name": "width",
+            "value": 120
+          },
+          {
+            "name": "depth",
+            "value": 68
+          }
+        ],
+        "extra": "高さ155mm 幅120mm 奥行き68mm",
+        "image": "img/product_detail/film/size/zip-aluminum-stand-small-lot/zip-aluminum-stand_250g.jpg",
+        "data": "design_templates/flatbag/zip_aluminum_stand_small_lot/zip_aluminum_stand_250g.ai"
+      }
+    }
+  },
+  "color_num": {
+    "name": "印刷に使用する色数",
+    "extra": "",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-sm",
+    "options": {
+      "1": {
+        "name": "１色",
+        "value": 1,
+        "extra": "印刷するデザインに使用する色数が１色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_01.png"
+      },
+      "2": {
+        "name": "２色",
+        "value": 2,
+        "extra": "印刷するデザインに使用する色数が２色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_02.png"
+      },
+      "3": {
+        "name": "３色",
+        "value": 3,
+        "extra": "印刷するデザインに使用する色数が３色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_03.png"
+      },
+      "4": {
+        "name": "４色",
+        "value": 4,
+        "extra": "印刷するデザインに使用する色数が４色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_04.png"
+      },
+      "5": {
+        "name": "フルカラー",
+        "value": -1,
+        "extra": "印刷するデザインに使用する色数が５色以上の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_full.png"
+      }
+    },
+    "note": {
+      "title": "印刷と色について",
+      "sections": [
+        {
+          "title": "印刷と料金について",
+          "layout_type": "horizontal-list-sm",
+          "summary": {
+            "title": "印刷に使用する色数で料金が変化します",
+            "body": [
+              "印刷に利用する色は<span class=\"js-external-link\" data-link=\"https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a\">『PANTONEの見本からお選びください』</span>をご覧ください",
+              "色数が増えると基本的に料金が上がります",
+              "５色以上扱う場合、写真はフルカラーに該当します。"
+            ]
+          },
+          "contents": [
+            {
+              "title": "１色",
+              "image": "img/product_detail/common/color_num/color_num_01.png"
+            },
+            {
+              "title": "２色",
+              "image": "img/product_detail/common/color_num/color_num_02.png"
+            },
+            {
+              "title": "３色",
+              "image": "img/product_detail/common/color_num/color_num_03.png"
+            },
+            {
+              "title": "４色",
+              "image": "img/product_detail/common/color_num/color_num_04.png"
+            },
+            {
+              "title": "フルカラー",
+              "image": "img/product_detail/common/color_num/color_num_full.png"
+            }
+          ]
+        },
+        {
+          "title": "印刷可能な範囲",
+          "layout_type": "vertical-list-lg",
+          "contents": [
+            {
+              "image": "img/product_detail/film/print_area/full.jpg",
+              "body": [
+                "端から5mmの余白を開ける必要があり、その部分は印刷ができません。"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "design_num": {
+    "name": "印刷するデザインの数",
+    "extra": "",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-sm",
+    "options": {
+      "1": {
+        "name": "１つ",
+        "value": 1,
+        "extra": "",
+        "image": ""
+      }
+    }
+  },
+  "print_area_num": {
+    "name": "印刷する面数",
+    "extra": "",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-sm",
+    "options": {
+      "1": {
+        "name": "１面",
+        "value": 1,
+        "extra": "",
+        "image": ""
+      }
+    }
+  },
+  "easy_draft": {
+    "125_100_56_1": {
+      "pdf_size": {
+        "height": 200,
+        "width": 140
+      },
+      "pdf_color": {
+        "background": "#FFFFFF",
+        "border": "#000000"
+      },
+      "image_size": {
+        "width": 1660,
+        "height": 1040
+      },
+      "print_area": [
+        {
+          "name": "前面",
+          "id": "A",
+          "is_printable": true,
+          "image": "img/easy_draft/products/zip-aluminum-stand-small-lot/100g/01.png",
+          "thumbnail": "img/easy_draft/products/zip-aluminum-stand-small-lot/100g/thumbnail/01.png",
+          "position": {
+            "image": {
+              "start": {
+                "x": 669,
+                "y": 171
+              },
+              "end": {
+                "x": 1046,
+                "y": 642
+              }
+            },
+            "pdf": {
+              "start": {
+                "x": 20,
+                "y": 20
+              },
+              "end": {
+                "x": 120,
+                "y": 145
+              }
+            }
+          }
+        },
+        {
+          "name": "背面",
+          "id": "B",
+          "is_printable": false,
+          "image": "img/easy_draft/products/zip-aluminum-stand-small-lot/100g/02.png",
+          "thumbnail": "img/easy_draft/products/zip-aluminum-stand-small-lot/100g/thumbnail/02.png"
+        }
+      ]
+    },
+    "145_110_65_1": {
+      "pdf_size": {
+        "height": 200,
+        "width": 160
+      },
+      "pdf_color": {
+        "background": "#FFFFFF",
+        "border": "#000000"
+      },
+      "image_size": {
+        "width": 1660,
+        "height": 1040
+      },
+      "print_area": [
+        {
+          "name": "前面",
+          "id": "A",
+          "is_printable": true,
+          "image": "img/easy_draft/products/zip-aluminum-stand-small-lot/200g/01.png",
+          "thumbnail": "img/easy_draft/products/zip-aluminum-stand-small-lot/200g/thumbnail/01.png",
+          "position": {
+            "image": {
+              "start": {
+                "x": 679,
+                "y": 171
+              },
+              "end": {
+                "x": 1046,
+                "y": 655
+              }
+            },
+            "pdf": {
+              "start": {
+                "x": 20,
+                "y": 20
+              },
+              "end": {
+                "x": 130,
+                "y": 165
+              }
+            }
+          }
+        },
+        {
+          "name": "背面",
+          "id": "B",
+          "is_printable": false,
+          "image": "img/easy_draft/products/zip-aluminum-stand-small-lot/200g/02.png",
+          "thumbnail": "img/easy_draft/products/zip-aluminum-stand-small-lot/200g/thumbnail/02.png"
+        }
+      ]
+    },
+    "155_120_68_1": {
+      "pdf_size": {
+        "height": 220,
+        "width": 180
+      },
+      "pdf_color": {
+        "background": "#FFFFFF",
+        "border": "#000000"
+      },
+      "image_size": {
+        "width": 1660,
+        "height": 1040
+      },
+      "print_area": [
+        {
+          "name": "前面",
+          "id": "A",
+          "is_printable": true,
+          "image": "img/easy_draft/products/zip-aluminum-stand-small-lot/250g/01.png",
+          "thumbnail": "img/easy_draft/products/zip-aluminum-stand-small-lot/250g/thumbnail/01.png",
+          "position": {
+            "image": {
+              "start": {
+                "x": 666,
+                "y": 173
+              },
+              "end": {
+                "x": 1044,
+                "y": 661
+              }
+            },
+            "pdf": {
+              "start": {
+                "x": 20,
+                "y": 20
+              },
+              "end": {
+                "x": 140,
+                "y": 175
+              }
+            }
+          }
+        },
+        {
+          "name": "背面",
+          "id": "B",
+          "is_printable": false,
+          "image": "img/easy_draft/products/zip-aluminum-stand-small-lot/250g/02.png",
+          "thumbnail": "img/easy_draft/products/zip-aluminum-stand-small-lot/250g/thumbnail/02.png"
+        }
+      ]
+    }
+  }
+}

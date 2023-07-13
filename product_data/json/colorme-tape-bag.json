@@ -1,0 +1,282 @@
+{
+  "contact_required": {
+    "name": "お問い合わせ",
+    "value": false,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "sample_order": {
+    "name": "サンプル注文",
+    "value": false,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "small_lot_availability": {
+    "name": "小ロット対応",
+    "value": true,
+    "extra": "",
+    "image": ""
+  },
+  "min_ordering_quantity": {
+    "name": "最小注文数",
+    "value": 500,
+    "extra": "",
+    "image": ""
+  },
+  "max_ordering_quantity": {
+    "name": "最大注文数",
+    "value": 3000,
+    "extra": "",
+    "image": ""
+  },
+  "estimated_shipping_date": {
+    "name": "納期",
+    "value": {
+      "first": 21,
+      "repeat": 14
+    },
+    "extra": {
+      "first": "データ確定後3週間",
+      "repeat": "2週間"
+    },
+    "image": ""
+  },
+  "can_select_original_size": {
+    "name": "オリジナルサイズ",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "is_design_unnecessary": {
+    "name": "デザイン不要",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "is_easy_draft_available": {
+    "name": "カンタン入稿可能",
+    "value": false
+  },
+  "print_area": {
+    "name": "印刷可能範囲",
+    "value": 5,
+    "extra": "端から5mmの余白を開ける必要があり、その部分は印刷ができません。",
+    "image": "img/product_detail/film/print_area/5mm.jpg"
+  },
+  "notes": {
+    "name": "備考",
+    "value": "",
+    "extra": [
+      {
+        "key": "フタの長さ",
+        "value": "40mm"
+      },
+      {
+        "key": "表面色",
+        "value": "白色(くすんだグレーに近い色です)"
+      },
+      {
+        "key": "内面色",
+        "value": "黒色"
+      },
+      {
+        "key": "基材構成",
+        "value": "HDPE//LDPE ※厚さはサイズによって変わります。"
+      }
+    ],
+    "image": ""
+  },
+  "example": {},
+  "size_limit": {
+    "height": {
+      "min": 140,
+      "max": 550
+    },
+    "width": {
+      "min": 80,
+      "max": 400
+    }
+  },
+  "shipping_area": {
+    "exclude": false,
+    "prefectures": [
+      "東京",
+      "神奈川",
+      "静岡",
+      "埼玉",
+      "千葉"
+    ]
+  },
+  "required_fields": {
+    "size": [
+      "height",
+      "width"
+    ],
+    "color_num": null,
+    "quantity": null
+  },
+  "option_order": [
+    "color_num",
+    "size",
+    "quantity"
+  ],
+  "quantity": {
+    "name": "注文数",
+    "extra": "",
+    "required": true,
+    "default": "5",
+    "image": "",
+    "unit": "袋",
+    "widget_type": "radio",
+    "options": {
+      "5": {
+        "name": "500",
+        "value": 500
+      },
+      "10": {
+        "name": "1,000",
+        "value": 1000
+      },
+      "15": {
+        "name": "1,500",
+        "value": 1500
+      },
+      "20": {
+        "name": "2,000",
+        "value": 2000
+      },
+      "25": {
+        "name": "2,500",
+        "value": 2500
+      },
+      "30": {
+        "name": "3,000",
+        "value": 3000
+      }
+    }
+  },
+  "size": {
+    "name": "サイズ",
+    "extra": "サイズを選択してください",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "modal-radio",
+    "options": {
+      "1": {
+        "name": "A4サイズ",
+        "value": [
+          {
+            "name": "height",
+            "value": 310
+          },
+          {
+            "name": "width",
+            "value": 220
+          },
+          {
+            "name": "lip",
+            "value": 40
+          }
+        ],
+        "extra": "高さ310mm 幅220mm",
+        "image": "img/external/colorme/size/tape-bag/a4.jpg",
+        "data": ""
+      },
+      "2": {
+        "name": "クリックポスト",
+        "value": [
+          {
+            "name": "height",
+            "value": 340
+          },
+          {
+            "name": "width",
+            "value": 250
+          },
+          {
+            "name": "lip",
+            "value": 40
+          }
+        ],
+        "extra": "高さ340mm 幅250mm",
+        "image": "img/external/colorme/size/tape-bag/clickpost.jpg",
+        "data": ""
+      }
+    }
+  },
+  "color_num": {
+    "name": "印刷カラー",
+    "extra": "",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-sm",
+    "options": {
+      "1": {
+        "name": "１色",
+        "value": 1,
+        "extra": "印刷するデザインに使用する色数が１色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_01.png"
+      }
+    },
+    "note": {
+      "title": "印刷と色について",
+      "sections": [
+        {
+          "title": "印刷と料金について",
+          "layout_type": "horizontal-list-sm",
+          "summary": {
+            "title": "印刷に使用する色数で料金が変化します",
+            "body": [
+              "印刷に利用する色は<span class=\"js-external-link\" data-link=\"https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a\">『PANTONEの見本からお選びください』</span>をご覧ください",
+              "色数が増えると基本的に料金が上がります",
+              "５色以上扱う場合、写真はフルカラーに該当します。"
+            ]
+          },
+          "contents": [
+            {
+              "title": "１色",
+              "image": "img/product_detail/common/color_num/color_num_01.png"
+            },
+            {
+              "title": "２色",
+              "image": "img/product_detail/common/color_num/color_num_02.png"
+            },
+            {
+              "title": "３色",
+              "image": "img/product_detail/common/color_num/color_num_03.png"
+            },
+            {
+              "title": "４色",
+              "image": "img/product_detail/common/color_num/color_num_04.png"
+            },
+            {
+              "title": "フルカラー",
+              "image": "img/product_detail/common/color_num/color_num_full.png"
+            }
+          ]
+        },
+        {
+          "title": "印刷可能な範囲",
+          "layout_type": "vertical-list-lg",
+          "contents": [
+            {
+              "image": "img/product_detail/film/print_area/5mm.jpg",
+              "body": [
+                "端から5mmの余白を開ける必要があり、その部分は印刷ができません。"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "choosable_color": [
+    {
+      "name": "1色 - PANTONE",
+      "link": "https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a",
+      "image": "img/external/colorme/color/pantone.png"
+    }
+  ]
+}

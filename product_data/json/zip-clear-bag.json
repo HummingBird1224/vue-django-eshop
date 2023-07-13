@@ -1,0 +1,390 @@
+{
+  "contact_required": {
+    "name": "お問い合わせ",
+    "value": false,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "sample_order": {
+    "name": "サンプル注文",
+    "value": true,
+    "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+    "image": ""
+  },
+  "small_lot_availability": {
+    "name": "小ロット対応",
+    "value": true,
+    "extra": "",
+    "image": ""
+  },
+  "min_ordering_quantity": {
+    "name": "最小注文数",
+    "value": 3000,
+    "extra": "",
+    "image": ""
+  },
+  "max_ordering_quantity": {
+    "name": "最大注文数",
+    "value": 20000,
+    "extra": "",
+    "image": ""
+  },
+  "estimated_shipping_date": {
+    "name": "納期",
+    "value": {
+      "first": 30,
+      "repeat": 21
+    },
+    "extra": {
+      "first": "データ確定後1ヶ月",
+      "repeat": "3週間"
+    },
+    "image": ""
+  },
+  "can_select_original_size": {
+    "name": "オリジナルサイズ",
+    "value": true,
+    "extra": "",
+    "image": ""
+  },
+  "is_design_unnecessary": {
+    "name": "デザイン不要",
+    "value": false,
+    "extra": "",
+    "image": ""
+  },
+  "is_easy_draft_available": {
+    "name": "カンタン入稿可能",
+    "value": false
+  },
+  "notes": {
+    "name": "備考",
+    "value": "",
+    "extra": [
+      {
+        "key": "ジップ上",
+        "value": "20mm"
+      },
+      {
+        "key": "注文枚数で材質が少し変化します。",
+        "value": ""
+      },
+      {
+        "key": "100-1000枚",
+        "value": "IPP#60"
+      },
+      {
+        "key": "",
+        "value": "→透明度がありコシがある手触りです"
+      },
+      {
+        "key": "1000枚以上",
+        "value": "LLDPE#80"
+      },
+      {
+        "key": "",
+        "value": "→半透明でマット調の柔らかい手触りです"
+      }
+    ],
+    "image": ""
+  },
+  "choosable_color": {
+    "name": "印刷色",
+    "value": "フルカラー",
+    "extra": "",
+    "image": ""
+  },
+  "print_area": {
+    "name": "印刷可能範囲",
+    "value": 5,
+    "extra": "端から5mmの余白を開ける必要があり、その部分は印刷ができません。",
+    "image": "img/product_detail/film/print_area/5mm.jpg"
+  },
+  "example": {
+    "value": 27.2,
+    "suffix": "円",
+    "unit": "枚",
+    "lot": 1000
+  },
+  "size_limit": {
+    "height": {
+      "min": 140,
+      "max": 500
+    },
+    "width": {
+      "min": 80,
+      "max": 400
+    }
+  },
+  "shipping_area": {
+    "exclude": false,
+    "prefectures": [
+      "東京",
+      "神奈川",
+      "静岡",
+      "埼玉",
+      "千葉"
+    ]
+  },
+  "required_fields": {
+    "size": [
+      "height",
+      "width"
+    ],
+    "color_num": null,
+    "quantity": null
+  },
+  "option_order": [
+    "color_num",
+    "size",
+    "quantity"
+  ],
+  "quantity": {
+    "name": "注文数",
+    "extra": "",
+    "required": true,
+    "default": "30",
+    "image": "",
+    "unit": "袋",
+    "widget_type": "radio",
+    "options": {
+      "30": {
+        "name": "3,000",
+        "value": 3000
+      },
+      "40": {
+        "name": "4,000",
+        "value": 4000
+      },
+      "50": {
+        "name": "5,000",
+        "value": 5000
+      },
+      "75": {
+        "name": "7,500",
+        "value": 7500
+      },
+      "100": {
+        "name": "10,000",
+        "value": 10000
+      },
+      "125": {
+        "name": "12,500",
+        "value": 12500
+      },
+      "150": {
+        "name": "15,000",
+        "value": 15000
+      },
+      "175": {
+        "name": "17,500",
+        "value": 17500
+      },
+      "200": {
+        "name": "20,000",
+        "value": 20000
+      }
+    }
+  },
+  "size": {
+    "name": "サイズ",
+    "extra": "サイズを選択してください",
+    "required": true,
+    "default": "1",
+    "image": "img/product_detail/film/size/zip-clear-bag/zip-clear-bag_original.jpg",
+    "widget_type": "modal-radio",
+    "options": {
+      "1": {
+        "name": "アクセサリー用サイズ",
+        "value": [
+          {
+            "name": "height",
+            "value": 140
+          },
+          {
+            "name": "width",
+            "value": 100
+          },
+          {
+            "name": "top",
+            "value": 20
+          }
+        ],
+        "extra": "高さ140mm 幅100mm",
+        "image": "img/product_detail/film/size/zip-clear-bag/zip-clear-bag_accesary.jpg",
+        "data": "design_templates/flatbag/zip_clear_bag/zip_clear_bag_accessories.ai"
+      },
+      "2": {
+        "name": "A6サイズ",
+        "value": [
+          {
+            "name": "height",
+            "value": 170
+          },
+          {
+            "name": "width",
+            "value": 120
+          },
+          {
+            "name": "top",
+            "value": 20
+          }
+        ],
+        "extra": "高さ170mm 幅120mm",
+        "image": "img/product_detail/film/size/zip-clear-bag/zip-clear-bag_a6.jpg",
+        "data": "design_templates/flatbag/zip_clear_bag/zip_clear_bag_a6.ai"
+      },
+      "3": {
+        "name": " A5サイズ",
+        "value": [
+          {
+            "name": "height",
+            "value": 240
+          },
+          {
+            "name": "width",
+            "value": 170
+          },
+          {
+            "name": "top",
+            "value": 20
+          }
+        ],
+        "extra": "高さ240mm 幅170mm",
+        "image": "img/product_detail/film/size/zip-clear-bag/zip-clear-bag_a5.jpg",
+        "data": "design_templates/flatbag/zip_clear_bag/zip_clear_bag_a5.ai"
+      },
+      "4": {
+        "name": "A4サイズ",
+        "value": [
+          {
+            "name": "height",
+            "value": 340
+          },
+          {
+            "name": "width",
+            "value": 240
+          },
+          {
+            "name": "top",
+            "value": 20
+          }
+        ],
+        "extra": "高さ340mm 幅240mm",
+        "image": "img/product_detail/film/size/zip-clear-bag/zip-clear-bag_a4.jpg",
+        "data": "design_templates/flatbag/zip_clear_bag/zip_clear_bag_a4.ai"
+      },
+      "5": {
+        "name": "A3サイズ",
+        "value": [
+          {
+            "name": "height",
+            "value": 480
+          },
+          {
+            "name": "width",
+            "value": 340
+          },
+          {
+            "name": "top",
+            "value": 20
+          }
+        ],
+        "extra": "高さ480mm 幅340mm",
+        "image": "img/product_detail/film/size/zip-clear-bag/zip-clear-bag_a3.jpg",
+        "data": "design_templates/flatbag/zip_clear_bag/zip_clear_bag_a3.ai"
+      }
+    }
+  },
+  "color_num": {
+    "name": "印刷に使用する色数",
+    "extra": "",
+    "required": true,
+    "default": "1",
+    "image": "",
+    "widget_type": "slider-sm",
+    "options": {
+      "1": {
+        "name": "１色",
+        "value": 1,
+        "extra": "印刷するデザインに使用する色数が１色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_01.png"
+      },
+      "2": {
+        "name": "２色",
+        "value": 2,
+        "extra": "印刷するデザインに使用する色数が２色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_02.png"
+      },
+      "3": {
+        "name": "３色",
+        "value": 3,
+        "extra": "印刷するデザインに使用する色数が３色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_03.png"
+      },
+      "4": {
+        "name": "４色",
+        "value": 4,
+        "extra": "印刷するデザインに使用する色数が４色の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_04.png"
+      },
+      "5": {
+        "name": "フルカラー",
+        "value": -1,
+        "extra": "印刷するデザインに使用する色数が５色以上の場合です。 生地や材質の色は含みません。",
+        "image": "img/product_detail/common/color_num/color_num_full.png"
+      }
+    },
+    "note": {
+      "title": "印刷と色について",
+      "sections": [
+        {
+          "title": "印刷と料金について",
+          "layout_type": "horizontal-list-sm",
+          "summary": {
+            "title": "印刷に使用する色数で料金が変化します",
+            "body": [
+              "印刷に利用する色は<span class=\"js-external-link\" data-link=\"https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a\">『PANTONEの見本からお選びください』</span>をご覧ください",
+              "色数が増えると基本的に料金が上がります",
+              "５色以上扱う場合、写真はフルカラーに該当します。"
+            ]
+          },
+          "contents": [
+            {
+              "title": "１色",
+              "image": "img/product_detail/common/color_num/color_num_01.png"
+            },
+            {
+              "title": "２色",
+              "image": "img/product_detail/common/color_num/color_num_02.png"
+            },
+            {
+              "title": "３色",
+              "image": "img/product_detail/common/color_num/color_num_03.png"
+            },
+            {
+              "title": "４色",
+              "image": "img/product_detail/common/color_num/color_num_04.png"
+            },
+            {
+              "title": "フルカラー",
+              "image": "img/product_detail/common/color_num/color_num_full.png"
+            }
+          ]
+        },
+        {
+          "title": "印刷可能な範囲",
+          "layout_type": "vertical-list-lg",
+          "contents": [
+            {
+              "image": "img/product_detail/film/print_area/full.jpg",
+              "body": [
+                "端から5mmの余白を開ける必要があり、その部分は印刷ができません。"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

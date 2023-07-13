@@ -1,0 +1,259 @@
+import json
+
+data = {
+    'contact_required': {
+        'name': 'お問い合わせ',
+        'value': False,
+        "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+        'image': '',
+    },
+    'sample_order': {
+        'name': 'サンプル注文',
+        'value': False,
+        "extra": "https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform",
+        'image': '',
+    },
+    'small_lot_availability': {
+        'name': '小ロット対応',
+        'value': True,
+        'extra': '',
+        'image': '',
+    },
+    'min_ordering_quantity': {
+        'name': '最小注文数',
+        'value': 100,
+        'extra': '',
+        'image': '',
+    },
+    'max_ordering_quantity': {
+        'name': '最大注文数',
+        'value': 2000,
+        'extra': '',
+        'image': '',
+    },
+    'estimated_shipping_date': {
+        'name': '納期',
+        'value': {
+            'first': 14,
+            'repeat': 7
+        },
+        'extra': {
+            'first': 'データ確定後2週間',
+            'repeat': '1週間',
+        },
+        'image': '',
+    },
+    'can_select_original_size': {
+        'name': 'オリジナルサイズ',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'is_design_unnecessary': {
+        'name': 'デザイン不要',
+        'value': False,
+        'extra': '',
+        'image': '',
+    },
+    'is_easy_draft_available': {
+        'name': 'カンタン入稿可能',
+        'value': False,
+    },
+    'print_area': {
+        'name': '印刷可能範囲',
+        'value': 0,
+        'extra': '袋全体',
+        'image': '',
+    },
+    'notes': {
+        'name': '備考',
+        'value': '',
+        'extra': [
+            {'key': 'ジップ上の高さ', 'value': '32mm'},
+            {'key': '基材構成', 'value': '表：PET#12//CP#50・裏：透明蒸着PET#12//VMPET#12//CP#50'},
+            {'key': '加工', 'value': '底開き、吊り下げ穴付き、角丸加工、ノッチ付き'},
+        ],
+        'image': '',
+    },
+    'example': {
+    },
+    'size_limit': {
+        'height': {
+            'min': 140,
+            'max': 500,
+        },
+        'width': {
+            'min': 80,
+            'max': 400,
+        },
+    },
+    'shipping_area': {
+        'exclude': False,
+        'prefectures': [
+            '東京',
+            '神奈川',
+            '静岡',
+            '埼玉',
+            '千葉',
+        ]
+    },
+    'required_fields': {
+        'size': [
+            "height",
+            "width",
+        ],
+        "color_num": None,
+        "quantity": None,
+    },
+    'option_order': [
+        'color_num',
+        'size',
+        'quantity'
+    ],
+    'quantity': {
+        'name': '注文数',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'unit': '袋',
+        'widget_type': 'radio',
+        'options': {
+            '1': {'name': '100', 'value': 100},
+            '2': {'name': '200', 'value': 200},
+            '3': {'name': '300', 'value': 300},
+            '4': {'name': '400', 'value': 400},
+            '5': {'name': '500', 'value': 500},
+            '6': {'name': '600', 'value': 600},
+            '7': {'name': '700', 'value': 700},
+            '8': {'name': '800', 'value': 800},
+            '9': {'name': '900', 'value': 900},
+            '10': {'name': '1,000', 'value': 1000},
+            '15': {'name': '1,500', 'value': 1500},
+            '20': {'name': '2,000', 'value': 2000},
+        },
+    },
+    'size': {
+        'name': 'サイズ',
+        'extra': 'サイズを選択してください',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'widget_type': 'modal-radio',
+        'options': {
+            '1': {
+                'name': '小物用',
+                'value': [
+                    {'name': 'height', 'value': 140},
+                    {'name': 'width', 'value': 100},
+                ],
+                'extra': '高さ140mm 幅100mm',
+                'image': 'img/external/base/size/zip-aluminum-clear-bag/accessories.jpg',
+                'data': ''
+            },
+            '2': {
+                'name': 'A6',
+                'value': [
+                    {'name': 'height', 'value': 170},
+                    {'name': 'width', 'value': 120},
+                ],
+                'extra': '高さ170mm 幅120mm',
+                'image': 'img/external/base/size/zip-aluminum-clear-bag/a6.jpg',
+                'data': ''
+            },
+            '3': {
+                'name': 'B6',
+                'value': [
+                    {'name': 'height', 'value': 200},
+                    {'name': 'width', 'value': 140},
+                ],
+                'extra': '高さ200mm 幅140mm',
+                'image': 'img/external/base/size/zip-aluminum-clear-bag/b6.jpg',
+                'data': ''
+            },
+            '4': {
+                'name': 'A5',
+                'value': [
+                    {'name': 'height', 'value': 240},
+                    {'name': 'width', 'value': 170},
+                ],
+                'extra': '高さ240mm 幅170mm',
+                'image': 'img/external/base/size/zip-aluminum-clear-bag/a5.jpg',
+                'data': ''
+            }
+        }
+    },
+    'color_num': {
+        'name': '印刷カラー',
+        'extra': '',
+        'required': True,
+        'default': '1',
+        'image': '',
+        'widget_type': 'slider-sm',
+        'options': {
+            '1': {
+                'name': '１色',
+                'value': 1,
+                'extra': '印刷するデザインに使用する色数が１色の場合です。 生地や材質の色は含みません。',
+                'image': 'img/product_detail/common/color_num/color_num_01.png'
+            }
+        },
+        'note': {
+            "title": "印刷と色について",
+            "sections": [
+                {
+                    "title": "印刷と料金について",
+                    "layout_type": "horizontal-list-sm",
+                    "summary": {
+                        "title": "印刷に使用する色数で料金が変化します",
+                        "body": [
+                            '印刷に利用する色は<span class="js-external-link" data-link="https://same-raft-469.notion.site/acaa6c5ea5294bc6a74494970299305a">『PANTONEの見本からお選びください』</span>をご覧ください',
+                            "色数が増えると基本的に料金が上がります",
+                            "５色以上扱う場合、写真はフルカラーに該当します。"
+                        ]
+                    },
+                    "contents": [
+                        {
+                            'title': '１色',
+                            'image': 'img/product_detail/common/color_num/color_num_01.png',
+                        },
+                        {
+                            'title': '２色',
+                            'image': 'img/product_detail/common/color_num/color_num_02.png'
+                        },
+                        {
+                            'title': '３色',
+                            'image': 'img/product_detail/common/color_num/color_num_03.png'
+                        },
+                        {
+                            'title': '４色',
+                            'image': 'img/product_detail/common/color_num/color_num_04.png'
+                        },
+                        {
+                            'title': 'フルカラー',
+                            'image': 'img/product_detail/common/color_num/color_num_full.png'
+                        }
+                    ]
+                },
+                {
+                    "title": "印刷可能な範囲",
+                    "layout_type": "vertical-list-lg",
+                    "contents": [
+                        {
+                            "image": "img/product_detail/film/print_area/full.jpg",
+                            "body": [
+                                "端から5mmの余白を開ける必要があり、その部分は印刷ができません。",
+                            ]
+                        },
+                    ]
+                },
+            ]
+        }
+    },
+    'choosable_color': [
+        {'name': '1色 - モノクロ', 'image': 'img/external/base/color/monokuro.png'},
+    ],
+}
+
+
+print(json.dumps(data, indent=2, ensure_ascii=False))
