@@ -1,0 +1,105 @@
+.c-colorListModal {
+  & {
+
+  }
+
+  &-content {
+    position: relative;
+    width: 73%;
+    min-width: 700px;
+    margin: 65px auto;
+    padding: 58px 55px 104px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+  }
+
+  .c-colorListModalClose {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 32px;
+    right: 56px;
+    color: $color-primary;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-left: 16px;
+      border: 1px solid $color-primary;
+      border-radius: 50%;
+
+      > svg {
+        width: 12px;
+        height: 12px;
+        fill: $color-primary;
+      }
+    }
+  }
+
+  .c-colorListModalHeader {
+    padding-bottom: 20px;
+
+    h2 {
+      @include f-text-h3;
+      color: $color-black;
+    }
+
+    p {
+      @include f-text-sm;
+      font-weight: bold;
+      color: $color-black;
+      margin-top: 6px;
+    }
+  }
+
+  .c-colorListModalMain {
+    padding-top: 40px;
+    border-top: 1px solid $border-color-gray;
+  }
+
+  .c-colorListModalRow {
+    & + .c-colorListModalRow {
+      padding-top: 48px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      @include f-text-lg;
+      color: black;
+    }
+
+    &-thumb {
+      flex: none;
+      width: 32px;
+      height: 32px;
+      margin-right: 16px;
+      background: #FBFBFC center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .c-colorListModalListWrapper {
+    margin-top: 24px;
+    overflow: hidden;
+  }
+
+  .c-colorListModalList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -19px;
+
+    &-item {
+      margin-left: 19px;
+      margin-bottom: 24px;
+      background: #fff center no-repeat;
+      background-size: contain;
+      width: 143px;
+      height: 86px;
+    }
+  }
+}

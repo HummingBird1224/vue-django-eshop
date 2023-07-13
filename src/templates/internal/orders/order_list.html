@@ -1,0 +1,298 @@
+{% extends "internal/base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="breadcrumbsInternal">
+    <div class="breadcrumbsItem">ホーム</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">ORDERS</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">注文一覧</div>
+  </div>
+
+  <h1 class="g-title-primary pageTitleInternal">注文一覧</h1>
+
+  <div class="orderInternal">
+    <div class="orderInternalList">
+      <div class="listFunction">
+        <div class="queryContainer">
+          <img src="{% static 'img/search.svg' %}" class="queryIcon"/>
+          <input type="text" class="query" id="js-query" value="{{ q }}" placeholder="ユーザー名、注文番号で検索">
+        </div>
+        <div class="csvDownloadContainer clickable" id="js-csv-download">
+          CSV書き出し
+        </div>
+      </div>
+      <div class="listTableContainer">
+        <div class="listTable">
+          <table>
+            <tr align="left">
+              <th>ユーザ名</th>
+              <th>注文番号</th>
+              <th>支払い方法</th>
+              <th>
+                <div class="filterButton clickable" id="js-filter-button-status">
+                  商品ステータス
+                  <div class="statusBatchContainerTh">
+                    {% if display_state is not None %}
+                      <div class="statusBatch {{ state }}">
+                        {{ display_state }}
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div class="arrow"></div>
+                </div>
+                <div class="filterModal hidden" id="js-filter-modal-status">
+                  <div class="filterItemContainer">
+                    <a href="?state=all&order={{ order }}&desc={{ desc }}&q={{ q }}">
+                      <div class="filterItemStatus">
+                        なし
+                      </div>
+                    </a>
+                  </div>
+                  {% for state in all_state %}
+                    <div class="filterItemContainer">
+                      <a href="?state={{ state.state }}&order={{ order }}&desc={{ desc }}&q={{ q }}">
+                        <div class="statusBatch {{ state.state }}">
+                          {{ state.display_state }}
+                        </div>
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </th>
+              <th>
+                <div class="filterButton clickable" id="js-filter-button-shipping-date">
+                  推定納期
+                  <div class="arrow"></div>
+                </div>
+                <div class="filterModal hidden" id="js-filter-modal-shipping-date">
+                  <div class="filterItemContainer">
+                    <a href="?state={{ state }}&order=shipping_date&desc=1&q={{ q }}">
+                      <div class="filterItemDate">
+                        新しい順
+                      </div>
+                    </a>
+                  </div>
+                  <div class="filterItemContainer">
+                    <a href="?state={{ state }}&order=shipping_date&desc=0&q={{ q }}">
+                      <div class="filterItemDate">
+                        古い順
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </th>
+{#              <th>ステータス変更日</th>#}
+              <th>
+                <div class="filterButton clickable" id="js-filter-button-created-at">
+                  注文日時
+                <div class="arrow"></div>
+                </div>
+                <div class="filterModal hidden" id="js-filter-modal-created-at">
+                  <div class="filterItemContainer">
+                    <a href="?state={{ state }}&order=created_at&desc=1&q={{ q }}">
+                      <div class="filterItemDate">
+                        新しい順
+                      </div>
+                    </a>
+                  </div>
+                  <div class="filterItemContainer">
+                    <a href="?state={{ state }}&order=created_at&desc=0&q={{ q }}">
+                      <div class="filterItemDate">
+                        古い順
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </th>
+              <th></th>
+            </tr>
+            {% for order in object_list %}
+              <tr align="left">
+                <td>{{ order.user.get_fullname }} 様</td>
+                <td>{{ order.ref_code }}</td>
+                <td>
+                  <p class="listTable-payment">
+                    {{ order.get_transaction.get_type_display }}
+                    {% if order.get_transaction.is_captured == True %}
+                    <svg class="">
+                      <use xlink:href="#icons-check_done" class="done" />
+                    </svg>
+                    {% endif %}
+                  </p>
+                  {% with trans=order.get_transaction %}
+                  {% if trans.type == 'bank_transfer' and trans.is_captured is False %}
+                    <button class="c-btn listTableContainer-banktransfer-btn js-bank-transfer-complete" data-url="{% url 'internal:order_bank_transfer_complete' ref_code=order.ref_code %}">
+                      振込確認
+                    </button>
+                  {% elif trans.type == 'bank_transfer' and trans.is_captured is True %}
+                    <button class="c-btn listTableContainer-banktransfer-btn listTableContainer-banktransfer-btn--undo js-bank-transfer-uncomplete" data-url="{% url 'internal:order_bank_transfer_uncomplete' ref_code=order.ref_code %}">
+                      振込取消
+                    </button>
+                  {% endif %}
+                  {% endwith %}
+                </td>
+                <td>
+                  {% for item in order.items.all %}
+                    <div class="tableItem">
+                      <a href="{% url 'internal:order_detail' item.ref_code %}" class="productState clickable">
+                        {{ item.product_name }}
+                        <div class="statusBatchContainer">
+                          <div class="statusBatch {{ item.internal_state }}">
+                            {{ item.internal_state_display }}
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  {% endfor %}
+                </td>
+                <td>
+                  {% for item in order.items.all %}
+                    <div class="tableItem">
+                      {{ item.delivery.shipping_date_display }}
+                    </div>
+                  {% endfor %}
+                </td>
+{#                <td>#}
+{#                  {% for item in order.items.all %}#}
+{#                    <div class="tableItem">2020年2月13日16:22</div>#}
+{#                  {% endfor %}#}
+{#                </td>#}
+                <td>
+                  {% for item in order.items.all %}
+                    <div class="tableItem">{{ item.created_at }}</div>
+                  {% endfor %}
+                </td>
+                <td>
+                  {% for item in order.items.all %}
+                    <div class="tableItem"></div>
+                  {% endfor %}
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+        <div class="pagination">
+          {% for num in page_obj.paginator.page_range %}
+              {% if page_obj.number == num %}
+                <div class="pagination-item-now">{{ num }}</div>
+              {% else %}
+                <a class="pagination-item" href="?page={{ num }}&state={{ state }}&order={{ order }}&desc={{ desc }}&q={{ q }}">
+                  {{ num }}
+                </a>
+              {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).click(function(event) {
+      const $target = $(event.target);
+      if (modalNotClicked($target, '#js-filter-modal-status', '#js-filter-button-status')) {
+        $('#js-filter-modal-status').addClass('hidden')
+      }
+      if (modalNotClicked($target, '#js-filter-modal-shipping-date', '#js-filter-button-shipping-date')) {
+        $('#js-filter-modal-shipping-date').addClass('hidden')
+      }
+      if (modalNotClicked($target, '#js-filter-modal-created-at', '#js-filter-button-created-at')) {
+        $('#js-filter-modal-created-at').addClass('hidden')
+      }
+    });
+
+    $('#js-filter-button-status').on('click', function() {
+      $('#js-filter-modal-status').toggleClass('hidden');
+    });
+
+    $('#js-filter-button-shipping-date').on('click', function() {
+      $('#js-filter-modal-shipping-date').toggleClass('hidden');
+    });
+
+    $('#js-filter-button-created-at').on('click', function() {
+      $('#js-filter-modal-created-at').toggleClass('hidden');
+    });
+
+    $('.js-bank-transfer-complete').on('click', function (e) {
+      e.preventDefault();
+      var url = $(this).data('url');
+      var data = {'ref_code': 'hello'};
+      $.ajax({
+        type: 'POST',
+        url: url,
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        beforeSend: function (xhr, settings) {
+          xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+        },
+        success: function (data) {
+          window.location.reload();
+        },
+        error: function( data ) {
+	        console.log(data);
+	      }
+      });
+    });
+
+    $('.js-bank-transfer-uncomplete').on('click', function (e) {
+      e.preventDefault();
+      var url = $(this).data('url');
+      var data = {'ref_code': 'hello'};
+      $.ajax({
+        type: 'POST',
+        url: url,
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        beforeSend: function (xhr, settings) {
+          xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+        },
+        success: function (data) {
+          window.location.reload();
+        },
+        error: function( data ) {
+	        console.log(data);
+	      }
+      });
+    });
+
+    $('#js-query').keypress(function (e) {
+      if (e.which === 13) {
+        const q = $('#js-query').val();
+        window.location.href = "?q=" + q;
+      }
+    });
+
+    $('#js-csv-download').on('click', function () {
+      $.get('/internal/orders/log/').done(function (data) {
+        const blobURL = window.URL.createObjectURL(new Blob([data], {type: 'blob'}));
+        const now = new Date();
+        const fileName = formatDate(now) + '.csv';
+        const a = $('<a>', {
+          style: 'display: none',
+          href: blobURL,
+          download: fileName,
+        }).appendTo($(document).find('body'));
+        a.get(0).click();
+      }).fail(function () {
+        alert('通信エラーが発生しました');
+      })
+    });
+
+    const formatDate = function (date) {
+      const Y = date.getFullYear();
+      const M = ('0' + date.getMonth() + 1).slice(-2);
+      const D = ('0' + date.getDate() + 1).slice(-2);
+      const h = ('0' + date.getHours() + 1).slice(-2);
+      const m = ('0' + date.getMinutes() + 1).slice(-2);
+      const s = ('0' + date.getSeconds() + 1).slice(-2);
+      return `${Y}${M}${D}${h}${m}${s}`;
+    };
+
+    const modalNotClicked = function ($e, modalSelector, buttonSelector) {
+      return !$e.closest(modalSelector).length && !$e.closest(buttonSelector).length
+    }
+  </script>
+{% endblock %}

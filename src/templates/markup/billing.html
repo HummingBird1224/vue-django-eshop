@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}購入フロー（マークアップ）【canal】{% endblock %}
+{% block titleog %}購入フロー（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  {#  <div id="js-billing-form">#}
+  {#  </div>#}
+  <div class="p-billing">
+    <div class="p-billingForm">
+      <div class="p-billingForm-body">
+        <header class="p-billingHeader">
+          <h1 class="g-title-primary"><svg class="c-logo"><use xlink:href='#icons-logo'/></svg></h1>
+          <a class="c-textLink c-textLink--black" href="/">サイトに戻る</a>
+        </header>
+        <ol class="p-billingFlow">
+          <li class="p-billingFlow-item is-done">
+            1. 登録/ログイン
+          </li>
+          <li class="p-billingFlow-item is-active">
+            2. 配送先情報
+          </li>
+          <li class="p-billingFlow-item">
+            3. お支払い
+          </li>
+        </ol>
+
+        <div class="p-billingNavigation">
+          <h3 class="g-title-tertiary"><a href="#">注文内容<svg><use xlink:href='#icons-arrow_down'/></svg></a></h3>
+          <p>7,700<span>円</span></p>
+        </div>
+
+        {#        <div class="p-billingContent">#}
+        {#          <h2 class="g-title-secondary p-billingContent-title">canalへようこそ！👋</h2>#}
+        {#          <p class="p-billingContent-description">アカウントを作成しましょう。</p>#}
+        {##}
+        {#          <div class="c-form-col">#}
+        {#            <div class="c-form-item">#}
+        {#              <input type="text" class="c-form-input" value="" onkeyup="this.setAttribute('value', this.value);">#}
+        {#              <label for="" class="c-form-label">#}
+        {#                メールアドレス#}
+        {#              </label>#}
+        {#              <p class="c-form-error">メールアドレスを入力してください</p>#}
+        {#            </div>#}
+        {#          </div>#}
+        {##}
+        {#          <div class="c-form-col">#}
+        {#            <div class="c-form-item">#}
+        {#              <input type="password" class="c-form-input" value="" onkeyup="this.setAttribute('value', this.value);">#}
+        {#              <label for="" class="c-form-label">#}
+        {#                パスワード#}
+        {#              </label>#}
+        {#              <p class="c-form-error">メールアドレスを入力してください</p>#}
+        {#            </div>#}
+        {#          </div>#}
+        {##}
+        {#          <div class="c-form-col c-form-col--bottom">#}
+        {#            <div class="c-form-item">#}
+        {#              <label class="c-form-checkbox">#}
+        {#                <input class="c-form-checkboxInput" type="checkbox">#}
+        {#                <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>#}
+        {#                <a href="#">プライバシーポリシー</a>と<a href="#">利用規約</a>に同意する#}
+        {#              </label>#}
+        {#              <p class="c-form-error">メールアドレスを入力してください</p>#}
+        {#            </div>#}
+        {#          </div>#}
+        {#        </div>#}
+
+                <div class="p-billingContent">
+                  <h2 class="g-title-secondary p-billingContent-title">配送先の情報を入力</h2>
+                  <p class="p-billingContent-description">
+                    <svg class="p-billingContent-icon--pin"><use xlink:href='#icons-pin_drop_lg'/></svg>
+                    <span>どこにお届けしますか？</span>
+                  </p>
+                  <div class="c-form-col">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        姓
+                      </label>
+                      <p class="c-form-error">姓を入力してください</p>
+                    </div>
+
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        名
+                      </label>
+                      <p class="c-form-error">名を入力してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col c-form-col--quarter">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        〒郵便番号
+                      </label>
+                      <p class="c-form-error">郵便番号を入力してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col">
+                    <div class="c-form-item">
+                      <div class="c-form-select">
+                        <select name="" class="c-form-selectInput">
+                          <option value="-">東京都</option>
+                          <option value="1">神奈川県</option>
+                        </select>
+                        <svg class='c-form-selectIcon'><use xlink:href='#icons-arrow_down'/></svg>
+                      </div>
+                      <p class="c-form-error">都道府県を選択してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        住所
+                      </label>
+                      <p class="c-form-error">住所を入力してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col c-form-col--half">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        電話番号
+                      </label>
+                      <p class="c-form-error">電話番号を入力してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col c-form-col--bottom">
+                    <div class="c-form-item">
+                      <label class="c-form-checkbox">
+                        <input class="c-form-checkboxInput" type="checkbox">
+                        <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                        請求先を別の住所にする
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col c-form-col--quarter c-form-col--bottom">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        〒郵便番号
+                      </label>
+                      <p class="c-form-error">郵便番号を入力してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col">
+                    <div class="c-form-item">
+                      <div class="c-form-select">
+                        <select name="" class="c-form-selectInput">
+                          <option value="-">東京都</option>
+                          <option value="1">神奈川県</option>
+                        </select>
+                        <svg class='c-form-selectIcon'><use xlink:href='#icons-arrow_down'/></svg>
+                      </div>
+                      <p class="c-form-error">都道府県を選択してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        住所
+                      </label>
+                      <p class="c-form-error">住所を入力してください</p>
+                    </div>
+                  </div>
+
+                  <div class="c-form-col c-form-col--half">
+                    <div class="c-form-item">
+                      <input type="text" class="c-form-input">
+                      <label for="" class="c-form-label">
+                        電話番号
+                      </label>
+                      <p class="c-form-error">電話番号を入力してください</p>
+                    </div>
+                  </div>
+                </div>
+
+{#        <div class="p-billingContent is-billing">#}
+{#          <h2 class="g-title-secondary p-billingContent-title">ご注文を確定させましょう</h2>#}
+{#          <p class="p-billingContent-description">#}
+{#            <svg class='p-billingContent-icon--pay'><use xlink:href='#icons-payment'/></svg>#}
+{#            <span>お支払い情報を入力して、ご注文を確定させましょう。</span>#}
+{#          </p>#}
+{##}
+{#          <div class="c-form-col">#}
+{#            <div class="c-form-item">#}
+{#              <input type="text" class="c-form-input">#}
+{#              <label for="" class="c-form-label">#}
+{#                クレジット番号#}
+{#              </label>#}
+{#              <p class="c-form-error">クレジット番号を入力してください</p>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="c-form-col c-form-col--half">#}
+{#            <div class="c-form-item">#}
+{#              <div class="c-form-select">#}
+{#                <select name="" class="c-form-selectInput c-form-selectInput--hasLabel">#}
+{#                  <option value="-"></option>#}
+{#                  <option value="1">1</option>#}
+{#                  <option value="2">2</option>#}
+{#                </select>#}
+{#                <label for="" class="c-form-label">#}
+{#                  年#}
+{#                </label>#}
+{#                <svg class='c-form-selectIcon'><use xlink:href='#icons-arrow_down'/></svg>#}
+{#              </div>#}
+{#              <p class="c-form-error">年を選択してください</p>#}
+{#            </div>#}
+{##}
+{#            <div class="c-form-item">#}
+{#              <div class="c-form-select">#}
+{#                <select name="" class="c-form-selectInput c-form-selectInput--hasLabel">#}
+{#                  <option value="-"></option>#}
+{#                  <option value="1">1</option>#}
+{#                  <option value="2">2</option>#}
+{#                </select>#}
+{#                <label for="" class="c-form-label">#}
+{#                  月#}
+{#                </label>#}
+{#                <svg class='c-form-selectIcon'><use xlink:href='#icons-arrow_down'/></svg>#}
+{#              </div>#}
+{#              <p class="c-form-error">月を選択してください</p>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="c-form-col c-form-col--half">#}
+{#            <div class="c-form-item">#}
+{#              <input type="text" class="c-form-input">#}
+{#              <label for="" class="c-form-label">#}
+{#                セキュリティコード#}
+{#              </label>#}
+{#              <p class="c-form-error">セキュリティコードを入力してください</p>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="p-billingAddress">#}
+{#            <header class="p-billingAddress-header">#}
+{#              <h3 class="g-title-tertiary">#}
+{#                <svg><use xlink:href='#icons-pin_drop'/></svg>配送先#}
+{#              </h3>#}
+{#              <a class="c-textLink c-textLink--black" href="#">#}
+{#                編集#}
+{#              </a>#}
+{#            </header>#}
+{##}
+{#            <div class="p-billingAddress-content">#}
+{#              田中 太郎 〒109-0099<br>#}
+{#              東京都港区六本木7-7-7 キャナルビル77階<br>#}
+{#              080-1234-5678#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+
+        <div class="p-billingFooter">
+          <a class="c-textLink" href="/">すでにアカウントをお持ちの方はログイン</a>
+          <a class="c-btn c-btn--primary" href="#">
+            配送先の入力へ
+          </a>
+        </div>
+      </div>
+      <div class="p-billingForm-cart">
+        <h3 class="g-title-tertiary p-CartHeader">注文内容</h3>
+        <ul class="p-CartList">
+          <li class="p-CartItem">
+            <div class="p-CartItemThumb"></div>
+            <div class="p-CartItemBody">
+              <header class="p-CartItemBody-header">
+                <h4 class="g-title-quaternary"><a href="#">チャック付きポリ袋</a></h4>
+                <p>2,500<span>円</span></p>
+              </header>
+              <div class="p-CartItemBody-content">
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">サイズ</h5>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>10,000 袋</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">材質</h5>
+                  <p>ハイマット</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">色数</h5>
+                  <p>1色</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="p-CartItem">
+            <div class="p-CartItemThumb"></div>
+            <div class="p-CartItemBody">
+              <header class="p-CartItemBody-header">
+                <h4 class="g-title-quaternary"><a href="#">チャック付きポリ袋</a></h4>
+                <p>2,500<span>円</span></p>
+              </header>
+              <div class="p-CartItemBody-content">
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">サイズ</h5>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>10,000 袋</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">材質</h5>
+                  <p>ハイマット</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">色数</h5>
+                  <p>1色</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="p-CartItem">
+            <div class="p-CartItemThumb"></div>
+            <div class="p-CartItemBody">
+              <header class="p-CartItemBody-header">
+                <h4 class="g-title-quaternary"><a href="#">チャック付きポリ袋</a></h4>
+                <p>2,500<span>円</span></p>
+              </header>
+              <div class="p-CartItemBody-content">
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">サイズ</h5>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>10,000 袋</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">材質</h5>
+                  <p>ハイマット</p>
+                </div>
+                <div class="p-CartItemBody-detail">
+                  <h5 class="g-title-quinary">色数</h5>
+                  <p>1色</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="p-CartPrice">
+          <div class="p-CartPriceDetail">
+            <div class="p-CartPriceDetail-col">
+              <h4 class="g-title-quaternary p-CartPriceDetail-title">小計（税抜）</h4>
+              <p class="p-CartPriceDetail-body">5,000<span class="p-CartPrice-unit">円</span></p>
+            </div>
+
+            <div class="p-CartPriceDetail-col">
+              <h4 class="g-title-quaternary p-CartPriceDetail-title">版代</h4>
+              <p class="p-CartPriceDetail-body">2,500<span class="p-CartPrice-unit">円</span></p>
+            </div>
+
+            <div class="p-CartPriceDetail-col">
+              <h4 class="g-title-quaternary p-CartPriceDetail-title">消費税</h4>
+              <p class="p-CartPriceDetail-body">200<span class="p-CartPrice-unit">円</span></p>
+            </div>
+          </div>
+          <div class="p-CartPriceTotal">
+            <h4 class="g-title-quaternary p-CartPriceTotal-title">合計</h4>
+            <p class="p-CartPriceTotal-body">7,700<span class="p-CartPrice-unit">円</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'billing' %}
+{% endblock %}

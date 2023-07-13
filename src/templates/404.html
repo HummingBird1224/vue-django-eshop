@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}404 Error | canal{% endblock %}
+{% block titleog %}404 Error | canal{% endblock %}
+
+
+{% block content %}
+<div class="p-404">
+  <div class="p-404-main">
+    <img src="{% static 'img/404.png' %}" alt="">
+  </div>
+  <div class="p-homeMain-buttons">
+    <a href="{% url 'catalog' slug='flatbag' %}">
+      <button class="c-btn c-btn--primary">
+      パッケージを見る
+      </button>
+    </a>
+    <a class="p-homeMain-buttons-contact" href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform" target="_blank">
+      <button class="c-btn">
+      お問い合わせはこちら
+      </button>
+    </a>
+  </div>
+</div>
+{% endblock %}

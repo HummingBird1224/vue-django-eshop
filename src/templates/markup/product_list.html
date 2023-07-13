@@ -1,0 +1,382 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}商品一覧（マークアップ）【canal】{% endblock %}
+{% block titleog %}商品一覧（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  <div class="p-products">
+    <div class="p-products-main">
+      <nav class="p-productsNav">
+        <div class="p-productsNavCategory">
+          <h3 class="g-title-tertiary">カテゴリから探す</h3>
+          <ul class="p-productsNavCategory-list">
+            <li class="p-productsNavCategory-item is-current">
+              <input id="category-menu-check1" class="category-menu-check" type="checkbox">
+              <label for="category-menu-check1">
+                <div>
+                  <img src="/static/img/icon_flat_bag.png"/>
+                  <span>平袋</span>
+                </div>
+                <div class="menuArrow"></div>
+              </label>
+              <ul class="p-productsNavCategory-items">
+                <li class="p-productsNavCategory-itemTags is-current-tag">
+                  <a>すべて</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小ロット印刷</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>インナー袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>スタンド袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小分け袋</a>
+                </li>
+              </ul>
+            </li>
+            <li class="p-productsNavCategory-item">
+              <input id="category-menu-check2" class="category-menu-check" type="checkbox">
+              <label for="category-menu-check2">
+                <div>
+                  <img src="/static/img/icon_cardboard.png"/>
+                  <span>箱 - ダンボール</span>
+                </div>
+                <div class="menuArrow"></div>
+              </label>
+              <ul class="p-productsNavCategory-items">
+                <li class="p-productsNavCategory-itemTags is-current-tag">
+                  <a href="#">すべて</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小ロット印刷</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>インナー袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>スタンド袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小分け袋</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-productsNavCategory">
+          <h3 class="g-title-tertiary">ユースケースから探す</h3>
+          <ul class="p-productsNavCategory-list">
+            <li class="p-productsNavCategory-item">
+              <a href="#">
+                <img src="/static/img/icon_hanger.png"/>ファッション
+              </a>
+            </li>
+            <li class="p-productsNavCategory-item">
+              <a href="#">
+                <img src="/static/img/icon_supplement.png"/>サプリメント
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="p-productsMain">
+        <div class="p-productsCategoryHeader">
+          <div class="p-productsCategoryHeaderLabel">
+            <span class="p-productsCategoryHeaderLabel-subTitle">平袋</span>
+            <h2 class="g-title-secondary">小ロット印刷</h2>
+            <span class="p-productsCategoryHeaderLabel-description">少量から印刷が可能</span>
+          </div>
+        <div>
+          <img src="/static/img/dummy/dummy_category.png"/>
+        </div>
+        </div>
+        <div class="p-products-GenreSelection">
+          <span>平袋: 小ロット印刷</span>
+          <div class="p-products-GenreSelection-arrow"></div>
+        </div>
+        <ul class="p-ProductGenreList">
+          <li class="p-ProductGenre">
+            <h3 class="g-title-tertiary p-ProductGenre-title">インナーバッグ</h3>
+            <ul class="p-ProductInformation">
+              <li>
+                <h4 class="g-title-quaternary">サイズは自由</h4>
+              </li>
+
+              <li>
+                <h4 class="g-title-quaternary">プリント</h4>
+              </li>
+
+              <li>
+                <h4 class="g-title-quaternary">小ロット</h4>
+              </li>
+            </ul>
+            <div class="p-ProductListWrapper">
+              <ul class="p-ProductList">
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <div class="p-ProductPhotosWrapper">
+                      <ul class="p-ProductPhotos">
+                        <li class="is-current" style="background-image: url(/static/img/dummy/detailPage_apparel08_top.jpg)"></li>
+                        <li style="background-image: url(/static/img/dummy/detailPage_apparel08_top.jpg)"></li>
+                        <li style="background-image: url(/static/img/dummy/detailPage_apparel08_top.jpg)"></li>
+                        <li style="background-image: url(/static/img/dummy/detailPage_apparel08_top.jpg)"></li>
+                      </ul>
+                    </div>
+
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-ProductGenre">
+            <h3 class="g-title-tertiary p-ProductGenre-title">スタンド</h3>
+            <ul class="p-ProductInformation">
+              <li>
+                <h4 class="g-title-quaternary">サイズは自由</h4>
+              </li>
+
+              <li>
+                <h4 class="g-title-quaternary">プリント</h4>
+              </li>
+
+              <li>
+                <h4 class="g-title-quaternary">小ロット</h4>
+              </li>
+            </ul>
+            <div class="p-ProductListWrapper">
+              <ul class="p-ProductList">
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </li>
+          <li class="p-ProductGenre">
+            <h3 class="g-title-tertiary p-ProductGenre-title">小分け袋</h3>
+            <ul class="p-ProductInformation">
+              <li>
+                <h4 class="g-title-quaternary">サイズは自由</h4>
+              </li>
+
+              <li>
+                <h4 class="g-title-quaternary">プリント</h4>
+              </li>
+
+              <li>
+                <h4 class="g-title-quaternary">小ロット</h4>
+              </li>
+            </ul>
+            <div class="p-ProductListWrapper">
+              <ul class="p-ProductList">
+                <li class="p-Product">
+                  <div class="p-ProductThumb">
+                    <img src="/static/img/dummy/detailPage_apparel08_top.jpg"/>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">テープ袋</h4>
+
+                    <p class="p-ProductBody">
+                      納期 : 最短1週間ほど
+                      <span class="p-ProductSupplement">データ確定後</span>
+                    </p>
+
+                    <div class="p-ProductTagsWrapper">
+                      <ul class="p-ProductTags">
+                        <li>小ロット対応</li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform">
+          <footer class="p-products-footer">
+            <div class="p-products-footer-contactDescription">
+              <h3 class="g-title-tertiary">お求めの商品が見当たらない場合</h3>
+              <h4 class="g-title-quaternary">見積もり依頼・問い合わせをする</h4>
+              <p>ご希望の材質・形状のパッケージをフォームからお問い合わせください。</p>
+            </div>
+            <div class="p-products-footer-contactIcon">
+              <img src="/static/img/arrow_24.png"/>
+            </div>
+          </footer>
+        </a>
+      </section>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

@@ -1,0 +1,19 @@
+.g-title-primary {
+  @include f-text-h1;
+}
+
+.g-title-secondary {
+  @include f-text-h2;
+}
+
+.g-title-tertiary {
+  @include f-text-h3;
+}
+
+.g-title-quaternary {
+  @include f-text-h4;
+}
+
+.g-title-quinary {
+  @include f-text-h5;
+}

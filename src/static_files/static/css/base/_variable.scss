@@ -1,0 +1,60 @@
+/**
+ * grid.
+ */
+$base-grid-size: 4px;
+$grid-size: 8px;
+
+/**
+ * color.
+ */
+$color-primary: #205EFB;
+$color-primary-hover: #214FC5;
+$color-white: #FFFFFF;
+$color-gray: #F5F5F2;
+$color-black: #000000;
+$color-black-inactive: rgba(0, 0, 0, 0.54);
+$color-orange: #FBDFB6;
+
+$color-text-black: #000000;
+$color-text-gray-more1: #A0A0AA;
+$color-text-gray: #DADBDD;
+$color-text-white: #FFFFFF;
+$color-text-brown: #C58C6C;
+$color-btn-text-dark: #4C6072;
+
+$bg-color-gray-less1: #FBFBFC;
+$bg-color-gray: #F1F1F2;
+$bg-color-gray-more1: #DADBDD;
+
+$bg-color-internal: #F9F2EE;
+
+/**
+ * width.
+ */
+
+
+/**
+ * border.
+ */
+$border-color-gray: #DADBDD;
+$border-color-gray-less1: #F7F7F8;
+
+/**
+ * modal.
+ */
+$modal-color-gray: rgba(207, 215, 226, .72); // #CFD7E2, alpha: 72%
+
+/**
+ * notify.
+ */
+$notify-color-red: #DF5475;
+$notify-color-red-hover: #C0506B;
+
+$notify-color-green: #5DD193;
+$notify-color-green-hover: #5DD193;
+
+
+/**
+ * Transition.
+ */
+$duration: .2s;

@@ -1,0 +1,45 @@
+{% load static %}
+<footer class="c-footer">
+  <div class="c-footerLeft">
+    <div class="c-footerMiniLogo">
+      <img src="{% static 'img/logo_mark.png' %}" alt="">
+    </div>
+    <div class="c-footerNavigation">
+      <ul class="c-footerNavigationList">
+        <h4>商品一覧</h4>
+        <li class="c-footerNavigationItem"><a href="{% url 'catalog' slug='flatbag' %}">平袋</a></li>
+        <li class="c-footerNavigationItem"><a href="{% url 'catalog' slug='cardboard' %}">ダンボール</a></li>
+        <li class="c-footerNavigationItem"><a href="{% url 'catalog' slug='paperbox' %}">紙器</a></li>
+      </ul>
+      <ul class="c-footerNavigationList">
+        <h4>その他コンテンツ</h4>
+        <li class="c-footerNavigationItem"><a href="https://same-raft-469.notion.site/canal-50e2a7a156fc4ae498e277996313e977" target="_blank">ご利用ガイド</a></li>
+        <li class="c-footerNavigationItem"><a href="https://same-raft-469.notion.site/c82c79e1e9b44d84833339a22117e141" target="_blank">データ入稿の方法</a></li>
+        <li class="c-footerNavigationItem"><a href="https://same-raft-469.notion.site/e3c4cc81f12247d694408fd9b59a6b7a" target="_blank">テンプレート</a></li>
+      </ul>
+      <ul class="c-footerNavigationList">
+        <li class="c-footerNavigationItem"><a href="https://same-raft-469.notion.site/47af8233650f4efea770ea6244b1569d" target="_blank">よくあるご質問</a></li>
+        <li class="c-footerNavigationItem"><a href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform" target="_blank">サンプル注文</a></li>
+        <li class="c-footerNavigationItem"><a href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform" target="_blank">お問い合わせ</a></li>
+      </ul>
+      <ul class="c-footerNavigationList">
+        <li class="c-footerNavigationItem"><a href="https://blog.canal.ink" target="_blank">ブログ</a></li>
+        <li class="c-footerNavigationItem"><a href="https://blog.canal.ink/case/" target="_blank">お客様事例</a></li>
+      </ul>
+      <ul class="c-footerNavigationList">
+        <li class="c-footerNavigationItem"><a href="{% url 'aboutus' %}">会社概要</a></li>
+        <li class="c-footerNavigationItem"><a href="{% url 'privacypolicy' %}">プライバシーポリシー</a></li>
+        <li class="c-footerNavigationItem"><a href="{% url 'tokutei' %}">特定商取引法に基づく表記</a></li>
+      </ul>
+      <ul class="c-footerNavigationList">
+        <li class="c-footerNavigationItem"><a href="{% url 'terms' %}">利用規約</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="c-footerRight">
+    <div class="c-footerCopyright">
+      <small>Copyright (c) 福岡パッケージ株式会社 All Rights Reserved.</small>
+    </div>
+  </div>
+</footer>

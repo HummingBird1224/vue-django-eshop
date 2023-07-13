@@ -1,0 +1,25 @@
+{% extends "internal/base.html" %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+  <div class="breadcrumbsInternal">
+    <div class="breadcrumbsItem">ホーム</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">NOTICE POSTS</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">お知らせ投稿一覧</div>
+  </div>
+
+  <h1 class="g-title-primary pageTitleInternal">お知らせ投稿一覧</h1>
+
+  <div
+      id="js-internal-notice-post"
+      data-static-url="{% static_url %}"
+    ></div>
+
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'internalNoticePost' %}
+{% endblock %}

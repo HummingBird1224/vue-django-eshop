@@ -1,0 +1,82 @@
+{% load static %}
+{% load sass_tags %}
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="{% block metakey %}パッケージ印刷,軟包装,ダンボール印刷,化粧箱{% endblock %}"/>
+    <meta name="description" content="{% block metades %}{% endblock %}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block titleog %}{% endblock %}"/>
+    <meta property="og:url" content="https://canal.ink"/>
+    <meta property="og:image" content="{% static 'img/ogp.png' %}"/>
+    <meta property="og:site_name" content="canal.ink"/>
+    <meta property="og:description" content="カナルはブランドオーナーと印刷のプロを最適につなぐパッケージ印刷プラットフォームです。全国の印刷会社をネットワーク化し、発注内容に最適な印刷方法で、オリジナルパッケージを発注できるサービスです。
+従来、1ヶ月以上かかっていた発注の即日完了や、平均30%コストダウン、高品質なオリジナルパッケージが制作可能です。
+"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="canal"/>
+    <meta name="twitter:image" content="{% static 'img/ogp.png' %}"/>
+    <meta itemprop="image" content=""/>
+
+    <link rel="icon" type="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="{size}" href="{% static 'img/apple-touch-icon.png' %}">
+    <meta name="facebook-domain-verification" content="txxne22jg3r10snnkzy62xuggztn02" />
+    <!--[if lt IE 9]>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% sass_src 'css/style.scss' %}" type="text/css">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K822DS9');</script>
+    <!-- End Google Tag Manager -->
+    {% block style %}
+    {% endblock %}
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K822DS9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% for message in messages %}
+    {% endfor %}
+
+    {% include 'svg.html' %}
+
+    {% if not request|header_remove_path %}
+    {% include 'core/header.html' %}
+    {% endif %}
+
+    <div class="common-container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    {% if not request|footer_remove_path %}
+    {% include 'core/footer.html' %}
+    {% endif %}
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+   {% render_bundle 'common' %} 
+    {% block javascript %}
+    {% render_bundle 'common' %}
+    {% endblock %}
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#main").css("min-height", $(document).height() - $(".navbar").height() - $("footer").height() - 40);
+    });
+    </script>
+  </body>
+</html>

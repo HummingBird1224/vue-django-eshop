@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}FujiLogi | canal{% endblock %}
+{% block titleog %}FujiLogi | canal{% endblock %}
+
+{% block content %}
+<div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+<div class="p-externalFujiLogi">
+  <div class="p-externalFujiLogiMain">
+    <div class="p-externalFujiLogiMain-body">
+      <div class="p-externalFujiLogiMain-message">
+        <div class="p-externalFujiLogiMain-message-top">
+          <div>
+            <img class="p-externalFujiLogiMain-message-top-colormeLogo" src="{% static 'img/partners/fujilogi.png' %}" alt="">
+          </div>
+        </div>
+        <h2 class="g-title-secondary">
+          無地の梱包材と同価格で<br>
+          オリジナルパッケージがつくれます
+        </h2>
+      </div>
+      <div class="p-externalFujiLogiMain-menu">
+        <ul>
+          <li class="p-externalFujiLogiMain-menu--disableonsp"><a href="#external-products">パッケージ一覧</a></li>
+          <li><a href="#external-how-to">発注までの流れについて</a></li>
+          <li><a href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="p-externalFujiLogiMain-image">
+      <img src="{% static 'img/external/base/sp_package_bg.png' %}" alt="">
+    </div>
+  </div>
+
+  <div
+          id="js-external-fujilogi-form"
+          data-static-url="{% static_url %}"
+          data-csrf-token="{{ csrf_token }}"
+  >
+  </div>
+
+  <div class="p-externalFujiLogiHowTo" id="external-how-to">
+    <div class="p-externalFujiLogi-content-header">
+      <div class="p-externalFujiLogi-content-topic">
+        <p>canalの使い方</p>
+      </div>
+      <h3 class="g-title-tertiary">
+        オリジナルパッケージが届くまで
+      </h3>
+    </div>
+    <div class="p-externalFujiLogiHowTo-content">
+      <div class="p-externalFujiLogiHowTo-box">
+        <div class="p-externalFujiLogiHowTo-box-left">
+          <img src="{% static 'img/external/base/ic_howto_check.svg' %}" alt="">
+          <div class="p-externalFujiLogiHowTo-box-left-text">
+            <h5 class="g-title-quinary">1.希望のパッケージを選択</h5>
+            <p>「サイズ」と「注文数」を表から選んで詳細へ</p>
+          </div>
+        </div>
+        <div class="p-externalFujiLogiHowTo-box-right">
+          <img src="{% static 'img/external/base/img_howto01.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="p-externalFujiLogiHowTo-box">
+        <div class="p-externalFujiLogiHowTo-box-left">
+          <img src="{% static 'img/external/base/ic_howto_cart.svg' %}" alt="">
+          <div class="p-externalFujiLogiHowTo-box-left-text">
+            <h5 class="g-title-quinary">2.カートに入れて購入へ</h5>
+            <p>内容を確認してカートへ。アカウント登録、配送先<br> 支払い情報を入力して購入します。</p>
+          </div>
+        </div>
+        <div class="p-externalFujiLogiHowTo-box-right">
+          <img src="{% static 'img/external/base/img_howto02.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="p-externalFujiLogiHowTo-box">
+        <div class="p-externalFujiLogiHowTo-box-left">
+          <img src="{% static 'img/external/base/ic_howto_template.svg' %}" alt="">
+          <div class="p-externalFujiLogiHowTo-box-left-text">
+            <h5 class="g-title-quinary">3.印刷デザインデータを作成・入稿</h5>
+            <p>テンプレートをダウンロード。データを作成、入稿します。</p>
+            <p><a href="https://same-raft-469.notion.site/c82c79e1e9b44d84833339a22117e141" class="c-textLink">データ作成に関してはこちらをご覧ください。</a></p>
+          </div>
+        </div>
+        <div class="p-externalFujiLogiHowTo-box-right">
+          <img src="{% static 'img/external/base/img_howto03.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="p-externalFujiLogiHowTo-box">
+        <div class="p-externalFujiLogiHowTo-box-left">
+          <img src="{% static 'img/external/base/ic_howto_track.svg' %}" alt="">
+          <div class="p-externalFujiLogiHowTo-box-left-text">
+            <h5 class="g-title-quinary">4.注文したパッケージが届きます</h5>
+            <p>無事入稿したら注文完了です。お届けまでお待ちください。<br>「注文一覧」から配送状況を確認することも可能です。</p>
+          </div>
+        </div>
+        <div class="p-externalFujiLogiHowTo-box-right">
+          <img src="{% static 'img/external/base/img_howto04.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-externalFujiLogiBottom">
+    <div class="p-externalFujiLogi-content-header">
+      <div class="p-externalFujiLogi-content-topic">
+        <p>より自由につくりたい方へ</p>
+      </div>
+      <h3 class="g-title-tertiary">
+        希望のパッケージが見つからない場合は<br>canal本サイトをご覧ください
+      </h3>
+    </div>
+    <div class="p-externalFujiLogiBottom-content">
+      <div class="p-externalFujiLogiBottom-content-box">
+        <div class="p-externalFujiLogiBottom-content-box-text">
+          <h2 class="g-title-secondary">より様々なパッケージの種類を<br>商品一覧ページからご覧になれます。</h2>
+          <p>canal本サイトでは、パッケージ・加工・注文数の種類など、<br>より多様な選択肢を選択して発注することができます。</p>
+        </div>
+        <div class="p-externalFujiLogiBottom-content-box-button">
+          <a href="{% url 'catalog_redirect' %}">
+            <button class="c-btn c-btn--primary">商品一覧のページへ</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'externalFujiLogi' %}
+{% endblock %}
+

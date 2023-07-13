@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}データ入稿【canal】{% endblock %}
+{% block titleog %}データ入稿【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div id="static-url" data-static-url="{{ static_url }}"></div>
+  <div class="p-draft">
+    <div class="p-draftWrapper">
+      <a class="p-draftPageBack" href="/orders/history/">
+        <div class="p-draftPageBack-icon">
+          <svg>
+            <use xlink:href='#icons-arrow_forward'/>
+          </svg>
+        </div>
+        <span class="p-draftPageBack-text">戻る</span>
+      </a>
+
+      <header class="p-draftHeader">
+        <h2 class="g-title-secondary">データ入稿</h2>
+
+        <div class="p-draftHeaderNotice">
+          <a class="c-textLink" href="">データの作成方法についてはこちら</a>
+        </div>
+      </header>
+
+      <div
+              id="js-draft-upload-filed"
+              data-ref-code="{{ object.ref_code }}"
+              data-state="{{ object.state }}"
+              data-static-url="{{ static_url }}"
+      >
+      </div>
+
+      {% if object.state == 'under_check' or object.state == 'resubmittion_request' or object.state == 'checked' %}
+        <div class="p-draftOrder">
+          <h4 class="g-title-quaternary">注文した商品</h4>
+
+          <div class="p-draftOrderDetail">
+            <div class="p-draftOrderThumb"
+                 style="background-image: url({{ object.product.get_thumbnail_url }});">
+            </div>
+            <div class="p-draftOrderInfo">
+              <div class="p-draftOrderBody">
+                <h5 class="g-title-quinary"><a class="c-textLink" href="{{ object.product.get_absolute_url }}">{{ object.product_name }}</a></h5>
+
+                <div class="p-draftOrderBody-rowContainer">
+                  <div class="p-draftOrderBody-row">
+                    <div class="p-draftOrderBody-info">
+                      <h6 class="g-title-quinary">サイズ</h6>
+                      <p>{{ object.size_str }}</p>
+                    </div>
+
+                    <div class="p-draftOrderBody-info">
+                      <h6 class="g-title-quinary">デザイン</h6>
+                      {% if object.extra_info.color_num > 0 %}
+                      <p>{{ object.extra_info.color_num }}色</p>
+                      {% elif object.extra_info.color_num == 0 %}
+                      <p>無地</p>
+                      {% else %}
+                      <p>フルカラー</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="p-draftOrderBody-info">
+                      <h6 class="g-title-quinary">出荷予定日</h6>
+                      <p>受付日確定から7日以内</p>
+                    </div>
+                  </div>
+
+                  <div class="p-draftOrderBody-row">
+                    <div class="p-draftOrderBody-info">
+                      <h6 class="g-title-quinary">注文数</h6>
+                      <p>{{ object.quantity|intcomma }}組</p>
+                    </div>
+
+                    <div class="p-draftOrderBody-info">
+                      <h6 class="g-title-quinary">注文商品番号</h6>
+                      <p>{{ object.ref_code }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="p-draftOrderPrice">{{ object.total|intcomma }}<span>円</span></p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <section class="p-HowTo">
+        <header class="p-HowToHeader">
+          <span>How To</span>
+          <h3 class="g-title-tertiary">データの作成方法について</h3>
+        </header>
+        <ol class="p-HowToList">
+          <li class="p-HowToSection p-HowToSection--1">
+            <div class="p-HowToSectionWrapper">
+              <p class="p-HowToSectionNo">1. </p>
+              <div class="p-HowToSectionContent">
+                <h4 class="g-title-quaternary">入稿データ作成ガイドをチェックしましょう</h4>
+                <div class="p-HowToBody">
+                  <p>
+                    データ作成の注意事項を解説しています。<br>
+                    初めての方はガイドをチェックしてデータ作成を行ってください。
+                  </p>
+                  <a class="c-btn u-sp-none" href="https://same-raft-469.notion.site/canal-50e2a7a156fc4ae498e277996313e977">作成ガイドをチェックする</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="p-HowToSection p-HowToSection--1">
+            <div class="p-HowToSectionWrapper">
+              <p class="p-HowToSectionNo">2. </p>
+              <div class="p-HowToSectionContent">
+                <h4 class="g-title-quaternary">テンプレートをダウンロードしましょう</h4>
+                <div class="p-HowToBody">
+                  <p>
+                    データ作成に使用できるテンプレートをダウンロードしましょう。 <br>
+                    ガイド線など引かれた状態で使用できます。
+                    <small>現在注文してい商品 : {{ object.product.name }}</small>
+                  </p>
+                  <a class="c-btn u-sp-none" href="https://same-raft-469.notion.site/e3c4cc81f12247d694408fd9b59a6b7a">テンプレートをチェックする</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="p-HowToSection p-HowToSection--1">
+            <div class="p-HowToSectionWrapper">
+              <p class="p-HowToSectionNo">3. </p>
+              <div class="p-HowToSectionContent">
+                <h4 class="g-title-quaternary">データを作成しましょう</h4>
+                <div class="p-HowToBody">
+                  <p>
+                    データ作成の注意事項を確認して、テンプレートをダウンロードしたら<br>
+                    入稿するデータ作成に取り掛かりましょう。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'draft' %}
+{% endblock %}

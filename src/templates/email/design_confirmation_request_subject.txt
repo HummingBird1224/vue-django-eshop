@@ -1,0 +1,1 @@
+【canal】入稿データの最終確認のお願い - ご注文番号：{{ orderitem.ref_code }}

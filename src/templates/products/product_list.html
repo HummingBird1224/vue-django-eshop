@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}
+  {% if parent_category.slug == 'flatbag' %}
+  平袋の商品一覧 | オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'cardboard'  %}
+  ダンボールの商品一覧 | オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'paperbox'  %}
+  紙器の商品一覧 | オリジナルパッケージ印刷のcanal
+  {% else %}
+  商品一覧 | オリジナルパッケージ印刷のcanal
+  {% endif %}
+{% endblock %}
+
+{% block titleog %}
+  {% if parent_category.slug == 'flatbag' %}
+  平袋の商品一覧 | オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'cardboard'  %}
+  ダンボールの商品一覧 | オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'paperbox'  %}
+  紙器の商品一覧 | オリジナルパッケージ印刷のcanal
+  {% else %}
+  商品一覧 | オリジナルパッケージ印刷のcanal
+  {% endif %}
+{% endblock %}
+
+{% block metades %}
+  {% if parent_category.slug == 'flatbag' %}平袋のオリジナルパッケージ印刷ならcanalにお任せください。アパレルや食品、サプリメントなど様々な用途に使えるオリジナルパッケージがオンラインで即日注文できます。100枚からなど小ロット発注も可能です。
+  {% elif parent_category.slug == 'cardboard'  %}ダンボールのオリジナルパッケージ印刷ならcanalにお任せください。ポスト投函や宅配便など様々な用途に使えるオリジナルパッケージがオンラインで即日注文できます。50枚からなど小ロット発注も可能です。
+  {% elif parent_category.slug == 'paperbox'  %}印刷紙器のオリジナルパッケージ印刷ならcanalにお任せください。サプリメントや化粧品など様々な用途に使えるオリジナルパッケージがオンラインで即日注文できます。箔押しやエンボス加工なども可能です。
+  {% else %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="p-products">
+    <div
+      id="js-product-list"
+      data-parent-category-slug="{{parent_category.slug}}"
+      data-category-slug="{{category.slug}}"
+      data-category-name="{{category.name}}"
+      data-static-url="{% static_url %}"
+    ></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'productList' %}
+{% endblock %}

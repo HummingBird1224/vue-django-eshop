@@ -1,0 +1,287 @@
+.p-account {
+  min-width: 1200px;
+  padding-top: 1px;
+  margin: 100px 0px 200px 0px;
+
+  &-title {
+    width: 80%;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid #DDDDDD;
+
+    @include mq {
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include mq {
+    min-width: auto;
+  }
+
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 500px;
+
+    @include mq {
+      padding: 0 10px;
+    }
+
+  }
+
+  &-logo {
+    margin: 40px 0;
+    text-align: center;
+
+    @include mq {
+      margin-bottom: 2rem;
+    }
+
+    svg {
+      height: 72px;
+    }
+
+    p {
+      color: $color-text-black;
+      font-family: "futura";
+      font-size: $fontSize-h1;
+      line-height: $lineHeight-h1;
+      text-align: center;
+    }
+  }
+
+  &-message {
+    p {
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    &-m {
+      p {
+        width: 100%;
+      }
+    }
+  }
+
+  &-form {
+    text-align: center;
+
+    &-item {
+      margin: 20px 0;
+
+      .c-btn {
+        height: 64px;
+        width: 100%;
+        border-radius: 100px;
+      }
+
+    }
+  }
+
+  &-links {
+    margin: 20px 0 50px;
+
+    &-link {
+       text-align: center;
+       margin: 1rem;
+    }
+  }
+
+  &-fixedTop {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+  }
+
+  &-divider {
+    font-size: 12px;
+    margin: 15px 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &-externalService {
+    > p {
+      text-align: center;
+      font-weight: bold;
+    }
+    &-buttons {
+      display: flex;
+      justify-content: space-evenly;
+      @include mq {
+        flex-direction: column;
+      }
+    }
+
+    &-button {
+      border-radius: 5px;
+      height: 48px;
+      width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      padding: 0 20px;
+      margin: 10px;
+
+      @include mq {
+        margin-right: auto;
+        margin-left: auto;
+        width: 230px;
+      }
+
+      img {
+        margin-right: 10px;
+        height: 18px;
+
+        @include mq {
+          height: 16px;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+        @include mq {
+          font-size: 1rem;
+        }
+      }
+
+      &--colorme {
+        background-color: #3787E1;
+      }
+
+      &--base {
+        background-color: #56BBAE;
+
+        img {
+           height: 26px;
+        }
+      }
+
+      &--disabled {
+        opacity: 0.32;
+        cursor: not-allowed;
+        pointer-events: none;
+        background-color: #808080;
+      }
+    }
+  }
+
+  &-dataList {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: center;
+
+    @include mq {
+      padding: 0 10px;
+    }
+
+    &-data {
+      text-align: left;
+      padding: 0 0 24px 32px;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #DDDDDD;
+
+      &-header {
+        margin-bottom: 4px;
+        display: flex;
+        justify-content: space-between;
+
+        &-defaultBadge {
+          color: $color-primary;
+          font-weight: normal;
+          margin-left: 1rem;
+          padding: 4px 12px;
+          border: 1px solid $color-primary;
+          border-radius: 100px;
+        }
+      }
+
+      &-body {
+        display: flex;
+        justify-content: space-between;
+
+        &-cardLogo {
+          width: 30px;
+          margin: 0 4px;
+          display: inline-block;
+        }
+
+        p {
+          line-height: 2rem;
+        }
+
+        .c-textLink {
+          margin-top: 10px;
+          align-items: baseline;
+          height: 20px;
+        }
+      }
+
+      .c-textLink {
+        align-items: center;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        font-weight: normal;
+      }
+    }
+
+    button {
+      height: 64px;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px 0;
+      border-radius: 100px;
+
+      @include mq {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  h3 {
+    svg {
+      display: inline-block;
+      margin-top: 2px;
+      margin-right: 8px;
+      fill: $color-black-inactive;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .payjp-outer {
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid rgba(32, 94, 251, 0);
+    margin: 5px 0;
+    background-color: #FBFBFC;
+    padding: 0 10px;
+  }
+
+  #expiry-form {
+    width: 50%;
+    @include mq {
+      width: 100%;
+    }
+  }
+
+  #cvc-form {
+    width: 50%;
+    @include mq {
+      width: 100%;
+    }
+  }
+
+  .payjp-outer > iframe {
+    border-radius: 8px;
+    border: 1px solid rgba(32, 94, 251, 0);
+  }
+}

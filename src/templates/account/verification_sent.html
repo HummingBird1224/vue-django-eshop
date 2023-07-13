@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}メールアドレス確認{% endblock %}
+{% block titleog %}メールアドレス確認{% endblock %}
+
+{% block content %}
+<div class="p-account">
+  <header class="p-account-header">
+    <div class="p-account-wrapper">
+      <div class="p-account-logo">
+        <svg class="c-logo">
+            <use xlink:href='#icons-logo'/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main class="p-account-main">
+    <div class="p-account-wrapper">
+      <div class="p-account-message">
+        <p>ご入力頂いたメールアドレスに確認メールを送信しました&#x2709;</p>
+        <p>メールのリンクにアクセスしてメールアドレスの確認をしてください</p>
+      </div>
+      <div class="p-account-links">
+        <div class="p-account-links-link">
+         <a href="{% url 'home' %}">
+           <small>ホームへ</small>
+         </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}

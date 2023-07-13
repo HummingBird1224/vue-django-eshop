@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}プライバシーポリシー | canal{% endblock %}
+{% block titleog %}プライバシーポリシー | canal{% endblock %}
+
+{% block content %}
+  <div style="padding: 40px 120px">
+    <h2 class="g-title-secondary">マークアップ一覧</h2>
+
+    <ul style="margin-top: 40px">
+      <li><a class="c-textLink" href="/markup/parts-list">パーツリスト</a></li>
+      <li><a class="c-textLink" href="/markup/billing">支払い</a></li>
+      <li><a class="c-textLink" href="/markup/billing-complete">支払い完了</a></li>
+      <li><a class="c-textLink" href="/markup/draft">入稿</a></li>
+      <li><a class="c-textLink" href="/markup/order">注文一覧</a></li>
+      <li><a class="c-textLink" href="/markup/products">商品一覧</a></li>
+      <li><a class="c-textLink" href="/markup/products/new">商品一覧 new</a></li>
+      <li><a class="c-textLink" href="/markup/product-detail">商品詳細</a></li>
+      <li><a class="c-textLink" href="/markup/product-detail-vue">商品詳細 Vue</a></li>
+      <li><a class="c-textLink" href="/markup/estimate">見積もり</a></li>
+      <li><a class="c-textLink" href="/markup/estimate-under">見積もり 下層</a></li>
+      <li><a class="c-textLink" href="/markup/estimate-vue">見積もり Vue</a></li>
+    </ul>
+  </div>
+{% endblock %}

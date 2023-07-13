@@ -1,0 +1,111 @@
+.c-modal {
+  /**************************
+   * style
+   **************************/
+  & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color-text-black, .64);
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &--white {
+    background: rgba(244, 244, 244, 0.72);
+  }
+
+  &-content {
+    width: 486px;
+    margin: 100px auto;
+    padding: 48px;
+    border-radius: 8px;
+    background: $color-white;
+
+    &--lg {
+      width: 548px;
+      padding: 0 0 48px;
+      text-align: center;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: -16px;
+    right: 44px;
+    display: flex;
+    align-items: center;
+    @include f-text-md;
+    font-weight: bold;
+    color: $color-white;
+    transform: translate(100%, -100%);
+  }
+
+  &-closeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+    transition: $duration;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: $color-white;
+    }
+  }
+
+  &-image {
+    height: 320px;
+    border-radius: 8px 8px 0 0;
+    background: $bg-color-gray;
+  }
+
+  &-title {
+    @at-root {
+      .c-modal-content--lg .c-modal-title {
+        margin-top: 33px;
+        padding: 0 48px;
+      }
+    }
+
+    + .c-modal-body {
+      margin-top: 18px;
+    }
+  }
+
+  &-body {
+    @at-root {
+      .c-modal-content--lg .c-modal-body {
+        padding: 0 48px;
+      }
+    }
+  }
+
+  &-btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 26px;
+
+    @at-root {
+      .c-modal-content--lg .c-modal-btns {
+        justify-content: center;
+        margin-top: 24px;
+        padding: 0 48px;
+      }
+    }
+
+    a + a {
+      margin-left: 24px;
+    }
+  }
+}

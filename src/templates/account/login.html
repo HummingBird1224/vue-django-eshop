@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block title %}ログイン{% endblock %}
+{% block titleog %}ログイン{% endblock %}
+
+{% block content %}
+<div class="p-account">
+  <div class="p-account-fixedTop">
+    <div class="p-account-fixedTop-back">
+      <a class="c-textLink" href="{% url 'home' %}">ホームに戻る</a>
+    </div>
+  </div>
+  <header class="p-account-header">
+    <div class="p-account-wrapper">
+      <div class="p-account-logo">
+        <svg class="c-logo">
+            <use xlink:href='#icons-logo'/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main class="p-account-main">
+    <div class="p-account-wrapper">
+      <div class="p-account-message">
+        <p>おかえりなさい&#x1F44B;</p>
+      </div>
+      <form class="p-account-form" method="POST" action="{% url 'login' %}">{% csrf_token %}
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="p-account-form-item c-form-item">
+          <input id="login-email" name="login" type="text" class="c-form-input" required="" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="login-email" class="c-form-label">
+            メールアドレス
+          </label>
+          <p class="c-form-error">メールアドレスを入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="login-pass" name="password" type="password" class="c-form-input" required="" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="login-pass" class="c-form-label">
+            パスワード
+          </label>
+          <p class="c-form-error">パスワードを入力してください</p>
+        </div>
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="p-account-form-item c-form-item">
+          <button class="c-btn c-btn--primary">ログイン</button>
+        </div>
+      </form>
+      <div class="p-account-links">
+        <div class="p-account-links-link">
+         <a href="{{ signup_url }}">
+           <small>アカウントをお持ちでない場合は新規登録をしましょう</small>
+         </a>
+        </div>
+        <div class="p-account-links-link">
+          <a class="button secondaryAction" href="{% url 'account_reset_password' %}">
+            <small>パスワードを忘れてしまった方はこちら</small>
+          </a>
+        </div>
+      </div>
+
+      <p class="p-account-divider">or</p>
+      <div class="p-account-externalService">
+        <p>外部サービスでログイン</p>
+        <div class="p-account-externalService-buttons">
+          <a class="p-account-externalService-button p-account-externalService-button--base" href="{% url 'base_login' %}?next={{ request.get_full_path }}">
+            <div class="">
+              <img src="{% static 'img/partners/base_new.png' %}">
+            </div>
+            <p>で作成</p>
+          </a>
+          <a class="p-account-externalService-button p-account-externalService-button--colorme" href="{% url 'colorme_login' %}?next={{ request.get_full_path }}">
+            <div class="">
+              <img src="{% static 'img/partners/colorme_sm.png' %}">
+            </div>
+            <p>カラーミーで作成</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+{% endblock %}

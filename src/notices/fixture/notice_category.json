@@ -1,0 +1,68 @@
+[
+    {
+        "model": "notices.noticeCategory",
+        "pk": 1,
+        "fields": {
+            "name": "notice about products",
+            "message": "新しい商品に関するお知らせがあります。",
+            "slug": "notice_product",
+            "icon_path": "img/notices/category/icons/notice_product.svg",
+            "post_attachable": true
+        }
+    },
+    {
+        "model": "notices.noticeCategory",
+        "pk": 2,
+        "fields": {
+            "name": "data import reminder",
+            "message": "デザインの入稿が完了していない商品があります。",
+            "slug": "notice_upload",
+            "icon_path": "img/notices/category/icons/notice_upload.svg",
+            "post_attachable": false
+        }
+    },
+    {
+        "model": "notices.noticeCategory",
+        "pk": 3,
+        "fields": {
+            "name": "notice about design comfirmation",
+            "message": "入稿したデザインが承認されました。",
+            "slug": "notice_confirmation",
+            "icon_path": "img/notices/category/icons/notice_confirmation.svg",
+            "post_attachable": false
+        }
+    },
+    {
+        "model": "notices.noticeCategory",
+        "pk": 4,
+        "fields": {
+            "name": "bank transfer reminder",
+            "message": "振込が完了していない商品があります。",
+            "slug": "notice_bank",
+            "icon_path": "img/notices/category/icons/notice_bank.svg",
+            "post_attachable": false
+        }
+    },
+    {
+        "model": "notices.noticeCategory",
+        "pk": 5,
+        "fields": {
+            "name": "notice about shipping",
+            "message": "商品が発送されました。",
+            "slug": "notice_delivery",
+            "icon_path": "img/notices/category/icons/notice_delivery.svg",
+            "post_attachable": false
+        }
+    },
+    {
+        "model": "notices.noticeCategory",
+        "pk": 6,
+        "fields": {
+            "name": "other notice",
+            "message": "その他のお知らせがあります。",
+            "slug": "notice_info",
+            "icon_path": "img/notices/category/icons/notice_info.svg",
+            "post_attachable": true
+        }
+    }
+]

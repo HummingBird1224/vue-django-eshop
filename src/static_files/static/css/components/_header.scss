@@ -1,0 +1,665 @@
+.c-header {
+
+  &-wide {
+    @include mq {
+      display: none;
+    }
+  }
+
+  &-sm {
+    display: none;
+    @include mq {
+      display: block;
+    }
+    &-Left {
+      position: absolute;
+      height: 40px;
+      top: 5px;
+      z-index: z(headerContents) + 1;
+    }
+
+    &-Right {
+      position: absolute;
+      height: 34px;
+      top: 8px;
+      right: 20px;
+      border: 1px solid #000000;
+      border-radius: 100px;
+      z-index: 31;
+      font-weight: bold;
+      color: #000;
+      padding: 2px 12px;
+    }
+  }
+
+  & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: $color-white;
+    border-bottom: 1px solid #DDDDDD;
+
+    @include mq{
+      height: 50px;
+    }
+  }
+
+  .c-headerOpenButton {
+    display: none;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    z-index: z(headerContents) + 1;
+
+    @include mq {
+      display: block;
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      cursor: pointer;
+
+      span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: $color-primary;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        top: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+
+        &:nth-child(1) {
+          top: 0px;
+          -webkit-transform-origin: left center;
+          -moz-transform-origin: left center;
+          -o-transform-origin: left center;
+          transform-origin: left center;
+        }
+
+        &:nth-child(2) {
+          top: 7px;
+          -webkit-transform-origin: left center;
+          -moz-transform-origin: left center;
+          -o-transform-origin: left center;
+          transform-origin: left center;
+        }
+
+        &:nth-child(3) {
+          top: 14px;
+          -webkit-transform-origin: left center;
+          -moz-transform-origin: left center;
+          -o-transform-origin: left center;
+          transform-origin: left center;
+        }
+      }
+
+      &.is-active {
+        span {
+          &:nth-child(1) {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+
+          &:nth-child(2) {
+            width: 0%;
+            opacity: 0;
+          }
+
+
+          &:nth-child(3) {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            top: 14px;
+          }
+        }
+      }
+    }
+  }
+
+
+  .c-headerCenter {
+    position: absolute;
+    height: 40px;
+    left: calc(50% - 48.5px);
+    top: calc(50% - 20px);
+    z-index: z(headerContents) + 1;
+
+    @include mq {
+      top: 5px;
+    }
+  }
+
+  .c-headerLogo {
+    @include mq {
+      height: 40px;
+    }
+
+    > a {
+      display: block;
+      height: 40px;
+
+      @include mq {
+        padding-top: 4px;
+      }
+    }
+
+    svg {
+      height: 40px;
+
+      @include mq {
+        text-align: center;
+        height: 32px;
+      }
+    }
+  }
+
+  .c-headerContents {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    z-index: z(headerContents);
+    margin-right: 100px;
+
+    @include mq {
+      display: none;
+      border: none;
+      height: unset;
+      flex-direction: column;
+      margin-top: 50px !important;
+      margin-right: 0;
+      background: $color-white;
+    }
+  }
+
+  .c-headerLeft {
+    display: flex;
+    height: 100%;
+    flex: 1;
+
+    @include mq {
+      height: unset;
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  .c-headerRight {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+
+    @include mq {
+      height: unset;
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .c-headerLink + .c-headerLink {
+      margin-left: 24px;
+
+      @include mq {
+        margin-left: 0;
+      }
+    }
+
+    .c-headerLink-button {
+      @include mq {
+        width: 90%;
+        border: 1px solid #DADBDD;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  .c-headerLinks {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 24px;
+    position: relative;
+
+    @include mq {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 0;
+    }
+
+    > li {
+      height: 100%;
+
+      @include mq {
+        width: 100%;
+      }
+    }
+
+    > li + li {
+      margin-left: 20px;
+
+      @include mq {
+        margin-left: 0px;
+      }
+    }
+
+    .notice-badge {
+      position:relative;
+    }
+
+    .notice-badge[data-badge="0"]::before {
+      display: none;
+    }
+
+    .notice-badge::before {
+      content:attr(data-badge);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 20px;
+      left: 80px;
+      font-size:.3em;
+      background: #205EFB;
+      color:white;
+      width:10px;
+      height:10px;
+      text-align:center;
+      line-height:10px;
+      border-radius:50%;
+      box-shadow:0 0 1px #333;
+    }
+  }
+
+  .c-headerLink {
+    padding: 0 7px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    color: $color-text-black;
+    font-weight: bold;
+    border-bottom: 2px solid rgba($color-primary, 0);
+    transition: border $duration;
+
+    @include mq {
+      width: 100%;
+      height: 50px;
+      border-bottom: none;
+    }
+
+    &--pc {
+      @include mq {
+        display: none;
+      }
+    }
+
+    &--sp {
+      display: none;
+
+      @include mq {
+        display: flex;
+      }
+    }
+
+    &::after { // ヘッダーメニューの領域確保用.
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: -3px; // Linkの border-bottom 2px + headerの border-bottom 1px.
+      width: 100%;
+      height: 1px;
+    }
+
+    &:hover, &.is-active {
+      color: $color-text-black;
+      border-bottom: 2px solid $color-primary;
+
+      @include mq {
+        border-bottom: none;
+      }
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+
+    &-dropdownIcon {
+      margin-left: 5px;
+
+      @include mq {
+        display: none;
+      }
+    }
+
+    &-dropdownIconSp {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 18px;
+      height: 14px !important;
+
+      @include mq {
+        display: block;
+      }
+
+      &--link {
+        height: 10px !important;
+      }
+    }
+
+  }
+
+  .c-headerUser {
+    font-weight: bold;
+
+    + .c-headerUser {
+      margin-left: 51px;
+    }
+  }
+
+  .c-headerCart {
+
+    position: absolute;
+    right: 0;
+    top: 20px;
+    z-index: z(headerContents) + 1;
+
+    @include mq {
+      top: 10px;
+    }
+
+
+    > a {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 45px;
+      margin-right: 45px;
+
+      @include mq {
+        margin-right: 15px;
+      }
+    }
+
+    &-notify {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -9px;
+      right: -5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #EC903B;
+      @include f-text-md;
+      font-weight: bold;
+      color: $color-white;
+
+      @include mq {
+        top: -5px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &-icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    &-caption {
+      position: relative;
+      left: 3px;
+      margin-top: 4px;
+      @include f-text-xs;
+      color: $color-black;
+      font-weight: bold;
+
+      @include mq {
+        display: none;
+      }
+    }
+  }
+
+  .c-headerMenuOverlay {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color-text-black, .64);
+    z-index: z(headerOverlay);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include mq {
+      position: static;
+      width: 100%;
+      height: unset;
+    }
+  }
+
+  .c-headerMenu {
+    display: flex;
+    justify-content: center;
+    background: $color-white;
+    z-index: z(headerContents);
+
+    &-wrapper {
+      display: flex;
+      flex: 1;
+      padding: 37px 0 48px 145px;
+    }
+  }
+
+  .c-headerMenuList {
+    margin-top: 16px;
+
+    & + .c-headerMenuList {
+      margin-left: 43px;
+    }
+
+    &-header {
+      padding-bottom: 17px;
+      border-bottom: 1px solid $border-color-gray-less1;
+
+      h3 {
+        @include f-text-sm;
+        color: $color-text-black;
+      }
+    }
+
+    &--large {
+      width: 704px;
+    }
+  }
+
+  .c-headerMenuLinks {
+    margin-top: 4px;
+
+    @at-root .c-header .c-headerMenuList--large .c-headerMenuLinks {
+      display: flex;
+      flex-wrap: wrap;
+
+      li:nth-child(even) {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  .c-headerMenuLink {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 56px;
+    margin-top: 8px;
+
+    @include mq {
+      width: 100%;
+      height: 50px;
+      margin: 0;
+    }
+
+    &-thumb {
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+      background: center no-repeat;
+      background-size: contain;
+
+      @include mq {
+        width: 20px;
+        height: 20px;
+        margin-right: 3px;
+        background-size: contain;
+      }
+    }
+
+    .c-textLink {
+      @include f-text-md;
+      font-weight: normal;
+
+      @include mq {
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      &-notice {
+        font-size: 12px;
+        font-weight: bold;
+        margin-right: 15%;
+      }
+    }
+
+    > a {
+      display: flex;
+      position: relative;
+      align-items: center;
+      padding: 0 7px;
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: 18px;
+        margin-right: 10px;
+      }
+    }
+
+    &-badge {
+      position: absolute;
+      display: flex;
+      right: -15%;
+      font-size: .3em;
+      background: #205EFB;
+      color: white;
+      width: 10px;
+      height: 10px;
+      text-align: center;
+      line-height: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 1px #333;
+
+      @include mq {
+        left: 90%;
+      }
+    }
+  }
+
+  .c-textLinkDetail {
+    margin: 0 0 0 70%;
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .c-headerAccount {
+    position: absolute;
+    top: 80px;
+    min-width: 260px;
+    right: 0;
+    background: $color-white;
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+  }
+
+  .c-headerAccountInfo {
+    padding: 16px 16px 15px;
+    border-bottom: 1px solid $bg-color-gray;
+
+    &-title {
+      padding-bottom: -5px;
+      @include f-text-md;
+      color: $color-black;
+    }
+
+    &-body {
+      @include f-text-xs;
+      color: $color-text-gray-more1;
+    }
+  }
+
+  .c-headerAccountNav {
+    padding: 12px 16px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      height: 40px;
+
+      .c-textLink {
+        @include f-text-md;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .c-headerNotice {
+    position: absolute;
+    top: 80px;
+    min-width: 400px;
+    left: -180px;
+    background: $color-white;
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+  }
+}

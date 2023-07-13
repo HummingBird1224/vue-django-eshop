@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if current_category %}{{ current_category.name }} | canal Blog{% else %}canal Blog オリジナルパッケージ・軟包装印刷のマガジン{% endif %}{% endblock %}
+{% block titleog %}{% if current_category %}{{ current_category.name }} | canal Blog{% else %}canal Blog オリジナルパッケージ・軟包装印刷のマガジン{% endif %}{% endblock %}
+{% block metades %}{% if current_category %}{{ current_category.meta_description }}{% else %}オリジナパッケージ・軟包装の印刷についてわかりやすく伝えるマガジンです{% endif %}{% endblock %}
+{% block metakey %}{% if current_category %}{{ current_category.meta_keywords }}{% else %}オリジナル,軟包装,パッケージ,オリジナルパッケージ,印刷,パッケージ印刷{% endif %}{% endblock %}
+
+{% block content %}
+<div id="main">
+	<div class="content">
+
+		<div class="content-header">
+			<div class="breadcrumbs">
+				<p><span class="breadcrumbs-spacer">&rang;</span><a href="{% url 'blog_list' %}">トップ</a>{% if current_category %}<span class="breadcrumbs-spacer">&rang;</span><a href="{% url 'category_blog_list' current_category.slug %}">{{ current_category.name }}</a>{% endif %}</p>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3 blog-list">
+					{% for blog in object_list %}
+					<article class="blog-post">
+						<div class="row">
+							<div class="col-sm-4 blog-thumbnail">
+								<a href="">
+									<img src="{{ blog.blogthumbnail.thumbnail.url }}" />
+								</a>
+							</div>
+							<div class="col-sm-8 post-content">
+								<div class="post-meta">
+									<a href=""><p class="post-category">{{ blog.category.name }}</p></a>
+									<p class="post-date">{{ blog.created_at|date:"Y/m/d" }}</p>
+								</div>
+								<a href="{% url 'blog_detail' blog.slug %}"><h3 class="g-title-tertiary post-title">{{ blog.title }}</h3></a>
+								<p class="post-shorten-content">{{ blog.get_first_n_letters }}...</p>
+							</div>
+						</div>
+					</article>
+					{% endfor %}
+				</div>
+
+				<div class="col-lg-3 side-widget">
+					<div class="category-list">
+						<div class="side-widget-header">
+							<p>カテゴリー</p>
+						</div>
+						<div class="side-widget-content">
+							{% for cat in categories %}
+							<div class="category" style="border-bottom: solid 1px #93b7b6;">
+								<a href="{% url 'category_blog_list' category=cat.slug %}"><p>{{ cat.name }}</p></a>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

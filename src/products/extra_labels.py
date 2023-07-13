@@ -1,0 +1,18 @@
+EXTRA_LABELS = {
+    "height": "高さ",
+    "width": "幅",
+    "depth": "奥行き",
+    "color_num": "色数",
+    "quantity": "注文数",
+    "material": "材質",
+    "kadomaru": "角丸",
+    "notch": "ノッチ",
+    "print_area": "印刷面数",
+    "bottom": "底",
+    "outside": "外側印刷面数",
+    "inside": "内側印刷面数",
+    "surface_material": "表面素材",
+    "surface_process": "表面加工",
+    "emboss": "エンボス/デボス",
+    "special_print": "特殊印刷",
+}

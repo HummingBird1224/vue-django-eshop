@@ -1,0 +1,125 @@
+.p-partsList {
+  margin: 10px;
+
+  .p-partsList-title {
+    margin: 60px 0 30px;
+    border-bottom: $border-color-gray solid 2px;
+    padding-bottom: 10px;
+
+    h1 {
+      font-size: 6rem;
+    }
+  }
+
+  .p-partsList-item {
+    padding: 10px 10px;
+
+    &.dark {
+      background-color: #34414E;
+    }
+
+    &--modal {
+      position: relative;
+      height: 500px;
+      padding: 40px;
+      margin: 10px;
+      background: rgba($color-text-black, .64);
+    }
+
+    &--modal-lg {
+      position: relative;
+      height: 1000px;
+      padding: 40px;
+      margin: 10px;
+      background: rgba($color-text-black, .64);
+    }
+  }
+
+  .text-lg {
+    @include f-text-lg;
+  }
+
+  .text-md {
+    @include f-text-md;
+  }
+
+  .text-sm {
+    @include f-text-sm;
+  }
+
+  .text-xs {
+    @include f-text-xs;
+  }
+
+  .p-colorSample {
+    .content {
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-black;
+      width: 164px;
+      height: 112px;
+
+      &.primary {
+        background: $color-primary;
+        color: $color-text-white;
+      }
+
+      &.primary--hover {
+        background: $color-primary-hover;
+        color: $color-text-white;
+      }
+
+      &.text {
+        background: $color-text-black;
+      }
+
+      &.text--gray {
+        background: $color-text-gray;
+      }
+
+      &.text--gray-more-1 {
+        background: $color-text-gray-more1;
+      }
+
+      &.text--white {
+        background: $color-text-white;
+      }
+
+      &.bg--gray-less-1 {
+        background: $bg-color-gray-less1;
+      }
+
+      &.bg--gray {
+        background: $bg-color-gray;
+      }
+
+      &.bg--gray-more-1 {
+        background: $bg-color-gray-more1;
+      }
+
+      &.border--gray {
+        background: $border-color-gray;
+      }
+
+      &.border--gray-less-1 {
+        background: $border-color-gray-less1;
+      }
+
+      &.modal--gray {
+        background: $modal-color-gray;
+      }
+
+      &.notify--red {
+        background: $notify-color-red;
+        color: $color-text-white;
+      }
+
+      &.notify--red-hover {
+        background: $notify-color-red-hover;
+        color: $color-text-white;
+      }
+    }
+  }
+}

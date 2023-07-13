@@ -1,0 +1,29 @@
+.p-404 {
+  &-main {
+    margin: 80px auto;
+    text-align: center;
+
+    img {
+      width: 500px;
+
+      @include mq {
+        width: 90%;
+      }
+    }
+  }
+
+  .p-homeMain-buttons {
+    text-align: center;
+
+    @include mq {
+      margin-bottom: 30px;
+    }
+
+    button {
+      @include mq {
+        margin: 10px 0;
+        width: 190px;
+      }
+    }
+  }
+}

@@ -1,0 +1,303 @@
+/*============================
+#top
+============================*/
+.jumbotron{
+  background-color: #FCFCFC;
+  height: 520px;
+}
+#top .main-message h1{
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 24px;
+}
+#top .main-message p{
+  font-size: 14px;
+  margin-bottom:40px;
+}
+
+.strengths {
+  max-width: 1140px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 24px rgba(0,0,0,0.04);
+  padding: 56px 80px 64px;
+  text-align: center;
+  margin: -289px auto 96px;
+}
+
+.strengths .row{
+  justify-content: space-between;
+}
+.strengths .section-title{
+  margin-bottom: 32px;
+}
+
+.strengths .section-title p{
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: bold;
+  color: #a0a0aa;
+  margin-bottom:12px;
+}
+.strengths .section-title h1{
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+.strengths .row{
+  margin: 0;
+}
+.strengths .col-md-3{
+  flex:0 0 22%;
+}
+
+.strengths .point{
+  background-color: #f3f5f5;
+  border-radius: 8px;
+  margin: 0;
+  padding: 32px;
+  height: 168px;
+}
+.strengths .point img{
+  width: 40px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.strengths .point  p{
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+/*====商品を探す===*/
+
+.product  {
+  margin: 0 0 144px;
+}
+
+.product .section-title {
+  padding: 0 0 32px;
+  margin: 0 0 88px;
+  border-bottom:solid 1px #dadbdd;
+
+}
+
+.product .section-title h2{
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.product .list_category {
+  margin:0 0 72px;
+}
+
+.product .list_category h3,.product .list_product h3{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 32px;
+}
+
+.product .list_category .items {
+  margin: 0 0 72px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.product .list_category .items li{
+  border:1px solid #dadbdd;
+  width: 22%;
+  border-radius: 6px;
+  margin: 0 24px 0 0 ;
+  list-style: none;
+  transition: all 0.24s;
+}
+
+.product .list_category .items li .comingsoon{
+position: absolute;
+width: 256px;
+height: 88px;
+text-align: center;
+background-color: rgba(0,0,0,0.48);
+color: white;
+z-index: 5;
+padding: 32px 0;
+border-radius: 4px;
+font-weight: bold;
+}
+
+.product .list_category .items li:hover{
+ border: 1px  solid #205EFB;
+
+}
+
+.product .list_category .items li a{
+  display: flex;
+  padding:24px 32px;
+  justify-content: flex-start;
+  color: #000;
+
+}
+
+
+.product .list_category .items  .icon {
+  width: 40px;
+  height: 40px;
+  margin:0 24px 0 0 ;
+}
+
+.product .list_category .items  .icon img{
+  width: 100%;
+}
+
+.product .list_category .items  .title {
+  font-size: 14px;
+  padding: 8px 0;
+}
+.product .list_product {
+}
+
+/*==使い方==*/
+.howtouse{
+  background-color: #F9F9FA;
+  padding: 72px 0;
+}
+
+.howtouse .section-title h3 {
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: bold;
+  color: #a0a0aa;
+  margin-bottom: 12px;
+}
+
+.howtouse .section-title p{
+  font-size: 32px;
+  line-height: 1.6;
+  font-weight: bold;
+  margin: 0 0 40px;
+}
+
+
+.how .container .point {
+  background-color: #fff;
+    border-radius: 8px;
+    margin: 0 auto 32px;
+    padding:0;
+    height: 240px;
+    flex: 0 0 23%;
+}
+
+.how .container .point .icon{
+  height:120px;
+  background-color: #f3f5f5;
+  width: 100%;
+}
+
+.how .container .point .icon img{
+  width:40px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.how .container .point .contents {
+  padding: 24px 20px;
+}
+
+.how .container .point .contents h4{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+.section-content .lh2{
+  font-size: 12px;
+  color: #666;
+}
+
+@media (max-width: 860px) {
+
+  .section{
+    height: 520px;
+  }
+
+  #top .main-message h1{
+    margin-top: 40px;
+    font-size: 32px;
+  }
+
+  #top .main-message br{
+    display: none;
+  }
+
+  #top .main-message p{
+    line-height: 2.0;
+  }
+
+  .strengths{
+    width: 88%;
+    padding: 32px 0 16px;
+    margin: -220px auto 96px;
+  }
+
+  .strengths .point{
+    margin-bottom: 12px;
+    flex: 0 0 48%;
+  }
+
+  .strengths .point p br{
+    display: none;
+  }
+  .strengths .point img{
+    margin-bottom: 12px;
+  }
+
+  .product .section-title{
+    margin-bottom:48px;
+    padding-bottom:16px;
+  }
+
+  .product .section-title h2{
+    font-size: 24px;
+  }
+
+  .product .list_category .items li{
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .product .list_category h3, .product .list_product h3{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .product .list_category{
+    margin-bottom: 56px;
+  }
+
+  .product .list_category .items{
+    display: block;
+  }
+
+  .product .list_category .items li a{
+    padding: 12px 12px;
+  }
+
+  .product .list_category .items li .comingsoon{
+    width: 100%;
+    height: 72px;
+  }
+
+  .howtouse .section-title p{
+    font-size: 24px;
+  }
+
+  .how .container .point{
+    flex: 0 0 100%;
+  }
+
+
+}

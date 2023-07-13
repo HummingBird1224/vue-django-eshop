@@ -1,0 +1,179 @@
+.p-notice {
+  & {
+    background: $bg-color-gray-less1;
+
+    @include mq {
+      padding: 0 24px;
+    }
+  }
+
+  .p-noticeList {
+    margin: 0 auto;
+    padding: 57px 0 100px;
+    max-width: 1000px;
+
+    @include mq {
+      max-width: 100%;
+    }
+
+    &-pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+
+      &-item {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        margin: 0 5px;
+
+        a {
+          color: black;
+        }
+
+        span {
+          font-size: 20px;
+        }
+        
+        &--active {
+          background-color: $color-primary;
+          border-radius: 100px;
+          color: white;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .p-orderedListHeader {
+    padding: 0 0 32px;
+
+    @include mq {
+      padding: 0 0 28px;
+    }
+
+    h2 {
+      line-height: 1;
+
+      @include mq {
+        @include f-text-h3;
+      }
+    }
+  }
+
+  .p-orderedNoticeList {
+    margin-top: 15px;
+
+    @include mq {
+      margin-top: 5px;
+    }
+  }
+
+  .p-orderedNotice {
+    display: flex;
+    //align-items: center;
+    height: 65px;
+    margin-top: 8px;
+    border-bottom: 1px solid $border-color-gray;
+
+    &-header {
+      display: flex;
+      font-weight: bold;
+
+      @include mq {
+        flex-direction: column;
+        line-height: 1.75em;
+        margin: auto 0;
+      }
+    }
+
+    &-itemIcon {
+      margin-block: auto;
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+
+      @include mq {
+        width: 85%;
+
+        p {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: 1em;
+        }
+      }
+    }
+
+    &-badge {
+      position: absolute;
+      display: flex;
+      margin-top: 25px;
+      left: 80%;
+      font-size: .3em;
+      background: #205EFB;
+      color: white;
+      width: 10px;
+      height: 10px;
+      text-align: center;
+      line-height: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 1px #333;
+
+      @include mq {
+        left: 90%;
+      }
+    }
+  }
+
+  .p-noticePostBody {
+    margin: 0 auto;
+    padding: 57px 0 100px;
+    max-width: 1000px;
+
+    @include mq {
+      max-width: 100%;
+    }
+  }
+
+  .p-noticePostTitle {
+    padding: 0 0 32px;
+
+    @include mq {
+      padding: 0 0 28px;
+    }
+
+    h2 {
+      line-height: 1;
+
+      @include mq {
+        @include f-text-h3;
+      }
+    }
+  }
+
+  .p-noticePostText {
+    padding: 20px 35px;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+  }
+
+  .p-noticePostLinks {
+    margin: 20px 0 50px;
+
+    &-link {
+       text-align: center;
+       margin: 1rem;
+    }
+  }
+}

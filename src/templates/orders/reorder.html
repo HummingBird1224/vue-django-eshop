@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}データ入稿【canal】{% endblock %}
+{% block titleog %}データ入稿【canal】{% endblock %}
+
+{% block content %}
+<div id="csrf-token" data-token="{{ csrf_token }}"></div>
+<div class="p-reorder">
+  <div class="p-reorder-fixedTop">
+    <div class="p-reorder-fixedTop-back">
+      <a class="c-textLink" href="{% url 'order_history' %}">注文履歴に戻る</a>
+    </div>
+  </div>
+  <div
+    id="js-reorder-form"
+    data-ref-code="{{ object.ref_code }}"
+    data-static-url="{{ static_url }}"
+  >
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'orders' %}
+{% endblock %}

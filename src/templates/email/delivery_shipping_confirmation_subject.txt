@@ -1,0 +1,1 @@
+【canal】出荷手配完了のご連絡 - ご注文番号：{{ orderitem.ref_code }}

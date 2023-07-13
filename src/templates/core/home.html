@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}オリジナルパッケージ印刷プラットフォーム | canal{% endblock %}
+{% block titleog %}オリジナルパッケージ印刷プラットフォーム | canal{% endblock %}
+
+{% block metades %}canalはブランドと印刷のプロをつなぐオリジナルパッケージ印刷のプラットフォームです。
+  全国の印刷会社をネットワーク化することで、最適な印刷方法で平均20%のコストダウンを実現し、オリジナルパッケージを最短で即日発注できます。
+  平袋やダンボール、化粧箱、紙袋などオリジナルパッケージはcanalにお任せください。{% endblock %}
+
+{% block content %}
+<div>
+
+  <div
+    id="js-home"
+    data-static-url="{% static_url %}"
+  ></div>
+
+</div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'home' %}
+{% endblock %}

@@ -1,0 +1,325 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}見積もり（マークアップ）【canal】{% endblock %}
+{% block titleog %}見積もり（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+  <div class="p-estimate">
+    <div class="p-estimate-wrapper">
+      <a class="p-PageBack" href="#">
+      <span class="p-PageBack-iconWrapper">
+        <svg class="p-PageBack-icon p-PageBack-icon--forward">
+          <use xlink:href='#icons-arrow_forward'/>
+        </svg>
+      </span>
+        戻る
+      </a>
+
+      <main class="p-Main">
+        <div class="p-Main-left">
+          <header class="p-Header">
+            <h2 class="g-title-secondary p-Header-title">見積もり / 購入</h2>
+            <p class="p-Header-body">選んだ項目によって値段が変化します。注文したい商品の詳細を選びましょう。</p>
+          </header>
+
+          <ul class="p-MenuList">
+            <li class="p-MenuListItem p-MenuListItem--disable">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--fullscreenExit">
+                      <use xlink:href='#icons-fullscreen_exit'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">サイズ</h4>
+                    <p>300 x 200 x 10 mm</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="p-MenuListItem p-MenuListItem--disable">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--localMall">
+                      <use xlink:href='#icons-local_mall'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">注文数</h4>
+                    <p>サンプル注文なので1袋の注文になります</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--formatPaint">
+                      <use xlink:href='#icons-format_paint'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">印刷面数</h4>
+                    <p>外面 2  内面 1</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--colorLens">
+                      <use xlink:href='#icons-color_lens'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">印刷に使用する色数</h4>
+                    <p>1色</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--grain">
+                      <use xlink:href='#icons-grain'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">材質</h4>
+                    <p>通常</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--buildingBlocks">
+                      <use xlink:href='#icons-building_blocks'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">加工</h4>
+                    <p>角丸　有　/　ノッチ　有</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--importExport">
+                      <use xlink:href='#icons-import_export'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">厚さ</h4>
+                    <p>通常 - 1.5mm</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--aspectRatio">
+                      <use xlink:href='#icons-aspect_ratio'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">底の種類</h4>
+                    <p>キャラメル底</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--layers">
+                      <use xlink:href='#icons-layers'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">凹凸加工の追加<span class="p-MenuListItemSupplement">任意</span></h4>
+                    <p>通常</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+            <li class="p-MenuListItem">
+              <a class="p-MenuListItem-link" href="#">
+                <div class="p-MenuListItem-left">
+                  <div class="p-MenuListItemIconWrapper">
+                    <svg class="p-MenuListItemIcon p-MenuListItemIcon--flare">
+                      <use xlink:href='#icons-flare'/>
+                    </svg>
+                  </div>
+
+                  <div class="p-MenuListItemContent">
+                    <h4 class="g-title-quaternary">特殊印刷加工の追加<span class="p-MenuListItemSupplement">任意</span></h4>
+                    <p>通常</p>
+                  </div>
+                </div>
+
+                <div class="p-MenuListItem-right">
+                  <svg>
+                    <use xlink:href='#icons-arrow_down'></use>
+                  </svg>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-Main-right">
+          <div class="p-Product">
+            <header class="p-Product-header">
+              <div class="p-Product-thumb"></div>
+              <div class="p-Product-content">
+                <span class="p-Product-label">選択中の商品</span>
+                <h3 class="g-title-tertiary p-Product-title">アルミスタンド袋 - 前透明</h3>
+              </div>
+            </header>
+            <div class="p-Product-main">
+              <ul class="p-ProductInfoList">
+                <li class="p-ProductInfo">
+                  <h4 class="g-title-quaternary">サイズ</h4>
+                  <p>A4サイズ 300×200×100</p>
+                </li>
+                <li class="p-ProductInfo">
+                  <h4 class="g-title-quaternary">注文数</h4>
+                  <p>サンプル注文</p>
+                </li>
+                <li class="p-ProductInfo">
+                  <h4 class="g-title-quaternary">色数</h4>
+                  <p>1色</p>
+                </li>
+                <li class="p-ProductInfo">
+                  <h4 class="g-title-quaternary">材質</h4>
+                  <p>通常</p>
+                </li>
+                <li class="p-ProductInfo">
+                  <h4 class="g-title-quaternary">加工</h4>
+                  <p>角丸　有　/　ノッチ　有</p>
+                </li>
+              </ul>
+              <footer class="p-ProductFooter">
+                <div class="p-ProductPrice">
+                  <span class="p-ProductPrice-label">小計 （税抜）</span>
+                  <p class="p-ProductPrice-value">43,000<span class="p-ProductPrice-unit">円</span></p>
+                </div>
+                <div class="p-ProductPrice p-ProductPrice--external">
+                  <span class="p-ProductPrice-label">小計 （税抜）</span>
+                  <p class="p-ProductPrice-value">43,000<span class="p-ProductPrice-unit">円</span></p>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="p-Footer">
+        <div class="p-Footer-left">
+          <h4 class="g-title-quaternary p-Footer-title">アルミスタンド袋 - 前透明</h4>
+          <p class="p-FooterPriceDetail">
+            <span class="p-FooterPriceDetail-label">小計</span>
+            <span class="p-FooterPriceDetail-value">43,000</span>
+            <span class="p-FooterPriceDetail-unit">円</span>
+            <span class="p-FooterPriceDetail-increment">+</span>
+            <span class="p-FooterPriceDetail-label">版代</span>
+            <span class="p-FooterPriceDetail-value">8,000</span>
+            <span class="p-FooterPriceDetail-unit">円</span>
+            <span class="p-FooterPriceDetail-increment">+</span>
+            <span class="p-FooterPriceDetail-label">送料</span>
+            <span class="p-FooterPriceDetail-value">1,000</span>
+            <span class="p-FooterPriceDetail-unit">円</span>
+          </p>
+        </div>
+        <div class="p-Footer-right">
+          <p class="p-FooterTotalPrice">
+            <span class="p-FooterTotalPrice-label">合計 （税抜）</span>
+            <span class="p-FooterTotalPrice-value">43,000</span>
+            <span class="p-FooterTotalPrice-unit">円</span>
+          </p>
+          <a class="c-btn c-btn--primary" href="#">カートに入れる</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %} お知らせ | canal{% endblock %}
+{% block titleog %} お知らせ | canal{% endblock %}
+
+
+{% block content %}
+<div class="p-notice">
+  <div
+      id="js-notice-detail"
+      data-title="{{ object.post_title }}"
+      data-text="{{ object.text }}"
+    ></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'noticeDetail' %}
+{% endblock %}

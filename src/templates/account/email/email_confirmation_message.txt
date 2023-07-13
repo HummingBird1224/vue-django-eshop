@@ -1,0 +1,23 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+canalへのご登録ありがとうございます。
+以下のリンクをクリックし、アカウント作成を完了してください。
+{% endblocktrans %}
+
+{% if redirect_to %}
+{{ activate_url }}?next={{ redirect_to }}
+{% else %}
+{{ activate_url }}
+{% endif %}
+
+
+================================================
+canal
+お問い合わせ先：https://docs.google.com/forms/d/e/1FAIpQLSebh80a69mJ_TwNzt_MhIjeCrz4xkhOGmk00tf1SbToB3P81w/viewform
+HP：https://canal.ink
+================================================
+
+{% endautoescape %}

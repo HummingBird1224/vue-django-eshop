@@ -1,0 +1,827 @@
+.pageTitleInternal {
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+
+.orderInternal {
+  .statusBatch {
+    height: 24px;
+    width: 64px;
+    line-height: 24px;
+    font-size: 10px;
+    color: white;
+    background: #C5C5C5;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .statusBatch.not_submitted {
+    background: #C5C5C5;
+  }
+
+  .statusBatch.under_check {
+    background: #F7A152;
+  }
+
+  .statusBatch.resubmission_request {
+    background: #ED6093;
+  }
+
+  .statusBatch.checked {
+    background: #5280F7;
+  }
+
+  .statusBatch.confirmed {
+    background: #0ED1DD;
+  }
+
+  .statusBatch.printing {
+    background: #D046D2;
+  }
+
+  .statusBatch.shipped {
+    background: #8460ED;
+  }
+
+  .statusBatch.delivered {
+    background: #79D94C;
+  }
+
+  .statusBatch.cancelled {
+    background: black;
+  }
+
+  .clickable {
+    transition: opacity 80ms;
+  }
+
+  .clickable:hover {
+    opacity: 0.6;
+  }
+}
+
+.orderInternalList {
+  & {
+    width: 100%;
+    color: black;
+  }
+
+  .listFunction {
+    & {
+      margin: 28px 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .query {
+      width: 400px;
+      background: white;
+      height: 40px;
+      border-radius: 20px;
+      padding: 8px 24px 8px 48px;
+    }
+
+    .query::placeholder {
+      color: #999999;
+      letter-spacing: 2px;
+      font-size: 12px;
+    };
+
+    .queryIcon {
+      width: 16px;
+      position: absolute;
+      top: 12px;
+      left: 16px;
+    }
+
+    .csvDownloadContainer {
+      font-size: 10px;
+      margin-left: auto;
+      margin-right: 60px;
+      border-radius: 4px;
+      border: 1px solid black;
+      font-weight: bold;
+      line-height: 28px;
+      padding: 0 12px;
+      cursor: pointer;
+    }
+  }
+
+  .listTableContainer {
+    .listTable {
+      overflow-x: scroll;
+      white-space: nowrap;
+      min-height: 500px;
+
+
+      &-payment {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+      display: inline-block;
+      width: 2000px;
+      overflow-y: visible;
+    }
+
+    th {
+      padding: 16px 24px;
+      font-size: 10px;
+      color: #787878;
+      font-weight: bold;
+      position: relative;
+    }
+
+    td {
+      min-width: 250px;
+      max-width: 250px;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 20px 0;
+    }
+
+    td:first-child {
+      padding: 0 24px;
+      font-weight: bold;
+    }
+
+    td:nth-child(2) {
+      padding: 0 24px;
+    }
+
+    td:nth-child(3) {
+      min-width: 150px;
+      max-width: 200px;
+    }
+
+    td:nth-child(4) {
+      min-width: 298px;
+      max-width: 298px;
+    }
+
+    td:last-child {
+      min-width: calc(2000px - 250px * 4 - 298px);
+      max-width: calc(2000px - 250px * 4 - 298px);
+    }
+
+    tr:nth-child(odd) {
+      background: #FFFFFF;
+    }
+
+    tr:nth-child(even) {
+      background: #F8F8F8;
+    }
+
+    .statusBatchContainerTh {
+      display: inline-block;
+      margin-left: 8px;
+    }
+
+    &-banktransfer-btn {
+      margin-top: 30px;
+      min-width: 100px;
+      height: 30px;
+      border-radius: 100px;
+
+      &--undo {
+        border: 0.5px solid #ff4242;
+        color: #ff4242;
+      }
+    }
+
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #787878;
+      float: right;
+      margin-top: 12px;
+    }
+
+    .tableItem {
+      padding: 0 24px;
+      font-size: 12px;
+      height: 56px;
+      line-height: 56px;
+      border-bottom: 1px solid #DADBDD;
+      color: black;
+    }
+
+    .tableItem:last-child {
+      border-bottom: none;
+    }
+
+    .productState {
+      color: black;
+      display: block;
+      position: relative;
+      padding-right: 80px;
+      min-width: 250px;
+      max-width: 250px;
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .statusBatchContainer {
+      margin: 16px 0;
+      margin-left: 32px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .filterButton {
+      cursor: pointer;
+    }
+
+    .filterModal {
+      position: absolute;
+      top: 64px;
+      background: white;
+      padding: 16px;
+      box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      z-index: 10;
+    }
+
+    .filterModal.hidden {
+      display: none;
+    }
+
+    .filterItemContainer {
+      margin-bottom: 16px;
+    }
+
+    .filterItemContainer:last-child {
+      margin-bottom: 0;
+    }
+
+    .filterItemStatus {
+      height: 24px;
+      width: 64px;
+      line-height: 24px;
+      font-size: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: black;
+    }
+
+    .filterItemDate {
+      height: 24px;
+      width: 64px;
+      line-height: 24px;
+      font-size: 12px;
+      font-weight: 300;
+      color: black;
+    }
+
+    .pagination {
+      padding: 40px 120px;
+    }
+
+    .pagination-item {
+      display: inline-block;
+      line-height: 32px;
+      text-align: center;
+      width: 32px;
+      height: 32px;
+      margin: 0 4px;
+      color: $color-text-black;
+    }
+
+    .pagination-item-now {
+      display: inline-block;
+      line-height: 32px;
+      text-align: center;
+      width: 32px;
+      height: 32px;
+      margin: 0 4px;
+      background: #548689;
+      color: white;
+      border-radius: 16px;
+    }
+  }
+}
+
+.orderInternalDetail {
+
+  .userName {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+
+  .refCodeContainer {
+    margin-top: 8px;
+  }
+
+  .refCodeTitle {
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .refCode {
+    font-size: 16px;
+  }
+
+  .sectionTitle {
+    margin-top: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #dadbdd;
+    padding: 16px 0;
+  }
+
+  .sectionContent {
+    & {
+      background: white;
+      margin-top: 24px;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid #F3F3F4;
+      margin: 0 32px;
+      padding: 20px 0;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .rowTitle {
+      width: 160px;
+      //padding: 12px 32px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    .rowContent {
+      //padding: 12px 32px;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+  }
+
+  .statusUpdate {
+    #id_state {
+      display: none;
+    }
+
+    .progressContainer {
+      display: flex;
+      align-items: start;
+    }
+
+    .progressItem {
+      display: inline-block;
+      margin: 0 12px;
+    }
+
+    .progressItem.resubmission {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      margin: 0;
+    }
+
+    .progressResubmissionContainer {
+      display: inline-block;
+    }
+
+    .progressResubmissionContainerUnder {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+
+    .progressLineUnderLeft {
+      width: 20px;
+      height: 16px;
+      border-bottom: 1px solid #DADBDD;
+      border-left: 1px solid #DADBDD;
+      margin-top: 8px;
+    }
+
+    .progressLineUnderRight {
+      width: 20px;
+      height: 16px;
+      border-bottom: 1px solid #DADBDD;
+      border-right: 1px solid #DADBDD;
+      margin-top: 8px;
+    }
+
+    .progressTitle {
+      font-size: 12px;
+      line-height: 1;
+      height: 12px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #16CB28;
+    }
+
+    .progressTitle.resubmission {
+      margin-top: 18px;
+      margin-right: 20px;
+      margin-bottom: 0;
+      display: inline-block;
+    }
+
+    .progressTitle.done {
+      color: #16CB28;
+    }
+
+    .progressTitle.current {
+      color: black;
+    }
+
+    .progressTitle.notyet {
+      color: #DADBDD;
+    }
+
+    .progressBatch {
+      width: 32px;
+      height: 32px;
+      margin: auto;
+      display: block;
+      cursor: pointer;
+
+      .noShow {
+        display: none;
+      }
+    }
+
+    .progressBatch.resubmission {
+      margin-left: 20px;
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+
+    .progressLine {
+      width: 40px;
+      border-bottom: 1px solid #DADBDD;
+      display: inline-block;
+      padding-top: 40px;
+    }
+
+    .guide {
+      margin-top: 24px;
+      display: none;
+
+      strong {
+        font-weight: bold;
+      }
+    }
+
+    .comment {
+      & {
+        margin-top: 16px;
+      }
+
+      textarea {
+        resize: both;
+        border-radius: 6px;
+        background: #F3F3F4;
+        padding: 6px 18px;
+        margin-bottom: 4px;
+        width: 400px;
+      }
+    }
+  }
+
+  .formDelivery {
+    .formContainer {
+      margin-bottom: 24px;
+    }
+
+    .formContainer:last-child {
+      margin-bottom: 0;
+    }
+
+    .formLabel {
+      margin-bottom: 8px;
+    }
+
+    .formInput {
+      input[type=text], input[type=date] {
+        border-radius: 6px;
+        width: 400px;
+        background: #F3F3F4;
+        padding: 6px 18px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .postContent {
+      & {
+        margin-top: 16px;
+      }
+
+      textarea {
+        resize: both;
+        border-radius: 6px;
+        background: #F3F3F4;
+        padding: 6px 18px;
+        margin-bottom: 4px;
+        width: 650px;
+        min-height: 800px;
+      }
+    }
+
+    .formSelect {
+      & {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 15px;
+        width: 300px;
+      }
+
+      select {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 15px;
+        outline: 0;
+        border: 0;
+        border-radius: 0;
+        background: #F3F3F4;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 6px 10px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .selectArrow {
+      position: absolute;
+      top: 6px;
+      right: 15px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #787878;
+      float: right;
+      margin-top: 12px;
+    }
+  }
+
+  .orderMeta {
+    .container {
+      height: 60px;
+      margin-top: 20px;
+    }
+
+    .thumbnail {
+      & {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      img {
+        width: 58px;
+      }
+    }
+
+    .title {
+      margin-left: 16px;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .content {
+      margin-left: 100px;
+      display: inline-block;
+      vertical-align: center;
+    }
+
+    .item {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .itemTitle {
+      font-size: 10px;
+      font-weight: bold;
+      color: #787878;
+    }
+
+    .itemContent {
+      font-size: 10px;
+      line-height: 8px;
+    }
+
+    .formButton {
+      & {
+        display: inline-block;
+        float: right;
+        height: 60px;
+        line-height: 60px;
+        padding-right: 100px;
+      }
+
+      .formSubmit {
+        display: inline-block;
+        padding: 0 16px;
+        border-radius: 20px;
+        background: #4c7c7e;
+        margin-right: 40px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        height: 40px;
+        line-height: 40px;
+      }
+
+      .formCancel {
+        color: #999999;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .cancelModal {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+
+      .cancelModalBg {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .cancelModalContent {
+        width: 480px;
+        padding: 40px 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: white;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+      }
+
+      .cancelModalMessage {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #dadbdd;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+
+      .cancelModalButtonContainer {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .cancelModalButton {
+        line-height: 40px;
+        font-weight: bold;
+        margin: 0 20px;
+        width: 80px;
+        border-radius: 8px;
+        display: inline-block;
+      }
+
+      .cancelModalButton.no {
+        color: #999999;
+      }
+
+      .cancelModalButton.yes {
+        color: white;
+        background: #4c7c7e;
+      }
+    }
+
+    .promptButton {
+      & {
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+        padding-right: 100px;
+      }
+  
+      .formPrompt {
+          display: inline-block;
+          padding: 0 16px;
+          border-radius: 20px;
+          background: #4c7c7e;
+          margin-right: 40px;
+          font-size: 12px;
+          font-weight: bold;
+          color: white;
+          height: 40px;
+          line-height: 40px;
+      }
+  
+      .promptModal {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+  
+      .promptModalBg {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+  
+      .promptModalContent {
+        width: 480px;
+        padding: 40px 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: white;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+      }
+  
+      .promptModalMessage {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #dadbdd;
+  
+        strong {
+          font-weight: bold;
+        }
+      }
+  
+      .promptModalButtonContainer {
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .promptModalButton {
+        line-height: 40px;
+        font-weight: bold;
+        margin: 0 20px;
+        width: 80px;
+        border-radius: 8px;
+        display: inline-block;
+      }
+  
+      .promptModalButton.no {
+        color: #999999;
+      }
+  
+      .promptModalButton.yes {
+        color: white;
+        background: #4c7c7e;
+      }
+    }
+  }
+
+  .dataDownload {
+    font-size: 12px;
+
+    a {
+      color: #548689;
+    }
+  }
+
+  .dataUpload {
+    margin-top: 8px;
+  }
+
+  .dataPreview {
+    margin-top: 8px;
+  }
+}

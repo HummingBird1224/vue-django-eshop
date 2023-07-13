@@ -1,0 +1,399 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}注文一覧（マークアップ）【canal】{% endblock %}
+{% block titleog %}注文一覧（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div class="p-order">
+    <div class="p-orderList">
+      <header class="p-orderListHeader">
+        <h2 class="g-title-secondary">注文一覧</h2>
+      </header>
+
+      <ol class="p-orderOrderList">
+        <li class="p-orderOrder">
+          <header class="p-orderOrder-header">
+            <div class="p-orderOrder-date">
+              <h6 class="g-title-quinary">注文日時</h6>
+              <p>2019年10月30日</p>
+            </div>
+
+            <div class="p-orderOrder-info">
+              <div class="p-orderOrder-price">
+                <h6 class="g-title-quinary">注文合計金額</h6>
+                <p>45,000 <span>円</span></p>
+              </div>
+
+              <div class="p-orderOrder-deliverTo">
+                <h6 class="g-title-quinary">お届け先</h6>
+                <a class="c-textLink">田中たろう</a>
+              </div>
+            </div>
+          </header>
+          <ul class="p-orderProductList">
+            <li class="p-orderProduct">
+              <header class="p-orderProduct-header">
+                <h5 class="g-title-quinary p-orderProduct-title">
+                  <a class="c-textLink" href="#">パッケージ名</a>
+                </h5>
+                <p class="p-orderProduct-price">
+                  50,000<span class="p-orderProduct-priceUnit">円</span>
+                  <span class="p-orderProduct-count">（8.33円/個）</span>
+                </p>
+                <ol class="p-orderProduct-flow">
+                  <li class="is-current">
+                    <span>1.未入稿</span>
+                  </li>
+                  <li>
+                    <span>2.入稿チェック</span>
+                  </li>
+                  <li>
+                    <span>3.再入稿依頼</span>
+                  </li>
+                  <li class="u-sp-none">
+                    <span>4.印刷/加工</span>
+                  </li>
+                  <li class="u-sp-none">
+                    <span>5.配送中</span>
+                  </li>
+                  <li class="u-sp-none">
+                    <span>6.配送済み</span>
+                  </li>
+                </ol>
+              </header>
+              <div class="p-orderProductDetail">
+                <div class="p-orderProductThumb"
+                     style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg);">
+                </div>
+                <div class="p-orderProductBody">
+                  <div class="p-orderProductBody-left">
+                    <div class="p-orderProductBody-rowContainer">
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">サイズ</h6>
+                          <p>240cm×300cm×3cm</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">デザイン</h6>
+                          <p>カシューナッツ</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">出荷予定日</h6>
+                          <p>受付日確定から7日以内</p>
+                        </div>
+                      </div>
+
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文数</h6>
+                          <p>4,000組</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文商品番号</h6>
+                          <p>1234567890</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="p-orderProductBody-right">
+                    <a class="c-btn " href="#">データ入稿へ</a>
+                    <a class="c-textLink c-textLink--negative" href="#">注文をキャンセルする</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="p-orderProduct">
+              <header class="p-orderProduct-header">
+                <h5 class="g-title-quinary p-orderProduct-title">
+                  <svg class="p-orderProduct-errorIcon">
+                    <use xlink:href='#icons-report_gmailerrorred'/>
+                  </svg>
+                  <a class="c-textLink" href="#">パッケージ名</a>
+                </h5>
+                <p class="p-orderProduct-price">
+                  50,000<span class="p-orderProduct-priceUnit">円</span>
+                  <span class="p-orderProduct-count">（8.33円/個）</span>
+                </p>
+                <ol class="p-orderProduct-flow">
+                  <li>
+                    <span>1.未入稿</span>
+                  </li>
+                  <li>
+                    <span>2.入稿チェック</span>
+                  </li>
+                  <li class="is-current is-error">
+                    <span>3.再入稿依頼</span>
+                  </li>
+                  <li>
+                    <span>4.印刷/加工</span>
+                  </li>
+                  <li>
+                    <span>5.配送中</span>
+                  </li>
+                  <li>
+                    <span>6.配送済み</span>
+                  </li>
+                </ol>
+              </header>
+              <div class="p-orderProductDetail">
+                <div class="p-orderProductThumb"
+                     style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg);">
+                </div>
+                <div class="p-orderProductBody">
+                  <div class="p-orderProductBody-left">
+                    <div class="p-orderProductBody-rowContainer">
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">サイズ</h6>
+                          <p>240cm×300cm×3cm</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">デザイン</h6>
+                          <p>カシューナッツ</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">出荷予定日</h6>
+                          <p>受付日確定から7日以内</p>
+                        </div>
+                      </div>
+
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文数</h6>
+                          <p>4,000組</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文商品番号</h6>
+                          <p>1234567890</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="p-orderProductBody-right">
+                    <a class="c-btn c-btn--red ghost" href="#">再入稿へ</a>
+                    <a class="c-textLink c-textLink--negative" href="#">注文をキャンセルする</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="p-orderOrder">
+          <header class="p-orderOrder-header">
+            <div class="p-orderOrder-date">
+              <h6 class="g-title-quinary">注文日時</h6>
+              <p>2019年10月30日</p>
+            </div>
+
+            <div class="p-orderOrder-info">
+              <div class="p-orderOrder-price">
+                <h6 class="g-title-quinary">注文合計金額</h6>
+                <p>45,000 <span>円</span></p>
+              </div>
+
+              <div class="p-orderOrder-deliverTo">
+                <h6 class="g-title-quinary">お届け先</h6>
+                <a class="c-textLink">田中たろう</a>
+              </div>
+            </div>
+          </header>
+          <ul class="p-orderProductList">
+            <li class="p-orderProduct">
+              <header class="p-orderProduct-header">
+                <h5 class="g-title-quinary p-orderProduct-title">
+                  <a class="c-textLink" href="#">パッケージ名</a>
+                </h5>
+                <p class="p-orderProduct-price">
+                  50,000<span class="p-orderProduct-priceUnit">円</span>
+                  <span class="p-orderProduct-count">（8.33円/個）</span>
+                </p>
+                <ol class="p-orderProduct-flow">
+                  <li>
+                    <span>1.未入稿</span>
+                  </li>
+                  <li>
+                    <span>2.入稿チェック</span>
+                  </li>
+                  <li class="is-current is-ok">
+                    <span>3.再入稿依頼</span>
+                  </li>
+                  <li>
+                    <span>4.印刷/加工</span>
+                  </li>
+                  <li>
+                    <span>5.配送中</span>
+                  </li>
+                  <li>
+                    <span>6.配送済み</span>
+                  </li>
+                </ol>
+              </header>
+              <div class="p-orderProductDetail">
+                <div class="p-orderProductThumb"
+                     style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg);">
+                </div>
+                <div class="p-orderProductBody">
+                  <div class="p-orderProductBody-left">
+                    <div class="p-orderProductBody-rowContainer">
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">サイズ</h6>
+                          <p>240cm×300cm×3cm</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">デザイン</h6>
+                          <p>カシューナッツ</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">出荷予定日</h6>
+                          <p>受付日確定から7日以内</p>
+                        </div>
+                      </div>
+
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文数</h6>
+                          <p>4,000組</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文商品番号</h6>
+                          <p>1234567890</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="p-orderProductBody-right">
+                    <a class="c-btn c-btn--green ghost" href="#">データ入稿へ</a>
+                    <a class="c-textLink c-textLink--negative" href="#">注文をキャンセルする</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="p-orderProduct">
+              <header class="p-orderProduct-header">
+                <h5 class="g-title-quinary p-orderProduct-title">
+                  <span>お届け済み</span>
+                  <a class="c-textLink" href="#">パッケージ名</a>
+                </h5>
+                <p class="p-orderProduct-price">
+                  50,000<span class="p-orderProduct-priceUnit">円</span>
+                  <span class="p-orderProduct-count">（8.33円/個）</span>
+                </p>
+                <ol class="p-orderProduct-flow">
+                  <li class="is-current">
+                    <span>1.未入稿</span>
+                  </li>
+                  <li>
+                    <span>2.入稿チェック</span>
+                  </li>
+                  <li>
+                    <span>3.再入稿依頼</span>
+                  </li>
+                  <li>
+                    <span>4.印刷/加工</span>
+                  </li>
+                  <li>
+                    <span>5.配送中</span>
+                  </li>
+                  <li>
+                    <span>6.配送済み</span>
+                  </li>
+                </ol>
+              </header>
+              <div class="p-orderProductDetail">
+                <div class="p-orderProductThumb"
+                     style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg);">
+                </div>
+                <div class="p-orderProductBody">
+                  <div class="p-orderProductBody-left">
+                    <div class="p-orderProductBody-rowContainer">
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">サイズ</h6>
+                          <p>240cm×300cm×3cm</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">デザイン</h6>
+                          <p>カシューナッツ</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">出荷予定日</h6>
+                          <p>受付日確定から7日以内</p>
+                        </div>
+                      </div>
+
+                      <div class="p-orderProductBody-row">
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文数</h6>
+                          <p>4,000組</p>
+                        </div>
+
+                        <div class="p-orderProductInfo">
+                          <h6 class="g-title-quinary">注文商品番号</h6>
+                          <p>1234567890</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="p-orderProductBody-right">
+                    <a class="c-btn c-btn--black ghost" href="#">注文内容を見る</a>
+                    <a class="c-textLink" href="#">同じ商品で再注文する</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <div class="c-modal">
+      <div class="p-orderAlert p-orderAlert--ok">
+        <svg class="p-orderAlertIcon">
+          <use xlink:href='#icons-check'/>
+        </svg>
+        <h2 class="g-title-secondary p-orderAlertTitle">入稿が完了しました</h2>
+        <p class="p-orderAlertBody">
+          データを確認して、最終確認のご連絡までお待ち下さい。
+        </p>
+        <p class="p-orderAlertBody">
+          確認に数週間かかる場合もございます。
+        </p>
+        <svg class="p-orderAlertIcon">
+          <use xlink:href='#icons-airport_shuttle'/>
+        </svg>
+        <h2 class="g-title-secondary p-orderAlertTitle">注文が完了しました！</h2>
+        <p class="p-orderAlertBody">
+          配送日が決まったらご連絡します。
+        </p>
+        <a class="c-btn " href="#">
+          閉じる
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

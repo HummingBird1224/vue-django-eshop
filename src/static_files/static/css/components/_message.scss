@@ -1,0 +1,188 @@
+.c-message {
+  /**************************
+   * style
+   **************************/
+  & {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    min-width: 180px;
+    padding: 0 22px;
+    border: 0.5px solid $color-primary;
+    border-radius: 4px;
+    @include f-text-md;
+    font-weight: bold;
+    color: $color-primary;
+    transition: background-color $duration, color $duration, opacity $duration;
+  }
+
+
+  &--dark {
+    border: 0.5px solid $color-white;
+    color: $color-text-white;
+  }
+
+  /**************
+   * サイズ
+   **************/
+
+  &--sm {
+    height: 36px;
+  }
+
+  &--lg {
+    height: 56px;
+  }
+
+  /**************
+   * 色
+   **************/
+
+  &--success {
+    border: none;
+    background-color: $color-primary;
+    color: $color-text-white;
+
+    &-dark {
+      border: none;
+      background-color: $color-white;
+      color: $color-btn-text-dark;
+    }
+  }
+
+  &--error {
+    border: none;
+    background-color: $notify-color-red;
+    color: $color-text-white;
+
+    &.ghost {
+      border: 1px solid $notify-color-red;
+      background: $color-text-white;
+      color: $notify-color-red;
+    }
+  }
+
+  &--info {
+    border: none;
+    background-color: $notify-color-green;
+    color: $color-text-white;
+
+    &.ghost {
+      border: 1px solid $notify-color-green;
+      background: $color-text-white;
+      color: $notify-color-green;
+    }
+  }
+
+   &--debug {
+    border: none;
+    background-color: $color-text-black;
+    color: $color-text-white;
+
+    &.ghost {
+      border: 1px solid $border-color-gray;
+      background: $color-text-white;
+      color: $color-text-black;
+    }
+  }
+}
+
+
+.c-fixed-messages {
+  position: fixed;
+  z-index: 2;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  top: 20px;
+}
+
+.c-fixed-message {
+    /**************************
+   * style
+   **************************/
+  height: 48px;
+  padding: 0 22px;
+  margin: 10px 0;
+  border: 0.5px solid $color-primary;
+  border-radius: 4px;
+
+  p {
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  button {
+    position: absolute;
+    display: inline-block;
+    right: 20px;
+    height: 48px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  color: $color-primary;
+
+  &--dark {
+    border: 0.5px solid $color-white;
+    color: $color-text-white;
+  }
+
+  /**************
+   * 色
+   **************/
+
+  &--success {
+    border: none;
+    background-color: $color-primary;
+    color: $color-text-white;
+
+    &-dark {
+      border: none;
+      background-color: $color-white;
+      color: $color-btn-text-dark;
+    }
+  }
+
+  &--error {
+    border: none;
+    background-color: $notify-color-red;
+    color: $color-text-white;
+
+    &.ghost {
+      border: 1px solid $notify-color-red;
+      background: $color-text-white;
+      color: $notify-color-red;
+    }
+  }
+
+  &--info {
+    border: none;
+    background-color: $notify-color-green;
+    color: $color-text-white;
+
+    &.ghost {
+      border: 1px solid $notify-color-green;
+      background: $color-text-white;
+      color: $notify-color-green;
+    }
+  }
+
+   &--debug {
+    border: none;
+    background-color: $color-text-black;
+    color: $color-text-white;
+
+    &.ghost {
+      border: 1px solid $border-color-gray;
+      background: $color-text-white;
+      color: $color-text-black;
+    }
+  }
+}

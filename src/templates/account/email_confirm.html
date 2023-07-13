@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load account %}
+
+{% block title %}メールアドレス確認{% endblock %}
+{% block titleog %}メールアドレス確認{% endblock %}
+
+{% block content %}
+<div class="p-account">
+  <header class="p-account-header">
+    <div class="p-account-wrapper">
+      <div class="p-account-logo">
+        <svg class="c-logo">
+            <use xlink:href='#icons-logo'/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main class="p-account-main">
+    <div class="p-account-wrapper">
+      {% if confirmation %}
+      {% user_display confirmation.email_address.user as user_display %}
+      <div class="p-account-message">
+        <p>メールアドレス確認&#x1F44B;</p>
+        <p><a href="mailto:{{ confirmation.email_address.email }}">{{ confirmation.email_address.email }}</a>は <br>
+          {{ user_display }}さんのメールアドレスですか？</p>
+      </div>
+
+      <form class="p-account-form" method="post" action="{% url 'account_confirm_email' confirmation.key %}">{% csrf_token %}
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="p-account-form-item c-form-item">
+          <button class="c-btn c-btn--primary">確認</button>
+        </div>
+      </form>
+      {% else %}
+      {% url 'account_email' as email_url %}
+      <div class="p-account-message">
+        <p>メール確認リンクの期限が切れています。,<br>
+          <a href="{{ email_url }}">こちら</a>から再度リンクを受信してください。</p>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+</div>
+{% endblock %}

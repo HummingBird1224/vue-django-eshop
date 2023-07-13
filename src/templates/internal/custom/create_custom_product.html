@@ -1,0 +1,17 @@
+{% extends "internal/base.html" %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div
+    id="js-internal-create-custom-product"
+    data-csrf-token="{{ csrf_token }}"
+  ></div>
+
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'js/yubinbango-core.js' %}"></script>
+  {% render_bundle 'createCustomProduct' %}
+{% endblock %}

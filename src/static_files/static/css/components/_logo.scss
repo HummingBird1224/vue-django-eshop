@@ -1,0 +1,17 @@
+.c-logo {
+  width: 97px;
+  height: 30px;
+  fill: $color-black;
+
+  &--small {
+    width: 80px;
+    height: 42px;
+    top: 6px;
+    position: relative;
+  }
+}
+
+.logo-mark {
+  width: 50px;
+  height: 50px;
+}

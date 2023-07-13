@@ -1,0 +1,24 @@
+.p-contact {
+  &-wrapper {
+    min-width: 1200px;
+    padding-top: 1px;
+    margin: 100px 0px 200px 0px;
+    padding: 50px 100px;
+
+    @include mq {
+      min-width: unset;
+      padding: 50px 20px;
+    }
+  }
+
+  &-content {
+    &-message {
+      margin-top: 100px;
+      text-align: center;
+
+      p {
+        line-height: 5rem;
+      }
+    }
+  }
+}

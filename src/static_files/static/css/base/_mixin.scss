@@ -1,0 +1,83 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// ==========================================
+// z-check_credit
+// =========================================
+$z-map: (
+  header: true,
+  headerOverlay: true,
+  headerContents: true,
+  modal: true,
+);
+
+// z-check_credit Function
+@function z($name, $childname: 0) {
+  $getkey: map-get($z-map, $name);
+  @if $childname != 0 {
+    @return index($getkey, $childname);
+  }
+  @return inspect(index($z-map, ($name $getkey)));
+}
+
+// =========================================
+//Mediaquerys
+// =========================================
+$breakpoints: (
+  'maxsm': 'screen and (max-width: 320px)', // <- When SmartPhone view
+  'maxmd': 'screen and (max-width: 768px)', // <- When SmartPhone view
+  'sm': 'screen and (min-width: 400px)',
+  'md': 'screen and (min-width: 768px)', // <- Default value
+  'lg': 'screen and (min-width: 1120px)',
+  'xlg': 'screen and (min-width: 1440px)',
+  'md-lg': 'screen and (min-width:950px) and ( max-width:1440px)',
+) !default;
+
+@mixin mq($breakpoint: maxmd) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// https://www.tam-tam.co.jp/tipsnote/html_css/post10708.html
+
+// .example {
+//   color: #F00;
+//   @include mq() {
+//     color: #00F;
+//   }
+//   @include mq(maxmd) {
+//     color: #0F0;
+//   }
+// }
+
+@mixin placeholder {
+  &:placeholder-shown {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin sp-none {
+  @include mq() {
+    display: none;
+  }
+}

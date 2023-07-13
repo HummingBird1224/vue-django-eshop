@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}見積もり（Vue）【canal】{% endblock %}
+{% block titleog %}見積もり（Vue）【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+  <div class="p-estimate">
+    <div
+            id="js-estimate-form"
+            data-product-slug="{{ object.slug }}"
+            data-csrf-token="{{ csrf_token }}"
+            data-absolute-url="{{ object.get_absolute_url }}"
+            data-size-fields="{{ size_fields }}"
+    ></div>
+  </div>
+
+  <div
+          id="js-color-list-modal"
+          data-product-slug="{{ object.slug }}"
+  ></div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'estimate' %}
+{% endblock %}
+

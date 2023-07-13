@@ -1,0 +1,224 @@
+.p-cart {
+  & {
+    @include mq {
+      padding: 0 24px;
+    }
+
+    h6 {
+      font-weight: normal;
+      color: #999999;
+    }
+  }
+
+  .p-cartWrapper {
+    margin: 0 auto;
+    padding: 57px 0 100px;
+    max-width: 1136px;
+
+    @include mq {
+      max-width: 100%;
+    }
+  }
+
+  .p-cartHeader {
+    padding: 0 0 32px;
+
+    @include mq {
+      padding: 0 0 28px;
+    }
+
+    h2 {
+      line-height: 1;
+      padding-bottom: 57px;
+
+      @include mq {
+        @include f-text-h3;
+      }
+    }
+
+    &-nav {
+      ul {
+        display: flex;
+
+        @include mq {
+          flex-direction: column;
+        }
+      }
+
+      li {
+        display: block;
+        flex: 0 1 auto;
+        list-style-type: none;
+        color: $color-text-gray-more1;
+        margin-left: 30px;
+
+        &.selected {
+          font-weight: bold;
+          color: $color-text-black;
+        }
+      }
+    }
+  }
+
+  .p-cartEmpty {
+    text-align: center;
+
+    p {
+      margin: 20px;
+    }
+
+    button {
+      border-radius: 100px;
+    }
+  }
+
+  .p-cartContainer {
+    display: flex;
+    flex-direction: row;
+
+    @include mq {
+      flex-direction: column;
+    }
+  }
+
+  .p-cartList {
+    flex: 2;
+  }
+
+  .p-cartItem {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $border-color-gray;
+    padding: 30px 0;
+    position: relative;
+
+    @include mq {
+      flex-direction: column;
+    }
+  }
+
+  .p-cartItemCancel {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: $color-text-gray-more1;
+  }
+
+  .p-cartItemThumb {
+    width:  15%;
+    background-size: cover;
+
+    @include mq {
+      width: 100%;
+    }
+  }
+
+  .p-cartItemContent {
+    width:  55%;
+
+    @include mq {
+      width: 100%;
+      order: -1;
+    }
+
+    &-rowContainer {
+      display: flex;
+
+      @include mq {
+        align-items: normal;
+        flex-direction: column;
+      }
+    }
+
+    &-row {
+      display: flex;
+      flex-direction: column;
+
+      + .p-cartItemContent-row {
+
+        @include mq {
+          margin-top: 10px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .p-cartItemPrice {
+    width:  25%;
+
+    @include mq {
+      width: 100%;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &-priceUnit {
+      @include f-text-sm;
+    }
+
+    &-unitPrice {
+      @include f-text-sm;
+    }
+  }
+
+  .p-cartItemProductInfo {
+    display: flex;
+    align-items: flex-start;
+
+    + .p-orderProductInfo {
+      margin-top: 7px;
+    }
+
+    h6, p {
+      @include f-text-sm;
+    }
+
+    h6 {
+      width: 75px;
+      margin-right: 13px;
+    }
+
+    p {
+      width: 130px;
+    }
+  }
+
+  .p-cartPrice {
+    width: 360px;
+    margin-left: 30px;
+    padding: 35px 22px;
+    border-radius: 10px;
+    background-color: $color-gray;
+
+    @include mq {
+      width: 100%;
+      margin: 15px 0 0;
+    }
+
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      margin: 1em 0;
+
+      h6, p {
+        font-size: 1.6rem;
+        color: $color-text-black;
+        font-weight: bold;
+      }
+    }
+
+    small {
+      line-height: 1em;
+    }
+  }
+
+  .p-cartToBilling-cta {
+    width: 100%;
+    border-radius: 100px;
+    margin: 20px 0;
+  }
+}

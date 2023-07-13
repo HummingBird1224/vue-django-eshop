@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}{{ object.category.get_parent_or_self.name }} {{ object.name }} | オリジナルパッケージ印刷のcanal{% endblock %}
+{% block titleog %}{{ object.category.get_parent_or_self.name }} {{ object.name }} | オリジナルパッケージ印刷のcanal{% endblock %}
+{% block metades %}
+ {{ object.category.get_parent_or_self.name }} {{ object.name }}のオリジナルパッケージ印刷ならcanalにお任せください。様々な用途に使えるオリジナルパッケージがオンラインで即日注文できます。箔押しやエンボス加工なども可能です。
+{% endblock %}
+
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div>
+    <div
+      id="js-product-detail"
+      data-static-url="{% static_url %}"
+      data-product-slug="{{ object.slug }}"
+      data-category-slug="{{ object.category.slug }}"
+      data-size-fields='{{ size_fields }}'
+      data-contact-url="{% if object.info.contact_url %}{{ object.info.contact_url }}{% else %}{% endif %}"
+    ></div>
+  </div>
+
+  <div
+    id="js-color-list-modal"
+    data-product-slug="{{ object.slug }}"
+  ></div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'productDetail' %}
+{% endblock %}

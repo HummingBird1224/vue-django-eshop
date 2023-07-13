@@ -1,0 +1,239 @@
+.c-btn {
+  /**************************
+   * mixins
+   **************************/
+  @mixin is-disabled {
+    cursor: default;
+    pointer-events: none;
+    color: $color-text-gray-more1;
+    border: 0.5px solid $border-color-gray;
+
+    &:hover {
+      opacity: 1;
+      color: $color-text-gray-more1;
+      border: $border-color-gray;
+    }
+  }
+
+  @mixin is-disabled-primary {
+    @include is-disabled;
+    background-color: $bg-color-gray-more1;
+
+    &:hover {
+      background-color: $bg-color-gray-more1;
+    }
+  }
+
+  @mixin is-loading {
+    font-size: 0;
+    cursor: default;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      border-radius: 50%;
+      width: 19.5px;
+      height: 19.5px;
+      border-top: 1px solid rgba($color-text-white, 0);
+      border-right: 1px solid rgba($color-text-white, 0);
+      border-bottom: 1px solid $color-primary;
+      border-left: 1px solid $color-primary;
+      animation: loading 0.9s infinite linear;
+    }
+  }
+
+  @mixin is-loading-primary {
+    @include is-loading;
+    font-size: 0;
+
+    &::after {
+      margin-left: 1rem;
+      border-bottom: 1px solid $color-white;
+      border-left: 1px solid $color-white;
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  /**************************
+   * style
+   **************************/
+  & {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    min-width: 180px;
+    padding: 0 22px;
+    border: 0.5px solid $color-primary;
+    border-radius: 4px;
+    @include f-text-md;
+    font-weight: bold;
+    color: $color-primary;
+    transition: background-color $duration, color $duration, opacity $duration;
+  }
+
+  &:hover {
+    background-color: rgba($color-primary, 0.08);
+  }
+
+  &--dark {
+    border: 0.5px solid $color-white;
+    color: $color-text-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-btn-text-dark;
+    }
+  }
+
+  &.is-disabled {
+    @include is-disabled;
+  }
+
+  &.is-loading {
+    @include is-loading;
+  }
+
+  /**************
+   * サイズ
+   **************/
+
+  &--sm {
+    height: 36px;
+  }
+
+  &--lg {
+    height: 56px;
+  }
+
+  /**************
+   * 色
+   **************/
+
+  &--primary {
+    border: none;
+    background-color: $color-primary;
+    color: $color-text-white;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+
+    &-dark {
+      border: none;
+      background-color: $color-white;
+      color: $color-btn-text-dark;
+
+      &:hover {
+        background-color: $color-white;
+        opacity: 0.72;
+      }
+    }
+
+    &.is-disabled {
+      @include is-disabled-primary;
+    }
+
+    &.is-loading {
+      @include is-loading-primary;
+    }
+  }
+
+  &--red {
+    border: none;
+    background-color: $notify-color-red;
+    color: $color-text-white;
+
+    &:hover {
+      background-color: $notify-color-red-hover;
+      color: $color-text-white;
+    }
+
+    &.is-disabled {
+      @include is-disabled-primary;
+    }
+
+    &.is-loading {
+      @include is-loading-primary;
+    }
+
+    &.ghost {
+      border: 1px solid $notify-color-red;
+      background: $color-text-white;
+      color: $notify-color-red;
+
+      &:hover {
+        background-color: $notify-color-red-hover;
+        color: $color-text-white;
+      }
+    }
+  }
+
+  &--green {
+    border: none;
+    background-color: $notify-color-green;
+    color: $color-text-white;
+
+    &:hover {
+      background-color: $notify-color-green-hover;
+    }
+
+    &.is-disabled {
+      @include is-disabled-primary;
+    }
+
+    &.is-loading {
+      @include is-loading-primary;
+    }
+
+    &.ghost {
+      border: 1px solid $notify-color-green;
+      background: $color-text-white;
+      color: $notify-color-green;
+
+      &:hover {
+        background-color: $notify-color-green-hover;
+        color: $color-text-white;
+      }
+    }
+  }
+
+  &--black {
+    border: none;
+    background-color: $color-text-black;
+    color: $color-text-white;
+
+    &:hover {
+      background-color: $color-text-black;
+    }
+
+    &.is-disabled {
+      @include is-disabled-primary;
+    }
+
+    &.is-loading {
+      @include is-loading-primary;
+    }
+
+    &.ghost {
+      border: 1px solid $border-color-gray;
+      background: $color-text-white;
+      color: $color-text-black;
+
+      &:hover {
+        background-color: $color-text-black;
+        color: $color-white;
+      }
+    }
+  }
+}

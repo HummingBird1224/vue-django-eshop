@@ -1,0 +1,47 @@
+<div class="modal fade" id="confirmationModel" tabindex="-1" role="dialog" aria-labelledby="designConfirmation" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="g-title-quinary modal-title bold" id="designConfirmation">データ最終確認</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>以下の3つのステップでデータの最終確認を行なってください。</p>
+        <ul class="lsn">
+          <li>
+            <p>①最終データをダウンロードする</p>
+            <div class="row">
+              <div class="col-md-6 tac">
+                <a href="" id="modal-design-download"><button class="btn btn-primary fs12">最終データをダウンロードする</button></a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p>②最終データの確認</p>
+            <p>弊社のオペレーターが確認するのは、誤字・脱字・デザインに関することではなく、印刷を行えるかどうかです。</p>
+          </li>
+          <li>
+            <p>③最終データを承認する、もしくは、データを再アップロードする</p>
+            <p>最終データに問題がない場合は、「最終データを承認する」をクリックしてください。「最終データを承認する」をクリック以後、データの差し替えを行うことができません。また、注文が最終確定し、印刷・加工工程に移り出荷予定日が確定します。最終確認後、3週間程度でお手元に到着いたします。 最終データに問題がある場合は、ダウンロードされた最終データを元に修正を行い、「データを再アップロード」をクリックし、アップロードを行なってください。最終データに問題がない場合は、「最終データを承認する」をクリックしてください。「最終データを承認する」をクリック以後、データの差し替えを行うことができません。また、注文が最終確定し、印刷・加工工程に移り出荷予定日が確定します。最終確認後、3週間程度でお手元に到着いたします。 最終データに問題がある場合は、ダウンロードされた最終データを元に修正を行い、「データを再アップロード」をクリックし、アップロードを行なってください。</p>
+            <div class="row">
+              <div class="col-md-6 tac">
+                <button class="btn btn-warning fs12" id="modal-design-confirm">最終データを承認する</button>
+              </div>
+              <div class="col-md-6 tac">
+                <label class="btn btn-danger file-upload fs12" id="modal-design-upload">
+                  データを再アップロードする
+                  <input type="file" class="design-data-input" name="design-data" id="data-{{ item.ref_code }}" data-item-ref="{{ item.ref_code }}" />
+                </label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>

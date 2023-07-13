@@ -1,0 +1,83 @@
+.p-policy {
+  min-width: 1200px;
+  min-height: 100%;
+  padding: 150px 0;
+
+  @include mq {
+    min-width: auto;
+    padding: 80px 15px;
+  }
+
+  &-main {
+    margin-top: 50px;
+  }
+
+  &-wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  &-section {
+
+    &-header {
+      h3 {
+        margin: 1em 0;
+      }
+    }
+
+    &-content {
+      p {
+        margin: 2rem 0;
+      }
+
+      ol {
+        margin: 2rem 0;
+        margin-left: 35px;
+
+        li {
+
+        }
+      }
+
+      table {
+        td {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    table {
+      td {
+        margin: 2rem;
+      }
+    }
+
+    &-terms {
+      text-align: right;
+    }
+  }
+
+  &-tokutei {
+    border-collapse: collapse;
+    border: 1px solid black;
+
+    tr {
+      vertical-align: top;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    &-title {
+      width: 200px;
+
+      @include mq {
+        width: 100px;
+      }
+    }
+  }
+}

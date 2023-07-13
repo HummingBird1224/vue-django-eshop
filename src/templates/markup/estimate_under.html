@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}見積もり（マークアップ）【canal】{% endblock %}
+{% block titleog %}見積もり（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+  <div class="p-estimate">
+    <div class="p-estimate-wrapper">
+      <a class="p-PageBack" href="#">
+      <span class="p-PageBack-iconWrapper">
+        <svg class="p-PageBack-icon p-PageBack-icon--cross">
+          <use xlink:href='#icons-cross'/>
+        </svg>
+      </span>
+        戻る
+      </a>
+
+      <header class="p-Header">
+        <h2 class="g-title-secondary p-Header-title">見積もり / 購入</h2>
+        <p class="p-Header-body">選んだ項目によって値段が変化します。注文したい商品の詳細を選びましょう。</p>
+      </header>
+
+      <main class="p-Main">
+        <div class="p-Main-left p-Main-left--under">
+          <div class="p-LeftRow p-LeftRow--small">
+            <h3 class="g-title-tertiary p-LeftRow-title">角丸の選択</h3>
+            <div class="c-form-item p-ProcessSelections">
+              <div class="c-form-radioGroup">
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01" checked="">
+                  <span class="c-form-radioMark"></span>
+                  モノクロ
+                </label>
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01">
+                  <span class="c-form-radioMark"></span>
+                  1色
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-LeftRow p-LeftRow--small">
+            <h3 class="g-title-tertiary p-LeftRow-title">ノッチの選択</h3>
+            <div class="c-form-item p-ProcessSelections">
+              <div class="c-form-radioGroup">
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01" checked="">
+                  <span class="c-form-radioMark"></span>
+                  モノクロ
+                </label>
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01">
+                  <span class="c-form-radioMark"></span>
+                  1色
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-LeftRow">
+            <h3 class="g-title-tertiary p-LeftRow-title">サイズを選択しましょう</h3>
+            <div class="p-PrintAreaSelections">
+              <h4 class="g-title-quaternary p-PrintAreaSelections-title">内面</h4>
+              <ul>
+                <li class="p-PrintAreaSelectionItem">
+                  <div class="c-form-item">
+                    <label class="c-form-checkbox">
+                      <input class="c-form-checkboxInput" type="checkbox">
+                      <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                      A
+                    </label>
+                  </div>
+                </li>
+                <li class="p-PrintAreaSelectionItem">
+                  <div class="c-form-item">
+                    <label class="c-form-checkbox">
+                      <input class="c-form-checkboxInput" type="checkbox">
+                      <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                      B
+                    </label>
+                  </div>
+                </li>
+                <li class="p-PrintAreaSelectionItem">
+                  <div class="c-form-item">
+                    <label class="c-form-checkbox">
+                      <input class="c-form-checkboxInput" type="checkbox">
+                      <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                      C
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="p-PrintAreaSelections">
+              <h4 class="g-title-quaternary p-PrintAreaSelections-title">内面</h4>
+              <ul>
+                <li class="p-PrintAreaSelectionItem">
+                  <div class="c-form-item">
+                    <label class="c-form-checkbox">
+                      <input class="c-form-checkboxInput" type="checkbox">
+                      <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                      A
+                    </label>
+                  </div>
+                </li>
+                <li class="p-PrintAreaSelectionItem">
+                  <div class="c-form-item">
+                    <label class="c-form-checkbox">
+                      <input class="c-form-checkboxInput" type="checkbox">
+                      <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                      B
+                    </label>
+                  </div>
+                </li>
+                <li class="p-PrintAreaSelectionItem">
+                  <div class="c-form-item">
+                    <label class="c-form-checkbox">
+                      <input class="c-form-checkboxInput" type="checkbox">
+                      <span class="c-form-checkboxMark"><i class="material-icons">done</i></span>
+                      C
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-LeftRow">
+            <h3 class="g-title-tertiary p-LeftRow-title">サイズを選択しましょう</h3>
+            <div class="c-form-item p-ColorSelections">
+              <div class="c-form-radioGroup">
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01" checked="">
+                  <span class="c-form-radioMark"></span>
+                  モノクロ
+                </label>
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01">
+                  <span class="c-form-radioMark"></span>
+                  1色
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-LeftRow p-LeftRow--small">
+            <h3 class="g-title-tertiary p-LeftRow-title">サイズを選択しましょう</h3>
+
+            <div class="c-form-item p-RawMaterialSelections">
+              <div class="c-form-radioGroup">
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01" checked="">
+                  <span class="c-form-radioMark"></span>
+                  <span class="p-RawMaterialSelectionLabel">
+                    <span class="p-RawMaterialSelectionLabel-thumb"></span>
+                    <span class="p-RawMaterialSelectionLabel-content">
+                      <span class="p-RawMaterialSelectionLabel-title">白ダンボール</span>
+                      <span class="p-RawMaterialSelectionLabel-body">
+                        通常の材質です。<br>
+                        アルミの光沢感があります
+                      </span>
+                    </span>
+                  </span>
+                </label>
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01">
+                  <span class="c-form-radioMark"></span>
+                  <span class="p-RawMaterialSelectionLabel">
+                    <span class="p-RawMaterialSelectionLabel-thumb"></span>
+                    <span class="p-RawMaterialSelectionLabel-content">
+                      <span class="p-RawMaterialSelectionLabel-title">白ダンボール</span>
+                      <span class="p-RawMaterialSelectionLabel-body">
+                        光沢が抑えられ、手触りがツルツルした印象の素材です。
+                      </span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-LeftRow">
+            <h3 class="g-title-tertiary p-LeftRow-title">サイズを選択しましょう</h3>
+
+            <div class="c-form-item p-MaterialSelections">
+              <div class="c-form-radioGroup">
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01" checked="">
+                  <span class="c-form-radioMark"></span>
+                  <span class="p-MaterialSelectionLabel">
+                    <span class="p-MaterialSelectionLabel-thumb"></span>
+                    <span class="p-MaterialSelectionLabel-content">
+                      <span class="p-MaterialSelectionLabel-title">通常</span>
+                      <span class="p-MaterialSelectionLabel-body">
+                        通常の材質です。<br>
+                        アルミの光沢感があります
+                      </span>
+                    </span>
+                  </span>
+                </label>
+                <label class="c-form-radio">
+                  <input type="radio" class="c-form-radioInput" name="radio01">
+                  <span class="c-form-radioMark"></span>
+                  <span class="p-MaterialSelectionLabel">
+                    <span class="p-MaterialSelectionLabel-thumb"></span>
+                    <span class="p-MaterialSelectionLabel-content">
+                      <span class="p-MaterialSelectionLabel-title">マット素材</span>
+                      <span class="p-MaterialSelectionLabel-body">
+                        光沢が抑えられ、手触りがツルツルした印象の素材です。
+                      </span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-Main-right p-Main-right--under">
+          <div class="p-RightRow">
+            <h3 class="g-title-tertiary p-RightRow-title">選択中</h3>
+            {#            <div class="p-ColorInfo">#}
+            {#              <div class="p-ColorInfo-thumb"></div>#}
+            {#              <div class="p-ColorInfo-content">#}
+            {#                <h4 class="g-title-quaternary">1色</h4>#}
+            {#                <p>印刷するデザインに使用する色数が１つの場合です。 生地や材質の色は含みません。</p>#}
+            {#              </div>#}
+            {#            </div>#}
+
+            {#            <div class="p-MaterialInfo">#}
+            {#              <h4 class="g-title-quaternary p-MaterialInfo-title">通常素材</h4>#}
+            {#              <img class="p-MaterialInfo-thumb" src="" alt="">#}
+            {#            </div>#}
+
+            {#            <ul class="p-ProcessInfoList">#}
+            {#              <li class="p-ProcessInfo">#}
+            {#                <div class="p-ProcessInfo-thumb"></div>#}
+            {#                <div class="p-ProcessInfo-content">#}
+            {#                  <h4 class="g-title-quaternary">角丸</h4>#}
+            {#                  <p>なし</p>#}
+            {#                </div>#}
+            {#              </li>#}
+            {##}
+            {#              <li class="p-ProcessInfo">#}
+            {#                <div class="p-ProcessInfo-thumb"></div>#}
+            {#                <div class="p-ProcessInfo-content">#}
+            {#                  <h4 class="g-title-quaternary">ノッチ</h4>#}
+            {#                  <p>なし</p>#}
+            {#                </div>#}
+            {#              </li>#}
+            {#            </ul>#}
+
+            {#            <div class="p-RawMaterialInfoList">#}
+            {#              <div class="p-RawMaterialInfo">#}
+            {#                <h3 class="g-title-tertiary p-RawMaterialInfo-title">選択中：外面</h3>#}
+            {##}
+            {#                <div class="p-RawMaterialInfo-body">#}
+            {#                  <div class="p-RawMaterialInfo-thumb"></div>#}
+            {#                  <div class="p-RawMaterialInfo-content">#}
+            {#                    <h4 class="g-title-quaternary">白ダンボール</h4>#}
+            {#                    <p>箱の外側が白で着色されたダンボールです</p>#}
+            {#                    <a class="c-textLink" href="">印刷に使用可能な色が限られます。色のリストはこちら。</a>#}
+            {#                  </div>#}
+            {#                </div>#}
+            {#              </div>#}
+            {#              <div class="p-RawMaterialInfo">#}
+            {#                <h3 class="g-title-tertiary p-RawMaterialInfo-title">選択中：外面</h3>#}
+            {##}
+            {#                <div class="p-RawMaterialInfo-body">#}
+            {#                  <div class="p-RawMaterialInfo-thumb"></div>#}
+            {#                  <div class="p-RawMaterialInfo-content">#}
+            {#                    <h4 class="g-title-quaternary">白ダンボール</h4>#}
+            {#                    <p>箱の外側が白で着色されたダンボールです</p>#}
+            {#                    <a class="c-textLink" href="">印刷に使用可能な色が限られます。色のリストはこちら。</a>#}
+            {#                  </div>#}
+            {#                </div>#}
+            {#              </div>#}
+            {#            </div>#}
+
+                        <div class="p-PrintAreaInfoList">
+                          <div class="p-PrintAreaInfo">
+                            <div class="p-PrintAreaInfo-content">
+                              <h3 class="g-title-tertiary p-PrintAreaInfo-title">外面</h3>
+                              <ul class="p-PrintAreaInfo-list">
+                                <li>A</li>
+                                <li>B</li>
+                                <li>C</li>
+                              </ul>
+                            </div>
+                            <img class="p-PrintAreaInfo-thumb" src="" alt="">
+                          </div>
+
+                          <div class="p-PrintAreaInfo">
+                            <div class="p-PrintAreaInfo-content">
+                              <h3 class="g-title-tertiary p-PrintAreaInfo-title">内面</h3>
+                              <ul class="p-PrintAreaInfo-list">
+                                <li>A</li>
+                                <li>B</li>
+                                <li>C</li>
+                              </ul>
+                            </div>
+                            <img class="p-PrintAreaInfo-thumb" src="" alt="">
+                          </div>
+                        </div>
+
+{#            <div class="p-ThicknessInfo">#}
+{#              <div class="p-ThicknessInfo-thumb"></div>#}
+{#              <div class="p-ThicknessInfo-content">#}
+{#                <h4 class="g-title-quaternary">通常の厚さ 1.5mm</h4>#}
+{#                <p>このタイプで標準の厚さです。</p>#}
+{#              </div>#}
+{#            </div>#}
+
+{#            <div class="p-BottomInfo">#}
+{#              <div class="p-BottomInfo-thumb"></div>#}
+{#              <div class="p-BottomInfo-content">#}
+{#                <h4 class="g-title-quaternary">キャラメル底</h4>#}
+{#                <p>このタイプで標準の厚さです。</p>#}
+{#              </div>#}
+{#            </div>#}
+
+{#            <div class="p-PaperProcessInfo">#}
+{#              <div class="p-PaperProcessInfo-thumb"></div>#}
+{#              <div class="p-PaperProcessInfo-content">#}
+{#                <h4 class="g-title-quaternary">デボス</h4>#}
+{#                <p>このタイプで標準の厚さです。</p>#}
+{#              </div>#}
+{#            </div>#}
+          </div>
+        </div>
+      </main>
+
+      <footer class="p-Footer">
+        <div class="p-Footer-left">
+          <p class="p-FooterSelecting">選択中<span class="p-FooterSelecting-value">１色</span></p>
+        </div>
+        <div class="p-Footer-right">
+          <a class="p-FooterCancel" href="#">変更しない</a>
+          <a class="c-btn c-btn--primary" href="#">変更する</a>
+        </div>
+      </footer>
+    </div>
+
+{#    <div class="c-modal c-modal--white c-colorListModal">#}
+{#      <div class="c-colorListModal-content">#}
+{#        <a class="c-colorListModalClose" href="#">#}
+{#          閉じる#}
+{#          <span class="c-colorListModalClose-icon">#}
+{#            <svg><use xlink:href='#icons-cross'/></svg>#}
+{#          </span>#}
+{#        </a>#}
+{##}
+{#        <header class="c-colorListModalHeader">#}
+{#          <h2 class="g-title-secondary">印刷に使える色</h2>#}
+{#          <p>表示の色は、素材に印刷した時の着色に近い表示にしています</p>#}
+{#        </header>#}
+{#        <div class="c-colorListModalMain">#}
+{#          <div class="c-colorListModalRow">#}
+{#            <h3 class="g-title-tertiary c-colorListModalRow-title">#}
+{#              <span class="c-colorListModalRow-thumb"></span>通常素材#}
+{#            </h3>#}
+{#            <div class="c-colorListModalListWrapper">#}
+{#              <ul class="c-colorListModalList">#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#            </ul>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="c-colorListModalRow">#}
+{#            <h3 class="g-title-tertiary c-colorListModalRow-title">#}
+{#              <span class="c-colorListModalRow-thumb"></span>通常素材#}
+{#            </h3>#}
+{#            <div class="c-colorListModalListWrapper">#}
+{#              <ul class="c-colorListModalList">#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#              <li class="c-colorListModalList-item"></li>#}
+{#            </ul>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

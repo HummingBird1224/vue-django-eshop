@@ -1,0 +1,518 @@
+{% load static %}
+
+<header id="common-header" class="c-header">
+
+  <div class="c-headerOpenButton">
+    <div id="js-open-header-menu-sp" class="c-headerOpenButton-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="c-headerCenter">
+    <div class="c-headerLogo">
+      <a href="{% url 'home' %}">
+        <svg class="c-logo">
+          <use xlink:href='#icons-logo'/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="c-headerContents" id="js-menu-sp">
+    <div class="c-headerLeft">
+      <ul class="c-headerLinks">
+        <li>
+          <a id="js-open-header-product-menu" class="c-headerLink c-headerLink--pc">
+            <svg>
+              <use xlink:href='#icons-header_catalog'/>
+            </svg>
+            商品一覧
+            <svg class="c-headerLink-dropdownIcon">
+              <use xlink:href='#icons-header_dropdown'/>
+            </svg>
+          </a>
+          {# MODAL #}
+          <div id="js-header-product-menu" class="c-headerMenuOverlay" style="display: none;">
+            <div id="js-header-product-menu-content" class="c-headerMenu">
+              <div class="c-headerMenu-wrapper">
+                <div class="c-headerMenuList">
+                  <header class="c-headerMenuList-header">
+                    <h3 class="g-title-tertiary">カテゴリーから探す</h3>
+                  </header>
+                  <ul class="c-headerMenuLinks">
+                    <li class="c-headerMenuLink">
+                      <div
+                              class="c-headerMenuLink-thumb"
+                              style="background-image: url(https://canalink.s3.amazonaws.com/public/media/products/extra/category/ic_nav_film.svg)"
+                      >
+                      </div>
+                      <a class="c-textLink c-textLink--black" href="{% url 'catalog' slug='flatbag' %}">平袋</a>
+                    </li>
+                    <li class="c-headerMenuLink">
+                      <div
+                              class="c-headerMenuLink-thumb"
+                              style="background-image: url(https://canalink.s3.amazonaws.com/public/media/products/extra/category/ic_nav_cardboox.svg)"
+                      >
+                      </div>
+                      <a class="c-textLink c-textLink--black" href="{% url 'catalog' slug='cardboard' %}">ダンボール</a>
+                    </li>
+                    <li class="c-headerMenuLink">
+                      <div
+                              class="c-headerMenuLink-thumb"
+                              style="background-image: url(https://canalink.s3.amazonaws.com/public/media/products/extra/category/ic_nav_paperbox.svg)"
+                      >
+                      </div>
+                      <a class="c-textLink c-textLink--black" href="{% url 'catalog' slug='paperbox' %}">紙器</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {# MODAL END #}
+
+
+          {# MOBILE #}
+          <a id="js-open-header-product-menu-sp" class="c-headerLink c-headerLink--sp">
+            <svg>
+              <use xlink:href='#icons-header_catalog'/>
+            </svg>
+            商品一覧
+            <svg class="c-headerLink-dropdownIconSp">
+              <use xlink:href='#icons-plus'/>
+            </svg>
+          </a>
+          {# MOBILE DROPDOWN #}
+          <div id="js-header-product-menu-sp" style="display:none;">
+            <ul>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="{% url 'catalog' slug='flatbag' %}">
+                  <div
+                          class="c-headerMenuLink-thumb"
+                          style="background-image: url(https://canalink.s3.amazonaws.com/public/media/products/extra/category/ic_nav_film.svg)"
+                  >
+                  </div>
+                  平袋
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="{% url 'catalog' slug='cardboard' %}">
+                  <div
+                          class="c-headerMenuLink-thumb"
+                          style="background-image: url(https://canalink.s3.amazonaws.com/public/media/products/extra/category/ic_nav_cardboox.svg)"
+                  >
+                  </div>
+                  ダンボール
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="{% url 'catalog' slug='paperbox' %}">
+                  <div
+                          class="c-headerMenuLink-thumb"
+                          style="background-image: url(https://canalink.s3.amazonaws.com/public/media/products/extra/category/ic_nav_paperbox.svg)"
+                  >
+                  </div>
+                  紙器
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+
+        {# S------------------- #}
+        <li>
+          <a id="js-open-header-guide-menu" class="c-headerLink c-headerLink--pc">
+            <svg>
+              <use xlink:href='#icons-header_help'/>
+            </svg>
+            ご利用ガイド
+            <svg class="c-headerLink-dropdownIcon">
+              <use xlink:href='#icons-header_dropdown'/>
+            </svg>
+          </a>
+          {# MODAL #}
+          <div id="js-header-guide-menu" class="c-headerMenuOverlay" style="display: none;">
+            <div id="js-header-guide-menu-content" class="c-headerMenu">
+              <div class="c-headerMenu-wrapper">
+                <div class="c-headerMenuList">
+                  <header class="c-headerMenuList-header">
+                    <h3 class="g-title-tertiary">注文〜お届けまで</h3>
+                  </header>
+                  <ul class="c-headerMenuLinks">
+                    <li class="c-headerMenuLink">
+                      <svg class="c-headerMenuLink-thumb">
+                        <use xlink:href='#icons-header_help'/>
+                      </svg>
+                      <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/canal-50e2a7a156fc4ae498e277996313e977" target="_blank">ご利用ガイド</a>
+                    </li>
+                    <li class="c-headerMenuLink">
+                      <svg class="c-headerMenuLink-thumb">
+                        <use xlink:href='#icons-design'/>
+                      </svg>
+                      <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/c82c79e1e9b44d84833339a22117e141" target="_blank">データ入稿の方法</a>
+                    </li>
+                    <li class="c-headerMenuLink">
+                      <svg class="c-headerMenuLink-thumb">
+                        <use xlink:href='#icons-template'/>
+                      </svg>
+                      <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/e3c4cc81f12247d694408fd9b59a6b7a" target="_blank">テンプレート</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="c-headerMenuList">
+                  <header class="c-headerMenuList-header">
+                    <h3 class="g-title-tertiary">ヘルプ</h3>
+                  </header>
+                  <ul class="c-headerMenuLinks">
+                    <li class="c-headerMenuLink">
+                      <svg class="c-headerMenuLink-thumb">
+                        <use xlink:href='#icons-header_help'/>
+                      </svg>
+                      <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/47af8233650f4efea770ea6244b1569d" target="_blank">よくあるご質問</a>
+                    </li>
+                    <li class="c-headerMenuLink">
+                      <svg class="c-headerMenuLink-thumb">
+                        <use xlink:href='#icons-sample_box'/>
+                      </svg>
+                      <a class="c-textLink c-textLink--black" href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform" target="_blank">サンプル注文</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {# MODAL END #}
+
+
+          {# MOBILE #}
+          <a id="js-open-header-guide-menu-sp" class="c-headerLink c-headerLink--sp">
+            <svg>
+              <use xlink:href='#icons-header_help'/>
+            </svg>
+            ご利用ガイド
+            <svg class="c-headerLink-dropdownIconSp">
+              <use xlink:href='#icons-plus'/>
+            </svg>
+          </a>
+          {# MOBILE DROPDOWN #}
+          <div id="js-header-guide-menu-sp" style="display:none;">
+            <ul>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/canal-50e2a7a156fc4ae498e277996313e977" target="_blank">
+                  <svg class="c-headerMenuLink-thumb">
+                    <use xlink:href='#icons-header_help'/>
+                  </svg>
+                  ご利用ガイド
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/c82c79e1e9b44d84833339a22117e141" target="_blank">
+                  <svg class="c-headerMenuLink-thumb">
+                    <use xlink:href='#icons-design'/>
+                  </svg>
+                  データ入稿の方法
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/e3c4cc81f12247d694408fd9b59a6b7a" target="_blank">
+                  <svg class="c-headerMenuLink-thumb">
+                    <use xlink:href='#icons-template'/>
+                  </svg>
+                  テンプレート
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="https://same-raft-469.notion.site/47af8233650f4efea770ea6244b1569d" target="_blank">
+                  <svg class="c-headerMenuLink-thumb">
+                    <use xlink:href='#icons-header_help'/>
+                  </svg>
+                  よくあるご質問
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+              <li class="c-headerMenuLink">
+                <a class="c-textLink c-textLink--black" href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform" target="_blank">
+                  <svg class="c-headerMenuLink-thumb">
+                    <use xlink:href='#icons-sample_box'/>
+                  </svg>
+                  サンプル注文
+                  <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                    <use xlink:href='#icons-arrow_right'/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        {# E------------------- #}
+
+        <li>
+          <a class="c-headerLink" href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform" target="_blank">
+            <svg>
+              <use xlink:href='#icons-header_contact'/>
+            </svg>
+            お問い合わせ
+            <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+              <use xlink:href='#icons-arrow_right'/>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a class="c-headerLink" href="https://blog.canal.ink/" target="_blank">
+            <svg>
+              <use xlink:href='#icons-list'/>
+            </svg>
+            ブログ
+            <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+              <use xlink:href='#icons-arrow_right'/>
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <a class="c-headerLink" href="{% url 'casestudy_list' %}" target="_blank">
+            <svg>
+              <use xlink:href='#icons-list'/>
+            </svg>
+            商品事例
+            <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+              <use xlink:href='#icons-arrow_right'/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div class="c-headerRight">
+      {% if user.is_authenticated %}
+        <ul class="c-headerLinks">
+          <li>
+            <a class="c-headerLink" href="{% url 'order_history' %}">
+              <svg>
+                <use xlink:href='#icons-header_upload'/>
+              </svg>
+              注文一覧
+              <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                <use xlink:href='#icons-arrow_right'/>
+              </svg>
+            </a>
+          </li>
+          {# <li> #}
+          {#   <a class="c-headerLink" href="{% url 'mydesign' %}"> #}
+          {#     <svg> #}
+          {#       <use xlink:href='#icons-palette'/> #}
+          {#     </svg> #}
+          {#     マイデザイン #}
+          {#     <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link"> #}
+          {#       <use xlink:href='#icons-arrow_right'/> #}
+          {#     </svg> #}
+          {#   </a> #}
+          {# </li> #}
+          <li>
+            <a id="js-open-header-notice-menu" class="c-headerLink c-headerLink--pc notice-badge" href="#" data-badge="{{ user_notice_summary.unread_count }}">
+              <svg>
+                <use xlink:href='#icons-header_notice'/>
+              </svg>
+              お知らせ
+            </a>
+            {# MOBILE #}
+            <a class="c-headerLink c-headerLink--sp" href="{% url 'notices' %}">
+              <svg>
+                <use xlink:href='#icons-header_notice'/>
+              </svg>
+              お知らせ
+              <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                <use xlink:href='#icons-arrow_right'/>
+              </svg>
+            </a>
+            {# MODAL #}
+            <div id="js-header-notice-menu" class="c-headerNotice" style="display: none;">
+              <div id="js-header-notice-menu-content" class="c-headerMenu">
+                  <div class="c-headerMenuList">
+                    <ul class="c-headerMenuLinks">
+                      {% for category in user_notice_summary.user_notice_categories %}
+                        {% if not category.is_read %}
+                          <li class="c-headerMenuLink">
+                            <a class="c-textLink-notice c-textLink--more-black" href="{% url 'notices' %}">
+                              <img class="c-headerNotice-icon" src="{% static '' %}{{ category.icon_path }}">
+                              {{ category.message }}
+                              <span class="c-headerMenuLink-badge"></span>
+                            </a>
+                          </li>
+                        {% endif %}
+                      {% endfor%}
+                    </ul>
+                    <a class="c-textLink c-textLinkDetail" href="{% url 'notices' %}">お知らせ一覧へ</a>                    
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a id="js-open-header-account-menu" class="c-headerLink c-headerLink--pc" href="#">
+              <svg>
+                <use xlink:href='#icons-header_mypage'/>
+              </svg>
+              マイページ
+              <svg class="c-headerLink-dropdownIcon">
+                <use xlink:href='#icons-header_dropdown'/>
+              </svg>
+              <svg class="c-headerLink-dropdownIconSp">
+                <use xlink:href='#icons-plus'/>
+              </svg>
+            </a>
+            {# MODAL #}
+            <div id="js-header-account-menu" class="c-headerAccount" style="display: none;">
+              <section class="c-headerAccountInfo">
+                <h3 class="g-title-tertiary c-headerAccountInfo-title">{{ user.get_fullname }}様</h3>
+                <p class="c-headerAccountInfo-body">{{ user.email }}</p>
+              </section>
+              <ul class="c-headerAccountNav">
+                <li class="c-headerAccountNav-item">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_update' %}">アカウント編集</a>
+                </li>
+                <li class="c-headerAccountNav-item">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_credit_manage' %}">クレジットカード管理</a>
+                </li>
+                <li class="c-headerAccountNav-item">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_address_manage' %}">配送先管理</a>
+                </li>
+                <li class="c-headerAccountNav-item">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_change_password' %}">パスワード変更</a>
+                </li>
+                <li class="c-headerAccountNav-item">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_logout' %}">ログアウト</a>
+                </li>
+              </ul>
+            </div>
+
+            {# MOBILE #}
+            <a id="js-open-header-account-menu-sp" class="c-headerLink c-headerLink--sp" href="#">
+              <svg>
+                <use xlink:href='#icons-header_mypage'/>
+              </svg>
+              マイページ
+              <svg class="c-headerLink-dropdownIcon">
+                <use xlink:href='#icons-header_dropdown'/>
+              </svg>
+              <svg class="c-headerLink-dropdownIconSp">
+                <use xlink:href='#icons-plus'/>
+              </svg>
+            </a>
+            {# MOBILE DROPDOWN #}
+            <div id="js-header-account-menu-sp" style="display:none;">
+              <ul>
+                <li class="c-headerMenuLink">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_update' %}">
+                    <div
+                            class="c-headerMenuLink-thumb"
+                    >
+                    </div>
+                    アカウント編集
+                    <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                      <use xlink:href='#icons-arrow_right'/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-headerMenuLink">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_credit_manage' %}">
+                    <div
+                            class="c-headerMenuLink-thumb"
+                    >
+                    </div>
+                    クレジットカード管理
+                    <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                      <use xlink:href='#icons-arrow_right'/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-headerMenuLink">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_address_manage' %}">
+                    <div
+                            class="c-headerMenuLink-thumb"
+                    >
+                    </div>
+                    配送先管理
+                    <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                      <use xlink:href='#icons-arrow_right'/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-headerMenuLink">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_change_password' %}">
+                    <div
+                            class="c-headerMenuLink-thumb"
+                    >
+                    </div>
+                    パスワード変更
+                    <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                      <use xlink:href='#icons-arrow_right'/>
+                    </svg>
+                  </a>
+                </li>
+                <li class="c-headerMenuLink">
+                  <a class="c-textLink c-textLink--more-black" href="{% url 'account_logout' %}">
+                    <div
+                            class="c-headerMenuLink-thumb"
+                    >
+                    </div>
+                    ログアウト
+                    <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+                      <use xlink:href='#icons-arrow_right'/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      {% else %}
+        <a class="c-headerLink c-headerLink-button" href="{% url 'login' %}">
+          ログイン
+          <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+            <use xlink:href='#icons-arrow_right'/>
+          </svg>
+        </a>
+        <a class="c-headerLink c-headerLink-button" href="{% url 'account_signup' %}">
+          新規会員登録
+          <svg class="c-headerLink-dropdownIconSp c-headerLink-dropdownIconSp--link">
+            <use xlink:href='#icons-arrow_right'/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="c-headerCart">
+    <a href="{% url 'cart' %}">
+      <span class="c-headerCart-notify">{% cart_num_items %}</span>
+      <img class="c-headerCart-icon" src="{% static 'img/icon_cart.png' %}" alt="cart">
+      <span class="c-headerCart-caption">カート</span>
+    </a>
+  </div>
+</header>

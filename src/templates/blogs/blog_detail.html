@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ object.title }} | canal Blog{% endblock %}
+{% block titleog %}{{ object.title }} | canal Blog{% endblock %}
+{% block metades %}{{ object.meta_description }}{% endblock %}
+{% block metakey %}{{ object.meta_keywords }}{% endblock %}
+
+{% block content %}
+<div id="main">
+	<div class="content">
+
+		<div class="content-header">
+			<div class="breadcrumbs">
+				<p><span class="breadcrumbs-spacer">&rang;</span><a href="{% url 'blog_list' %}">トップ</a>{% if object.category %}<span class="breadcrumbs-spacer">&rang;</span><a href="{% url 'category_blog_list' object.category.slug %}">{{ object.category.name }}</a>{% endif %}</p>
+			</div>
+		</div>
+		<article id="post-{{object.id}}" class="post-detail">
+			<div class="post">
+				<header class="post-header">
+					<div class="post-thumbnail">
+						<img src="{{ object.blogthumbnail.thumbnail.url }}">
+					</div>
+					<div class="post-meta">
+						<div class="post-title">
+							<h1 class="g-title-primary">{{ object.title }}</h1>
+						</div>
+						<p class="post-category"><a href="">{{ object.category.name }}</a></p>
+						<p class="post-date">{{ object.created_at|date:"Y/m/d" }}</p>
+					</div>
+				</header>
+				<div class="post-content">
+					<div class="container">
+						<div class="col-lg-8 offset-lg-2 post-content-area">
+							{{ object.content|safe }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<div class="contact-btn">
+			<a href="{% url 'contact' %}"><button class="btn">問い合わせ・相談をする</button></a>
+		</div>
+
+		<div class="related-posts">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-6 offset-lg-3 blog-list">
+						<h3 class="g-title-tertiary">関連記事</h3>
+						{% for post in object.get_related_posts %}
+						<article class="blog-post">
+							<div class="row">
+								<div class="col-sm-4 blog-thumbnail">
+									<a href="">
+										<img src="{{ post.blogthumbnail.thumbnail.url }}" />
+									</a>
+								</div>
+								<div class="col-sm-8 post-content">
+									<div class="post-meta">
+										<a href=""><p class="post-category">{{ post.category.name }}</p></a>
+										<p class="post-date">{{ post.created_at|date:"Y/m/d" }}</p>
+									</div>
+									<a href="{% url 'blog_detail' post.slug %}"><h3 class="g-title-tertiary post-title">{{ post.title }}</h3></a>
+									<p class="post-shorten-content">{{ post.get_first_n_letters }}...</p>
+								</div>
+							</div>
+						</article>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

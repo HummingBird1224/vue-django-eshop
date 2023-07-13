@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}注文完了 | canal{% endblock %}
+{% block titleog %}注文完了 | canal{% endblock %}
+
+
+{% block content %}
+  <div>
+
+    <div
+      id="js-thankyou"
+      data-static-url="{% static_url %}"
+    ></div>
+
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'thankyou' %}
+{% endblock %}
+

@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}新規会員登録{% endblock %}
+{% block titleog %}新規会員登録{% endblock %}
+
+{% block content %}
+<div class="p-account">
+  <div class="p-account-fixedTop">
+    <div class="p-account-fixedTop-back">
+      <a class="c-textLink" href="{% url 'home' %}">ホームに戻る</a>
+    </div>
+  </div>
+  <header class="p-account-header">
+    <div class="p-account-wrapper">
+      <div class="p-account-logo">
+        <svg class="c-logo">
+            <use xlink:href='#icons-logo'/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main class="p-account-main">
+    <div class="p-account-wrapper">
+      <div class="p-account-message">
+        <p>canalへようこそ！&#x1F44B;</p>
+      </div>
+      <form class="p-account-form" method="POST" action="{% url 'account_signup' %}">{% csrf_token %}
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-email" name="email" type="text" class="c-form-input" required="" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-email" class="c-form-label">
+            メールアドレス
+          </label>
+          <p class="c-form-error">メールアドレスを入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-name" name="name" type="text" class="c-form-input" required="" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-name" class="c-form-label">
+            ご担当者名
+          </label>
+          <p class="c-form-error">お名前を入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-company" name="company_name" type="text" class="c-form-input" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-company" class="c-form-label">
+            貴社名（任意）
+          </label>
+          <p class="c-form-error">貴社名を入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-url" name="url" type="url" class="c-form-input" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-url" class="c-form-label">
+            貴社ホームページURL（任意）
+          </label>
+          <p class="c-form-error">貴社名を入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-pass1" name="password1" type="password" class="c-form-input" required="" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-pass1" class="c-form-label">
+            パスワード
+          </label>
+          <p class="c-form-error">パスワードを入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-pass2" name="password2" type="password" class="c-form-input" required="" value="" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-pass2" class="c-form-label">
+            パスワード（確認）
+          </label>
+          <p class="c-form-error">確認用パスワードを入力してください</p>
+        </div>
+        <div class="c-form-item">
+          <label class="c-form-checkbox">
+            <input class="c-form-checkboxInput" name="is_confirmed" type="checkbox">
+            <span class="c-form-checkboxMark">
+              <i class="material-icons">done</i>
+            </span>
+            <a data-v-33120dd1="" href="{% url 'privacypolicy' %}">プライバシーポリシー</a>
+            と
+            <a data-v-33120dd1="" href="{% url 'terms' %}">利用規約</a>
+            に同意する
+          </label>
+          <p class="c-form-error">同意が必要です</p>
+        </div>
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="p-account-form-item c-form-item">
+          <button class="c-btn c-btn--primary">新規登録</button>
+        </div>
+      </form>
+      <div class="p-account-links">
+        <div class="p-account-links-link">
+         <a href="{{ login_url }}">
+           <small>すでにアカウントをお持ちの方はこちらからログイン</small>
+         </a>
+        </div>
+        <div class="p-account-links-link">
+          <a class="button secondaryAction" href="{% url 'privacypolicy' %}">
+            <small>個人情報の取り扱いについてはこちらをご覧ください</small>
+          </a>
+        </div>
+      </div>
+
+      <p class="p-account-divider">or</p>
+      <div class="p-account-externalService">
+        <p>外部サービスでログイン</p>
+        <div class="p-account-externalService-buttons">
+          <a class="p-account-externalService-button p-account-externalService-button--base" href="{% url 'base_login' %}?next={{ request.get_full_path }}">
+            <div class="">
+              <img src="{% static 'img/partners/base_new.png' %}">
+            </div>
+            <p>で作成</p>
+          </a>
+          <a class="p-account-externalService-button p-account-externalService-button--colorme" href="{% url 'colorme_login' %}?next={{ request.get_full_path }}">
+            <div class="">
+              <img src="{% static 'img/partners/colorme_sm.png' %}">
+            </div>
+            <p>カラーミーで作成</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+{% endblock %}

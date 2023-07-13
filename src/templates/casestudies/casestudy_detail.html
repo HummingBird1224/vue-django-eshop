@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}{{ object.title }} | オリジナルパッケージ印刷のcanal{% endblock %}
+
+{% block content %}
+  <div class="p-products p-product">
+    <div
+      id="js-casestudy-detail"
+      data-detail-category="{{category}}"
+      data-detail-tag="{{tag}}"
+      data-detail-slug="{{slug}}"
+      data-object="{{object}}"
+      data-static-url="{% static_url %}"
+    ></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'casestudyDetail' %}
+{% endblock %}

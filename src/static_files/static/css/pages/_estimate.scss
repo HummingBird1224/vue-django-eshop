@@ -1,0 +1,936 @@
+@mixin column-radio-form {
+  .c-form-radioGroup {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .c-form-radio {
+    & + .c-form-radio {
+      margin-left: 0;
+    }
+  }
+
+  .c-form-radioInput:checked + .c-form-radioMark::after {
+    background: $color-primary;
+  }
+}
+
+.p-estimate {
+  & {
+    background: #FBFBFC;
+    min-height: 100vh;
+  }
+
+  &-wrapper {
+    max-width: 1250px;
+    margin: -80px auto 0;
+    padding-top: 24px;
+    padding-bottom: 88px;
+  }
+
+  .p-PageBack {
+    display: flex;
+    align-items: center;
+    color: $color-black;
+    @include f-text-lg;
+
+    & + .p-Header {
+      margin-top: 60px;
+    }
+
+    & + .p-Main {
+      margin-top: 56px;
+    }
+
+    &-iconWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      margin-right: 11px;
+    }
+
+    &-icon {
+      fill: $color-black-inactive;
+
+      &--cross {
+        width: 14px;
+        height: 14px;
+      }
+
+      &--forward {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .p-Header {
+    &-title {
+      @include f-text-h2;
+      color: $color-black;
+    }
+
+    &-body {
+      margin-top: 18px;
+      color: $color-black;
+      @include f-text-md;
+    }
+
+    & + .p-Main {
+      margin-top: 48px;
+    }
+  }
+
+  .p-Main {
+    display: flex;
+    padding-bottom: 40px;
+
+    &-left {
+      flex: 1;
+
+      &--under {
+        width: 400px;
+        flex: none;
+      }
+    }
+
+    &-right {
+      &--under {
+        flex: 1;
+        margin-left: 56px;
+      }
+    }
+  }
+
+  .p-LeftRow, .p-RightRow {
+    width: 100%;
+    background: $color-white;
+    border-radius: 8px;
+  }
+
+  .p-LeftRow {
+    padding: 24px 0 20px;
+    min-height: 500px;
+
+    &--small {
+      min-height: auto;
+    }
+
+    &-title {
+      margin: 0 24px;
+      @include f-text-sm;
+      color: $color-black;
+      font-weight: bold;
+    }
+
+    & + .p-LeftRow {
+      margin-top: 20px;
+    }
+  }
+
+  .p-RightRow {
+    padding-top: 32px;
+
+    &-title {
+      margin: 0 40px;
+      @include f-text-lg;
+      color: $color-black;
+      font-weight: bold;
+    }
+  }
+
+  .p-MenuList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  .p-MenuListItem {
+    background: $color-white;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+
+    &--disable {
+
+    }
+
+    &-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 90px;
+      padding: 18px 0;
+      color: $color-black;
+
+      @at-root .p-estimate .p-MenuListItem.p-MenuListItem--disable .p-MenuListItem-link {
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      padding-left: 26px;
+    }
+
+    &-right {
+
+      > svg {
+        fill: $color-primary;
+        transform: rotateZ(-90deg);
+        width: 12px;
+        height: 12px;
+        margin-right: 25px;
+      }
+    }
+
+    & + .p-MenuListItem {
+      margin-top: 20px;
+    }
+  }
+
+  .p-MenuListItemIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+  }
+
+  .p-MenuListItemIcon {
+    fill: $color-primary;
+
+    @at-root .p-estimate .p-MenuListItem.p-MenuListItem--disable .p-MenuListItemIcon {
+      fill: #DADADA;
+    }
+
+    &--fullscreenExit {
+      width: 19px;
+      height: 19px;
+    }
+
+    &--localMall {
+      width: 24px;
+      height: 28px;
+    }
+
+    &--colorLens {
+      width: 27px;
+      height: 27px;
+    }
+
+    &--importExport {
+      width: 19px;
+      height: 24px;
+    }
+
+    &--formatPaint {
+      width: 23px;
+      height: 27px;
+    }
+
+    &--grain {
+      width: 21px;
+      height: 21px;
+    }
+
+    &--buildingBlocks {
+      width: 32px;
+      height: 32px;
+    }
+
+    &--aspectRatio {
+      width: 30px;
+      height: 24px;
+    }
+
+    &--layers {
+      width: 24px;
+      height: 25px;
+      fill: #EC903B;
+    }
+
+    &--flare {
+      width: 29px;
+      height: 29px;
+      fill: #EC903B;
+    }
+  }
+
+  .p-MenuListItemContent {
+    margin-left: 31px;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      @include f-text-lg;
+      color: $color-text-black;
+      line-height: 2.8rem;
+    }
+
+    p {
+      @include f-text-sm;
+      color: $color-text-gray-more1;
+      font-weight: bold;
+    }
+  }
+
+  .p-MenuListItemSupplement {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    margin-left: 18px;
+    padding: 0 6px;
+    background: $bg-color-gray;
+    border-radius: 4px;
+    @include f-text-xs;
+    font-weight: bold;
+  }
+
+  .p-Product {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    min-height: 530px;
+    margin-left: 186px;
+    background: $color-white;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 40px 32px 34px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+    }
+
+    &-thumb {
+      width: 120px;
+      height: 120px;
+      background: #FFF center no-repeat;
+      background-size: contain;
+      border: 1px solid $bg-color-gray;
+    }
+
+    &-content {
+      margin-left: 24px;
+      color: $color-black;
+    }
+
+    &-label {
+      @include f-text-sm;
+    }
+
+    &-title {
+      @include f-text-lg;
+      line-height: 2.8rem;
+    }
+
+    &-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .p-ProductInfoList {
+    margin-top: 20px;
+    padding: 0 8px;
+  }
+
+  .p-ProductInfo {
+    display: flex;
+
+    & + .p-ProductInfo {
+      margin-top: 12px;
+    }
+
+    h4 {
+      width: 54px;
+      @include f-text-sm;
+      color: $color-text-gray-more1;
+    }
+
+    p {
+      flex: 1;
+      margin-left: 16px;
+      @include f-text-sm;
+      color: $color-black;
+      font-weight: bold;
+    }
+  }
+
+  .p-ProductFooter {
+    margin-top: 17px;
+    padding-top: 17px;
+    border-top: 1px solid $border-color-gray;
+  }
+
+  .p-ProductPrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-label {
+      @include f-text-sm;
+      color: $color-text-gray-more1;
+      font-weight: bold;
+    }
+
+    &-value {
+      @include f-text-h4;
+    }
+
+    &-unit {
+      margin-left: 7px;
+      @include f-text-xs;
+    }
+
+    &--external {
+      margin-top: 14px;
+
+      .p-ProductPrice-value {
+        @include f-text-md;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .p-Footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 88px;
+    padding: 0 99px 0 93px;
+    background: $color-white;
+
+    &-left {
+
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+
+      .c-btn {
+        width: 199px;
+        height: 48px;
+        border-radius: 200px;
+      }
+    }
+
+    &-title {
+      @include f-text-md;
+    }
+  }
+
+  .p-FooterPriceDetail {
+    margin-top: 2px;
+    font-size: 0;
+
+    &-label {
+      @include f-text-sm;
+      font-weight: bold;
+      color: $color-text-gray-more1;
+    }
+
+    &-value {
+      margin-left: 5px;
+      @include f-text-md;
+      font-weight: bold;
+    }
+
+    &-unit {
+      margin-left: 4px;
+      @include f-text-xs;
+      font-weight: bold;
+    }
+
+    &-increment {
+      margin-left: 8px;
+      @include f-text-xs;
+      font-weight: bold;
+
+      & + .p-FooterPriceDetail-label {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .p-FooterSelecting {
+    color: $color-black;
+    @include f-text-sm;
+
+    &-value {
+      margin-left: 16px;
+      @include f-text-md;
+      font-weight: bold;
+    }
+  }
+
+  .p-FooterTotalPrice {
+    margin-right: 40px;
+    font-size: 0;
+
+    &-label {
+      @include f-text-sm;
+      color: $color-text-gray-more1;
+      font-weight: bold;
+    }
+
+    &-value {
+      margin-left: 16px;
+      @include f-text-h4;
+      color: $color-black;
+    }
+
+    &-unit {
+      margin-left: 4px;
+      @include f-text-xs;
+      color: $color-black;
+      font-weight: bold;
+    }
+  }
+
+  .p-FooterCancel {
+    margin-right: 42px;
+    @include f-text-md;
+    color: $color-black;
+  }
+
+  .p-ColorSelections {
+    margin-top: 23px;
+    padding: 0 24px;
+    color: $color-black;
+
+    @include column-radio-form;
+
+    .c-form-radio {
+      padding: 16px 0;
+      border-bottom: 1px solid #F3F3F4;
+    }
+  }
+
+  .p-ColorInfo {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 34px;
+    padding: 0 66px 40px 40px;
+
+    &-thumb {
+      flex: none;
+      width: 240px;
+      height: 240px;
+      background: #FFF center no-repeat;
+      background-size: contain;
+    }
+
+    &-content {
+      margin-left: 40px;
+      color: $color-black;
+
+      h4 {
+        @include f-text-lg;
+        line-height: 1;
+      }
+
+      p {
+        margin-top: 24px;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  .p-MaterialSelections {
+    margin-top: 16px;
+    @include column-radio-form;
+
+    .c-form-radio {
+      padding: 36px 24px 33px;
+
+      & + .c-form-radio {
+        border-top: 1px solid #F3F3F4;
+      }
+    }
+  }
+
+  .p-MaterialSelectionLabel {
+    display: flex;
+
+    &-thumb {
+      flex: none;
+      width: 80px;
+      height: 80px;
+      background: $bg-color-gray-less1 center no-repeat;
+      background-size: contain;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 22px;
+    }
+
+    &-title {
+      @include f-text-md;
+      color: $color-black;
+      font-weight: bold;
+    }
+
+    &-body {
+      margin-top: 2px;
+      @include f-text-sm;
+      white-space: pre-wrap;
+    }
+  }
+
+  .p-MaterialInfo {
+    padding: 25px 40px 51px;
+
+    &-title {
+      @include f-text-md;
+      font-weight: bold;
+      color: $color-black;
+    }
+
+    &-thumb {
+      width: 100%;
+    }
+  }
+
+  .p-ProcessSelections {
+    margin-top: 12px;
+    padding: 0 24px 4px;
+
+    @include column-radio-form;
+
+    .c-form-radio {
+      padding: 16px 0;
+      border-bottom: 1px solid #F3F3F4;
+    }
+  }
+
+  .p-ProcessInfoList {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 34px;
+    padding-bottom: 120px;
+  }
+
+  .p-ProcessInfo {
+    display: flex;
+    align-items: center;
+
+    &-thumb {
+      flex: none;
+      width: 160px;
+      height: 160px;
+      background: center no-repeat;
+      background-size: contain;
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      max-width: 152px;
+      margin-left: 32px;
+
+      h4 {
+        @include f-text-lg;
+        line-height: 1;
+      }
+
+      p {
+        margin-top: 24px;
+        @include f-text-md;
+      }
+    }
+
+    & + .p-ProcessInfo {
+      margin-left: 27px;
+    }
+  }
+
+  .p-RawMaterialSelections {
+    margin-top: 12px;
+    @include column-radio-form;
+
+    .c-form-radio {
+      padding: 27px 24px 25px;
+
+      & + .c-form-radio {
+        border-top: 1px solid #F3F3F4;
+      }
+    }
+  }
+
+  .p-RawMaterialSelectionLabel {
+    display: flex;
+
+    &-thumb {
+      flex: none;
+      width: 80px;
+      height: 80px;
+      background: #FFF center no-repeat;
+      background-size: contain;
+
+      & + .p-RawMaterialSelectionLabel-content {
+        margin-left: 22px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 12px;
+    }
+
+    &-title {
+      @include f-text-md;
+      color: $color-black;
+      font-weight: bold;
+    }
+
+    &-body {
+      margin-top: 2px;
+      @include f-text-sm;
+      white-space: pre-wrap;
+    }
+  }
+
+  .p-RawMaterialInfoList {
+    padding-bottom: 8px;
+
+    &--no-main-title {
+      margin-top: -32px;
+    }
+  }
+
+  .p-RawMaterialInfo {
+    margin: 0 40px;
+    padding: 32px 0;
+
+    & + .p-RawMaterialInfo {
+      border-top: 1px solid $border-color-gray;
+    }
+
+    &-title {
+      @include f-text-lg;
+      color: $color-black;
+      font-weight: bold;
+    }
+
+    &-body {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+    }
+
+    &-thumb {
+      width: 166px;
+      height: 132px;
+      background: $color-white center no-repeat;
+      background-size: contain;
+
+      & + .p-RawMaterialInfo-content {
+        margin-left: 42px;
+      }
+    }
+
+    &-content {
+      color: $color-black;
+      white-space: pre-wrap;
+
+      &--large {
+        padding: 34px 0 61px;
+      }
+
+      h4 {
+        @include f-text-md;
+      }
+
+      p {
+        @include f-text-sm;
+      }
+
+      .c-textLink {
+        @include f-text-sm;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .p-PrintAreaSelections {
+    @at-root .p-estimate .p-LeftRow-title + .p-PrintAreaSelections {
+      margin-top: 19px;
+    }
+
+    & + .p-PrintAreaSelections {
+      padding-top: 24px;
+      border-top: 1px solid $border-color-gray-less1;
+    }
+
+    &-title {
+      margin: 0 24px;
+      @include f-text-sm;
+      color: $color-black;
+      font-weight: bold;
+    }
+
+    ul {
+      padding: 0 24px 25px;
+    }
+  }
+
+  .p-PrintAreaSelectionItem {
+    padding: 16px 0;
+
+    & + .p-PrintAreaSelectionItem {
+      border-top: 1px solid #F3F3F3;
+    }
+  }
+
+  .p-PrintAreaInfoList {
+    margin-top: -9px;
+    padding: 0 40px;
+  }
+
+  .p-PrintAreaInfo {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 56px;
+
+    & + .p-PrintAreaInfo {
+      border-top: 1px solid $border-color-gray;
+    }
+
+    &-content {
+
+    }
+
+    &-title {
+      @include f-text-md;
+      line-height: 1;
+      color: $color-black;
+    }
+
+    &-list {
+      margin-top: 32px;
+      list-style: disc;
+      padding-left: 1.1em;
+
+      li {
+        list-style: disc;
+        @include f-text-md;
+      }
+    }
+
+    &-thumb {
+      max-width: 308px;
+      margin-left: 61px;
+    }
+  }
+
+  .p-ThicknessInfo {
+    display: flex;
+    align-items: flex-start;
+    margin: 33px 40px 0;
+    padding-bottom: 64px;
+
+    &-thumb {
+      width: 144px;
+      height: 144px;
+      background: #FBFBFC center no-repeat;
+      background-size: contain;
+    }
+
+    &-content {
+      margin-left: 32px;
+
+      h4 {
+        color: $color-black;
+        @include f-text-md;
+      }
+
+      p {
+        color: $color-black;
+        @include f-text-sm;
+      }
+    }
+  }
+
+  .p-BottomInfo {
+    display: flex;
+    align-items: center;
+    margin: 26px 40px 0;
+    padding-bottom: 64px;
+
+    &-thumb {
+      width: 251px;
+      height: 145px;
+      background: $bg-color-gray-less1 center no-repeat;
+      background-size: contain;
+      border: 1px solid $border-color-gray;
+      border-radius: 16px;
+    }
+
+    &-content {
+      margin-left: 40px;
+
+      h4 {
+        color: $color-black;
+        @include f-text-md;
+      }
+
+      p {
+        margin-top: 4px;
+        color: $color-black;
+        @include f-text-sm;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  .p-PaperProcessInfo {
+    display: flex;
+    align-items: center;
+    margin: 26px 40px 0;
+    padding-bottom: 64px;
+
+    &-thumb {
+      width: 251px;
+      height: 145px;
+      background: $bg-color-gray-less1 center no-repeat;
+      background-size: contain;
+      border: 1px solid $border-color-gray;
+      border-radius: 16px;
+    }
+
+    &-content {
+      margin-left: 43px;
+
+      h4 {
+        color: $color-black;
+        @include f-text-md;
+      }
+
+      p {
+        margin-top: 4px;
+        color: $color-black;
+        @include f-text-sm;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

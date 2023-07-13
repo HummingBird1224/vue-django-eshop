@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}購入 | canal{% endblock %}
+{% block titleog %}購入 | canal{% endblock %}
+
+{% block content %}
+  {#  <div id="js-billing-form">#}
+  {#  </div>#}
+
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div class="p-billing">
+    <div
+            id="js-billing-form"
+            data-is-login="{{ user.is_authenticated }}"
+            data-oid="{{ order_id }}"
+            data-static-url="{% static_url %}"
+            data-colorme-url="{% url 'colorme_login' %}?next={{ request.get_full_path }}"
+            data-base-url="{% url 'base_login' %}?next={{ request.get_full_path }}"
+    ></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  <script src="https://js.pay.jp/v2/pay.js"></script>
+  <script src="{% static 'js/yubinbango-core.js' %}"></script>
+  {% render_bundle 'billing' %}
+{% endblock %}

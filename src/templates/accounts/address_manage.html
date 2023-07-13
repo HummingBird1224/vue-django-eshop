@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}アカウント{% endblock %}
+{% block titleog %}アカウント{% endblock %}
+
+{% block content %}
+<div>
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div
+    id="js-account-address-manage"
+    data-static-url="{% static_url %}"
+  ></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'js/yubinbango-core.js' %}"></script>
+  {% render_bundle 'accountAddressManage' %}
+{% endblock %}

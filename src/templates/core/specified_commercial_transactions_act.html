@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}特定商取引法に基づく表記 | canal{% endblock %}
+{% block titleog %}特定商取引法に基づく表記 | canal{% endblock %}
+
+{% block content %}
+<div class="p-policy">
+  <header class="p-policy-header">
+    <div class="p-policy-wrapper">
+      <h1 class="g-title-primary">特定商取引法に基づく表記</h1>
+    </div>
+  </header>
+  <main class="p-policy-main">
+    <div class="p-policy-wrapper">
+      <div class="p-policy-content">
+        <table class="p-policy-tokutei">
+          <tr>
+            <td class="p-policy-tokutei-title">事業者の名称</td>
+            <td>福岡パッケージ株式会社</td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">代表者</td>
+            <td>庄嶋 毅</td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">所在地</td>
+            <td>〒160-0022 東京都新宿区新宿3丁目5-6 417</td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">お問い合わせ先</td>
+            <td>
+              お客様から下記メールアドレス宛にお問い合わせをいただいた際に遅滞なく開示いたします。<br>
+              support@canal.ink
+            </td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">商品の代金</td>
+            <td>各商品のご注文ページにて表示します。</td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">代金以外の必要料金</td>
+            <td>
+              商品のご注文等に必要となるインターネット接続料金、通信料金等は、お客様のご負担となります。それぞれの料金は、お客様がご利用のインターネットプロバイダ、携帯電話会社等にお問い合わせください。<br>
+              その他必要となる料金は以下の通りです。
+              <ul>
+                <li>・消費税</li>
+                <li>・配送費用</li>
+                <li>・銀行振込手数料</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">支払方法</td>
+            <td>
+              クレジットカード決済<br>
+              銀行振込 ※前払い
+            </td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">代金の支払時期</td>
+            <td>
+              【クレジットカード決済】<br>
+              クレジットカードを利用してお支払いいただけます。支払時期は各カード会社の引き落とし日です。<br>
+              <br>
+              【銀行振込】<br>
+              当社が指定する方法にて銀行口座情報を送付いたします。当該情報の内容に従ってお振込みください。
+
+            </td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">商品の引き渡し時期</td>
+            <td>当社による代金決済手続きの完了確認後、ご注文いただいた商品の製作に着手いたします。なお、商品毎に製作期間が異なりますので、
+              ご注文いただいた商品の引き渡し時期は当社が定める方法にてお知らせいたします。</td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">返品・キャンセルに関する特約</td>
+            <td>
+              canalで注文を受ける商品については、原則として注文手続完了後の返品またはキャンセルをお受けできません。
+              ただし、未使用の場合に限り、配送後1週間以内（配送を受けた日を含みます。）に、商品に品質不良がある旨を当社に連絡し、
+              当社が商品に品質不良があることを認めた場合に限り、代替品の送付又はご注文金額を上限とする返金をお受けいたします。<br>
+              ※ 詳細は、<a href="{% url 'terms' %}">利用規約</a>に記載の通り
+            </td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">ホームページURL</td>
+            <td><a href="http://www.canal.ink/">http://www.canal.ink</a></td>
+          </tr>
+          <tr>
+            <td class="p-policy-tokutei-title">販売数量の制限</td>
+            <td>数量限定や期間限定の商品については、各商品ページに記載いたします。</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+{% endblock %}
+
+
+{% block javascript %}
+{% endblock %}

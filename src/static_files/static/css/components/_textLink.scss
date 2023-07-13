@@ -1,0 +1,78 @@
+.c-textLink {
+  & {
+    border-bottom: 1px solid rgba(0,0,0,0);
+    display: inline-flex;
+    color: $color-primary;
+    font-weight: bold;
+    @include f-text-md;
+    transition: border-bottom $duration;
+  }
+
+  @mixin is-loading {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0);
+
+    &::after {
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      width: 19.5px;
+      height: 19.5px;
+      margin: 0 auto;
+      border-top: 1px solid rgba($color-text-white, 0);
+      border-right: 1px solid rgba($color-text-white, 0);
+      border-bottom: 1px solid $color-primary;
+      border-left: 1px solid $color-primary;
+      animation: loading .9s infinite linear;
+    }
+  }
+
+  &:hover {
+    border-bottom: 1px solid $color-primary;
+  }
+
+  &.is-loading {
+    @include is-loading;
+  }
+
+  &--dark {
+    color: $color-white;
+
+    &:hover {
+      border-bottom: 1px solid $color-white;
+    }
+  }
+
+  &--negative {
+    color: $color-text-gray-more1;
+
+    &:hover {
+      border-bottom: 1px solid $color-text-gray-more1;
+    }
+
+    &.is-loading::after {
+      border-bottom: 1px solid $color-text-gray-more1;
+      border-left: 1px solid $color-text-gray-more1;
+    }
+  }
+
+  &--black {
+    color: $color-text-black;
+
+    &:hover {
+      border-bottom: 1px solid $color-text-black;
+    }
+  }
+
+  &--more-black {
+    color: $color-black;
+
+    &:hover {
+      border-bottom: 1px solid $color-black;
+    }
+  }
+}

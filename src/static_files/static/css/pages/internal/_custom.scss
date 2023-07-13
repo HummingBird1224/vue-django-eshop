@@ -1,0 +1,110 @@
+
+
+.customInternal {
+
+  .form-btn {
+    display: inline-block;
+    padding-top: 2px;
+    width: 120px;
+    height: 32px;
+    border-radius: 6px;
+    border: solid 1px #4C45F4;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+  .file-label {
+    position: relative;
+    input {
+      position: absolute;
+      width: 120px;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .createCustomProductInternal {
+
+    .sectionContent {
+      background: white;
+      margin-top: 24px;
+      padding-top: 40px;
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        margin: 0 32px;
+        padding: 10px 0;
+        
+        .rowTitle {
+          width: 160px;
+          font-size: 14px;
+          font-weight: bold;
+          margin-right: 20px;
+        }
+
+        .rowContent {
+          font-size: 14px;
+          flex-grow: 1;
+
+          .formLabel {
+            margin-bottom: 8px;
+          }
+      
+          .formInput {
+            input[type=text], input[type=number], input[type=tel], input[type=date], textarea {
+              border-radius: 6px;
+              width: 400px;
+              background: #F3F3F4;
+              padding: 6px 18px;
+              margin-bottom: 4px;
+            }
+
+            &--small {
+              input[type=text], input[type=number], input[type=tel], input[type=date] {
+                width: 190px;
+              }
+            }
+
+            label {
+              font-weight: bold;
+            }
+
+            .formImageWrapper {
+              margin-top: 10px;
+              img {
+                max-width: 300px;
+                max-height: 300px;
+              }
+            }
+          }
+          .formGroup {
+            display: flex;
+            margin-bottom: 10px;
+            .formInput {
+              margin-right: 20px;
+            }
+            .removeListItemButton {
+              color: #000;
+              font-weight: bold;
+              padding-top: 12px;
+            }
+          }
+          .formGroup:last-of-type {
+            margin-bottom: 0;
+          }
+          .addListItemButton {
+            color: #4C45F4;
+            font-weight: bold;
+          }
+        }
+
+
+        &.submitRow {
+          margin-top: 40px;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}

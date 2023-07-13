@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}アカウント{% endblock %}
+{% block titleog %}アカウント{% endblock %}
+
+{% block content %}
+<div>
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div
+    id="js-account-credit-manage"
+    data-static-url="{% static_url %}"
+  ></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  <script src="https://js.pay.jp/v2/pay.js"></script>
+  {% render_bundle 'accountCreditManage' %}
+{% endblock %}

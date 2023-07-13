@@ -1,0 +1,986 @@
+.p-billing {
+  margin-top: -80px;
+
+  & {
+  }
+
+  &--complete {
+    margin: 50px 96px 0;
+
+    @include mq {
+      margin: 48px 0;
+    }
+  }
+
+  .p-billingForm {
+    display: flex;
+    width: 100%;
+
+    @include mq {
+      flex-direction: column;
+    }
+
+    &-body {
+      flex: 1;
+      padding: 0 97px 50px;
+
+      @include mq {
+        padding: 0 0 88px;
+      }
+    }
+
+    &-cart {
+      width: 40%;
+      min-height: 100vh;
+      padding: 71px 74px 50px;
+      background: $bg-color-gray-less1;
+      color: $color-black;
+
+      @include mq {
+        width: 100%;
+        padding: 32px 24px 50px;
+      }
+    }
+  }
+
+  .p-billingHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+
+    @include mq {
+      padding: 20px 24px;
+    }
+
+    h1 {
+      @include mq {
+        line-height: 1;
+      }
+    }
+
+    a {
+      @include f-text-sm;
+      color: $color-black;
+      font-weight: normal;
+    }
+  }
+
+  .p-billingFlow {
+    display: flex;
+
+    @include mq {
+      padding: 0 24px;
+    }
+
+    &-item {
+      flex: 1;
+      border-top: 3px solid rgba(196, 196, 196, 0.48);
+      padding-top: 12px;
+      color: $color-text-gray-more1;
+
+      &.is-done {
+        border-top: 3px solid $color-primary;
+      }
+
+      &.is-active {
+        border-top: 3px solid $color-primary;
+        font-weight: bold;
+        color: $color-text-black;
+      }
+
+      &:nth-child(1) {
+        text-align: left;
+      }
+
+      &:nth-child(2) {
+        text-align: center;
+      }
+
+      &:nth-child(3) {
+        text-align: right;
+      }
+    }
+  }
+
+  .p-billingNavigation {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding: 16px 24px;
+    background: $bg-color-gray-less1;
+
+    @include mq {
+      display: flex;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      @include f-text-sm;
+      font-weight: bold;
+
+      a {
+        color: $color-black;
+      }
+
+      svg {
+        width: 8px;
+        height: 6px;
+        fill: $color-primary;
+        margin-left: 8px;
+      }
+    }
+
+    p {
+      @include f-text-lg;
+      font-weight: bold;
+
+      span {
+        @include f-text-sm;
+        font-weight: normal;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .p-billingContent {
+    margin-top: 54px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $border-color-gray;
+
+    @include mq {
+      margin: 54px 24px 0;
+      padding-bottom: 40px;
+    }
+
+    &.is-billing {
+      padding-bottom: 0;
+    }
+
+    &-title {
+      line-height: 1;
+
+      @include mq {
+        @include f-text-h3;
+      }
+    }
+
+    &-description {
+      display: flex;
+      align-items: start;
+      margin: 35px 0 32px;
+      color: $color-black;
+      @include f-text-md;
+
+      span {
+        @include f-text-md;
+      }
+    }
+
+    &-externalService {
+      border: 1px solid #DADBDD;
+      border-radius: 8px;
+      margin: 35px 0;
+      padding: 20px;
+
+      &-header {
+        display: table;
+        margin-top: -3em;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        padding: 0 10px;
+        font-size: 11px;
+      }
+
+      &-buttons {
+        display: flex;
+        justify-content: space-evenly;
+
+        @include mq {
+          flex-direction: column;
+        }
+      }
+
+      &-button {
+        border-radius: 5px;
+        height: 48px;
+        width: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        padding: 0 20px;
+        margin: 10px;
+
+        @include mq {
+          margin-right: auto;
+          margin-left: auto;
+          width: 230px;
+        }
+
+        img {
+          margin-right: 10px;
+          height: 18px;
+
+          @include mq {
+            height: 16px;
+          }
+        }
+
+        p {
+          font-size: 1.2rem;
+          @include mq {
+            font-size: 1rem;
+          }
+        }
+
+        &--colorme {
+          background-color: #3787E1;
+        }
+
+        &--base {
+          background-color: #56BBAE;
+
+          img {
+            height: 26px !important;
+          }
+        }
+
+        &--disabled {
+          opacity: 0.32;
+          cursor: not-allowed;
+          pointer-events: none;
+          background-color: #808080;
+        }
+      }
+    }
+
+    &-divider {
+      font-size: 11px;
+      margin: 15px 0;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      &:before, &:after {
+        content: '';
+        border-top: 1px solid #DADBDD;
+        margin: 0 20px 0 0;
+        flex: 1 0 20px;
+      }
+
+      &:after {
+        margin: 0 0 0 20px
+      }
+    }
+
+    &-top-btn {
+      margin-top: -8px;
+      width: 280px;
+      height: 48px;
+    }
+
+    &-icon {
+      &--pin {
+        display: inline-block;
+        margin-top: 2px;
+        margin-right: 8px;
+        fill: $color-black-inactive;
+        width: 24px;
+        height: 24px;
+      }
+
+      &--pay {
+        display: inline-block;
+        margin-top: 3px;
+        margin-right: 10px;
+        fill: $color-black-inactive;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    hr {
+      border: 1px solid #F1F1F2;
+    }
+
+    &-paymentMethod {
+      box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+
+      &-choice {
+        margin: 20px 0;
+
+        &-content {
+          margin-top: -28px;
+          margin-left: 30px;
+          cursor:pointer;
+
+          p {
+            font-size: 12px;
+          }
+        }
+
+        &-tag {
+          font-size: 10px !important;
+          font-weight: bold;
+          background: #F1F1F2;
+          border-radius: 4px;
+          display: inline-block;
+          padding: 0 10px;
+        }
+
+        &-header {
+          display: flex;
+          align-items: center;
+
+          h3 {
+            font-size: 16px;
+          }
+        }
+
+        &-cardLogo {
+          width: 30px;
+          margin: 0 4px;
+          display: inline-block;
+        }
+      }
+    }
+
+    .payjp-outer {
+      height: 56px;
+      border-radius: 8px;
+      border: 1px solid rgba(32, 94, 251, 0);
+      margin: 5px 0;
+      background-color: #FBFBFC;
+      padding: 0 10px;
+    }
+
+    #expiry-form1 {
+      width: 50%;
+      @include mq {
+        width: 100%;
+      }
+    }
+
+    #cvc-form1 {
+      width: 50%;
+      @include mq {
+        width: 100%;
+      }
+    }
+
+    #expiry-form2 {
+      width: 50%;
+      @include mq {
+        width: 100%;
+      }
+    }
+
+    #cvc-form2 {
+      width: 50%;
+      @include mq {
+        width: 100%;
+      }
+    }
+
+    .payjp-outer > iframe {
+      border-radius: 8px;
+      border: 1px solid rgba(32, 94, 251, 0);
+    }
+
+  }
+
+  .c-form-col + .p-billingAddress {
+    margin-top: 29px;
+  }
+
+  .p-billingAddress {
+    width: 100%;
+    padding: 10px 0 20px;
+
+    @include mq {
+      padding: 10px 0 18px;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        @include f-text-md;
+        font-weight: bold;
+      }
+
+      svg {
+        width: 23px;
+        height: 20px;
+        margin-right: 9.5px;
+        fill: $color-black-inactive;
+      }
+
+      .c-textLink {
+        align-items: center;
+        @include f-text-sm;
+        font-weight: normal;
+      }
+    }
+
+    &-content {
+      width: 100%;
+      margin-top: 6px;
+      padding-left: 33px;
+      @include f-text-sm;
+    }
+  }
+
+  .p-billingAddress + .p-billingPayment {
+    padding: 38px 0 20px;
+    border-top: 1px solid $border-color-gray;
+
+    @include mq {
+      padding: 22px 0 20px;
+    }
+  }
+
+  .p-billingPayment {
+    width: 100%;
+    padding: 10px 0 20px;
+
+    @include mq {
+      padding: 10px 0 18px;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        @include f-text-md;
+        font-weight: bold;
+      }
+
+      svg {
+        width: 23px;
+        height: 20px;
+        margin-right: 9.5px;
+        fill: $color-black-inactive;
+      }
+
+      .c-textLink {
+        align-items: center;
+        @include f-text-sm;
+        font-weight: normal;
+      }
+    }
+
+    &-content {
+      width: 100%;
+      margin-top: 6px;
+      padding-left: 33px;
+      @include f-text-sm;
+
+      h4 {
+        @include f-text-md;
+      }
+    }
+  }
+
+  .p-billingFooter {
+    display: flex;
+    margin-top: 28px;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq {
+      margin: 24px 24px 0;
+      align-items: normal;
+      flex-direction: column;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+
+    .c-textLink, p {
+      @include f-text-sm;
+      font-weight: normal;
+    }
+
+    .c-btn {
+      width: 280px;
+
+      @include mq {
+        margin-top: 24px;
+        width: 100%;
+      }
+    }
+  }
+
+  .p-CartHeader {
+    @include f-text-sm;
+    font-weight: bold;
+  }
+
+  .p-CartList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 26px 0 35px;
+
+    @include mq {
+      margin: 26px 0 32px;
+    }
+  }
+
+  .p-CartItem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: $color-white;
+
+    @include mq {
+      align-items: start;
+    }
+
+    & + .p-CartItem {
+      margin-top: 15px;
+    }
+  }
+
+  .p-CartItemThumb {
+    width: 88px;
+    height: 88px;
+    margin: 16px 12px;
+    background: $bg-color-gray-more1;
+    background-size: cover;
+
+    @include mq {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .p-CartItemBody {
+    flex: 1;
+    margin: 11px 28px 15px 0;
+
+    @include mq {
+      margin: 15px 12px 18px 0;
+    }
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+
+      h4 {
+        @include f-text-md;
+        font-weight: bold;
+
+        a {
+          @include f-text-md;
+          color: $color-primary;
+        }
+      }
+
+      p {
+        span {
+          margin-left: 3px;
+          @include f-text-sm;
+
+          @include mq {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+
+    &-content {
+      margin-top: 6px;
+
+      @include mq {
+        margin-top: 4px;
+      }
+    }
+
+    &-detail {
+      display: flex;
+
+      & + .p-CartItemBody-detail {
+        margin-top: 4px;
+
+        @include mq {
+          margin-top: 5px;
+        }
+      }
+
+      h5 {
+        min-width: 54px;
+        color: #999999;
+        @include f-text-xs;
+
+        @include mq {
+          min-width: 42px;
+        }
+      }
+
+      p {
+        @include f-text-xs;
+      }
+    }
+  }
+
+  .p-CartPrice {
+  }
+
+  .p-CartPriceDetail {
+    padding: 25px 0;
+    border-top: 0.5px solid #DDDDDD;
+
+    &-col {
+      display: flex;
+      justify-content: space-between;
+
+      & + .p-CartPriceDetail-col {
+        margin-top: 6px;
+      }
+    }
+
+    &-title {
+      @include f-text-sm;
+      font-weight: bold;
+    }
+
+    &-body {
+      @include f-text-md;
+
+      span {
+        margin-left: 3px;
+        @include f-text-sm;
+        color: $color-black;
+        font-weight: normal;
+
+        @include mq {
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+
+  .p-CartPriceTotal {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 28px;
+
+    &-title {
+      @include f-text-h5;
+    }
+
+    &-body {
+      @include f-text-h4;
+
+      span {
+        margin-left: 3px;
+        @include f-text-sm;
+        color: $color-black;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .p-billingMessage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 89px 0px;
+    border-bottom: 1px solid $border-color-gray;
+
+    @include mq {
+      flex-direction: column;
+      padding-bottom: 56px;
+      margin: 0 24px;
+    }
+
+    &-top {
+      display: flex;
+
+      @include mq {
+        flex-direction: column;
+      }
+
+      h2 {
+        @include mq {
+          @include f-text-h3;
+          text-align: center;
+        }
+      }
+    }
+
+    &-body {
+      width: 100%;
+
+      p {
+        margin-top: 22px;
+        margin-left: 51px;
+        color: $color-black;
+
+        @include mq {
+          margin: 27px 0 0;
+        }
+      }
+
+      small {
+        display: block;
+        margin-top: 8px;
+        color: $color-text-gray-more1;
+      }
+    }
+
+    &-red {
+      color: red !important;
+    }
+
+    &-checkIcon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-right: 13px;
+      border-radius: 50%;
+      background: #5DD193;
+      color: $color-white;
+
+      @include mq {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 20px;
+        width: 50px;
+        height: 50px;
+      }
+
+      i {
+        font-size: 2.1rem;
+        font-weight: bold;
+
+        @include mq {
+          font-size: 3.1rem;
+        }
+      }
+    }
+
+    &-cta {
+      width: 280px;
+
+      @include mq {
+        width: 100%;
+        margin-top: 24px;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      margin-left: 51px;
+      margin-top: 20px;
+
+      @include mq {
+        justify-content: space-between;
+        margin-left: 0;
+      }
+
+      a {
+        margin: 0 10px;
+
+        @include mq {
+          margin: 0;
+          width: 47%;
+          font-size: 1.2rem;
+          min-width: 120px;
+          padding: 0;
+        }
+      }
+    }
+
+    &-flow {
+      @include mq {
+        margin-top: 50px;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: $fontSize-lg;
+      }
+
+
+      &-graph {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+
+        @include mq {
+          flex-direction: column;
+          align-items: baseline;
+        }
+
+        &-item {
+          display: flex;
+          text-align: center;
+          flex-direction: column;
+
+          @include mq {
+            flex-direction: row;
+            align-items: center;
+          }
+
+          img {
+            @include mq {
+              width: 100px;
+            }
+          }
+
+          p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            line-height: 1.5rem;
+            margin: 0 5px;
+          }
+
+          &--arrow {
+            margin: 0 10px;
+
+            @include mq {
+              margin-left: 32px;
+            }
+
+            img {
+              @include mq {
+                width: 30px;
+                transform: rotate(90deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .p-CartPriceDetail + .p-CartPriceTotal {
+    padding-top: 20px;
+    padding-bottom: 0;
+    border-top: 0.5px solid #DDDDDD;
+  }
+
+  .p-CartPriceTotal + .p-CartPriceDetail {
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .p-billingDetail {
+    padding-top: 48px;
+
+    @include mq {
+      padding-top: 32px;
+    }
+
+    &-content {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      margin-top: 22px;
+
+      @include mq {
+        display: block;
+        margin-top: 20px;
+      }
+    }
+
+    &-header {
+      @include f-text-h5;
+
+      @include mq {
+        margin: 0 24px;
+      }
+    }
+
+    &-body {
+      flex: 1;
+      padding-top: 10px;
+
+      @include mq {
+        margin: 0 24px;
+        padding: 0;
+      }
+    }
+
+    &-price {
+      flex: 1;
+      max-width: 520px;
+      margin-left: 41px;
+      padding: 49px 50px 40px;
+      background: $bg-color-gray-less1;
+
+      @include mq {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 31px 24px 33px;
+      }
+
+      .p-CartPriceTotal {
+        @include mq {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .p-billingPayment + .p-billingOrder {
+    border-top: 1px solid $border-color-gray;
+  }
+
+  .p-billingOrder {
+    padding-top: 34px;
+
+    @include mq {
+      padding-top: 32px;
+    }
+
+    .p-CartHeader {
+      @include f-text-md;
+      font-weight: bold;
+      color: $color-black;
+    }
+
+    .p-CartList {
+      padding-bottom: 14px;
+      border-bottom: 1px solid $border-color-gray;
+
+      @include mq {
+        margin: 0;
+        padding-bottom: 55px;
+        border: none;
+      }
+    }
+  }
+}

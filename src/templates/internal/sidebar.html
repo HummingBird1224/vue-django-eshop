@@ -1,0 +1,35 @@
+{% load static %}
+
+<div class="c-sidebarInternal">
+  <div class="c-sidebarContents">
+    <div class="c-sidebarSection">
+      <div class="c-sidebarSectionTitle">ORDERS</div>
+      <div class="c-sidebarSectionContents">
+        <a href="{% url 'internal:order_list' %}">
+          {% if request.path == '/internal/orders/' %}
+            <div class="c-sidebarSectionItem is-active">注文一覧</div>
+          {% else %}
+            <div class="c-sidebarSectionItem">注文一覧</div>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+    <div class="c-sidebarSection">
+      <div class="c-sidebarSectionTitle">CUSTOM</div>
+      <div class="c-sidebarSectionContents">
+        <a href="{% url 'internal:create_custom_product' %}">
+          {% if request.path == '/internal/create_custom_product/' %}
+            <div class="c-sidebarSectionItem is-active">カスタム商品追加</div>
+          {% else %}
+            <div class="c-sidebarSectionItem">カスタム商品追加</div>
+          {% endif %}
+        </a>
+      <div class="c-sidebarSectionTitle">NOTICES</div>
+      <div class="c-sidebarSectionContents"></div>
+        <a href="{% url 'internal:notice_post_list' %}">
+          <div class="c-sidebarSectionItem">お知らせ投稿一覧</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

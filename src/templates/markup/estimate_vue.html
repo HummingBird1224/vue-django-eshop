@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}見積もり（Vue）【canal】{% endblock %}
+{% block titleog %}見積もり（Vue）【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+  <div class="p-estimate">
+    <div id="js-estimate-form"></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'estimate' %}
+{% endblock %}
+

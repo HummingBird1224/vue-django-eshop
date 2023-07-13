@@ -1,0 +1,605 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}商品詳細（マークアップ）【canal】{% endblock %}
+{% block titleog %}商品詳細（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+<div class="p-product">
+  <header class="p-product-header">
+    <div class="p-product-wrapper">
+      <div
+              id="js-product-detail-header-slider"
+              data-images='["/static/img/dummy/productDetail/thumb_md.png","/static/img/dummy/productDetail/thumb_md.png","/static/img/dummy/productDetail/thumb_md.png","/static/img/dummy/productDetail/thumb_md.png"]'
+      >
+      </div>
+      <div class="p-productInfo">
+        <div class="p-productInfo-left">
+          <h2 class="g-title-secondary p-productInfo-title">テープ付きOPP袋</h2>
+
+          <p class="p-productInfo-body">
+            シールで密封するタイプの袋です。シールのため、簡単に密封・開封することができ、防水性や防塵性も高いです。サイズを選んで厚みのある衣服も包装できます。
+          </p>
+
+          <div class="p-productSupplement">
+            <div class="p-productSupplement-left">
+              <div class="p-productSupplementItem">
+                <div class="p-productSupplementItem-iconContainer">
+                  <svg class="p-productSupplementItem-icon p-productSupplementItem-icon--time">
+                    <use xlink:href="#icons-access_time"></use>
+                  </svg>
+                </div>
+                <div class="p-productSupplementItem-body p-productSupplementItem-body--multiline">
+                  <h4 class="g-title-quaternary">納期の目安</h4>
+                  <p>
+                    通常：データ確定後1ヶ月/リピート3週間<br>
+                    小ロット:データ確定後2週間/リピート1週間
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="p-productSupplement-right">
+              <div class="p-productSupplementItem">
+                <div class="p-productSupplementItem-iconContainer">
+                  <svg class="p-productSupplementItem-icon p-productSupplementItem-icon--note">
+                    <use xlink:href="#icons-event_note"></use>
+                  </svg>
+                </div>
+                <div class="p-productSupplementItem-body">
+                  <h4 class="g-title-quaternary">最小注文数</h4>
+                  <p>100</p>
+                </div>
+              </div>
+
+              <div class="p-productSupplementItem">
+                <div class="p-productSupplementItem-iconContainer">
+                  <svg class="p-productSupplementItem-icon p-productSupplementItem-icon--shuttle">
+                    <use xlink:href="#icons-airport_shuttle"></use>
+                  </svg>
+                </div>
+                <div class="p-productSupplementItem-body">
+                  <h4 class="g-title-quaternary">送料</h4>
+                  <p>無料キャンペーン中</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-productInfo-right">
+          <div id="js-product-detail-form"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="p-product-main">
+    <div class="p-product-wrapper">
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">利用例</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-Example">
+            <div class="p-Example-thumb"
+                 style="background-image: url(/static/img/dummy/productDetail/thumb_md.png)"></div>
+            <div class="p-Example-body">
+              <h5 class="g-title-quinary p-Example-title">テープ付OPP袋</h5>
+              <p class="p-Example-unitPrice">5円/1袋
+                <span class="p-Example-unitPrice--total">合計<span
+                        class="p-Example-unitPrice--totalPrice">90,000</span>円</span>
+              </p>
+              <p class="p-Example-largeSupplement">18,000<span>袋印刷</span></p>
+              <span class="p-Example-supplement">1色印刷</span>
+              <p class="p-Example-size">A4サイズ(250×370mm)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">サイズについて</h3>
+          <ul class="p-detailColumn-titleTags">
+            <li>
+              <svg>
+                <use xlink:href="#icons-zoom_out"></use>
+              </svg>
+              サイズ指定自由
+            </li>
+          </ul>
+          <p class="p-detailColumn-titleSupplement">
+            よく使われるサイズを選択することも オリジナルサイズの指定も可能です。
+          </p>
+        </div>
+        <div class="p-detailColumn-right">
+          <ul class="p-sizeList">
+            <li class="p-Size">
+              <div class="p-Size-left">
+                <h5 class="g-title-quinary p-Size-title">オリジナルサイズ用テンプレート</h5>
+                <p class="p-Size-body">自由にサイズを選択できます</p>
+              </div>
+              <div class="p-Size-right">
+                <a class="c-textLink" href="#">テンプレートをダウンロード</a>
+              </div>
+            </li>
+            <li class="p-Size">
+              <div class="p-Size-left">
+                <h5 class="g-title-quinary p-Size-title">A4<span class="p-Size-supplement">メール便サイズ</span></h5>
+                <p class="p-Size-body">自由にサイズを選択できます</p>
+              </div>
+              <div class="p-Size-right">
+                <a class="c-textLink" href="#">テンプレートをダウンロード</a>
+              </div>
+            </li>
+            <li class="p-Size">
+              <div class="p-Size-left">
+                <h5 class="g-title-quinary p-Size-title">オリジナルサイズ用テンプレート</h5>
+                <p class="p-Size-body">自由にサイズを選択できます</p>
+              </div>
+              <div class="p-Size-right">
+                <a class="c-textLink" href="#">テンプレートをダウンロード</a>
+              </div>
+            </li>
+            <li class="p-Size">
+              <div class="p-Size-left">
+                <h5 class="g-title-quinary p-Size-title">オリジナルサイズ用テンプレート</h5>
+                <p class="p-Size-body">自由にサイズを選択できます</p>
+              </div>
+              <div class="p-Size-right">
+                <a class="c-textLink" href="#">テンプレートをダウンロード</a>
+              </div>
+            </li>
+            <li class="p-Size">
+              <div class="p-Size-left">
+                <h5 class="g-title-quinary p-Size-title">A4 <span>メール便サイズ</span></h5>
+                <p class="p-Size-body">(9.2 x 9.2 x 2.5 cm)</p>
+              </div>
+              <div class="p-Size-right">
+                <a class="c-textLink" href="#">テンプレートをダウンロード</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">印刷について</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-detailRow">
+            <h4 class="g-title-quaternary p-detailRow-title">プリントカラーの種類</h4>
+            <ul class="p-mediumHorizontalList">
+              <li class="p-mediumListItem">
+                <div class="p-mediumListItem-thumb"
+                     style="background-image: url(/static/img/dummy/productDetail/mono.png)">
+                  <span class="p-mediumListItem-defaultIcon">標準</span>
+                </div>
+                <div class="p-mediumListItem-body">
+                  <h5 class="g-title-quinary p-mediumListItem-title">モノクロ</h5>
+                  <p class="p-mediumListItem-detail">白と黒を使った印刷</p>
+                </div>
+              </li>
+
+              <li class="p-mediumListItem">
+                <div class="p-mediumListItem-thumb"
+                     style="background-image: url(/static/img/dummy/productDetail/color.png)"></div>
+                <div class="p-mediumListItem-body">
+                  <h5 class="g-title-quinary p-mediumListItem-title">カラー</h5>
+                  <p class="p-mediumListItem-detail">白と黒を使った印刷</p>
+                </div>
+              </li>
+
+              <li class="p-mediumListItem">
+                <div class="p-mediumListItem-thumb"
+                     style="background-image: url(/static/img/dummy/productDetail/full_color.png)"></div>
+                <div class="p-mediumListItem-body">
+                  <h5 class="g-title-quinary p-mediumListItem-title">フルカラー</h5>
+                  <p class="p-mediumListItem-detail">白と黒を使った印刷</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-detailRow">
+            <h4 class="g-title-quaternary p-detailRow-title">印刷可能な範囲</h4>
+            <div class="p-printArea">
+              <div class="p-printArea-left">
+                <img src="{% static 'img/dummy/productDetail/print_area.png' %}" alt="" class="p-printArea-thumb">
+              </div>
+              <div class="p-printArea-right">
+                <p class="p-printArea-body">端から5mmの余白を開ける必要があり、その部分は印刷ができません。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-detailRow">
+            <h4 class="g-title-quaternary p-detailRow-title">素材によって印刷の使用可能色に制限があります</h4>
+            <ul class="p-smallColorList">
+              <li class="p-smallColor">
+                <div class="p-smallColor-left">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>100 - 1,000</p>
+                </div>
+                <div class="p-smallColor-right">
+                  <p>
+                    「モノクロ」のみ利用可能。 素材がIPPといって柔らかい手触りの材質になります。
+                  </p>
+                </div>
+              </li>
+              <li class="p-smallColor">
+                <div class="p-smallColor-left">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>100 - 1,000</p>
+                </div>
+                <div class="p-smallColor-right">
+                  <p>
+                    「モノクロ」のみ利用可能。 素材がIPPといって柔らかい手触りの材質になります。
+                  </p>
+                  <a class="c-textLink" href="">使える色にも制限があります。詳しくはこちら。</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-detailRow">
+            <h4 class="g-title-quaternary p-detailRow-title">表と裏両面の印刷が可能な商品です</h4>
+            <ul class="p-printGuideList">
+              <li style="background-image: url(/static/img/dummy/productDetail/outer.png)"></li>
+              <li style="background-image: url(/static/img/dummy/productDetail/inner.png)"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">小ロットの場合</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-detailRow p-detailRow--small">
+            <h4 class="g-title-quaternary p-detailRow-title">印刷可能な範囲</h4>
+            <p class="p-detailRow-body">小ロットで注文できるサイズの種類に制限があります。</p>
+            <ul class="p-smallSizeList">
+              <li class="p-smallSizeItem">
+                <p>アクセサリー用サイズ</p>
+                <span>100mm×140mm+チャック上20mm</span>
+              </li>
+              <li class="p-smallSizeItem">
+                <p>アクセサリー用サイズ</p>
+                <span>100mm×140mm+チャック上20mm</span>
+              </li>
+              <li class="p-smallSizeItem">
+                <p>アクセサリー用サイズ</p>
+                <span>100mm×140mm+チャック上20mm</span>
+              </li>
+              <li class="p-smallSizeItem">
+                <p>アクセサリー用サイズ</p>
+                <span>100mm×140mm+チャック上20mm</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-detailRow p-detailRow--small">
+            <h4 class="g-title-quaternary p-detailRow-title">色数の制限</h4>
+            <p class="p-detailRow-body">注文数が少ない場合、利用できる色に限りがあります。</p>
+            <ul class="p-smallColorList">
+              <li class="p-smallColor">
+                <div class="p-smallColor-left">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>100 - 1,000</p>
+                </div>
+                <div class="p-smallColor-right">
+                  <p>
+                    「モノクロ」のみ利用可能。 素材がIPPといって柔らかい手触りの材質になります。
+                  </p>
+                </div>
+              </li>
+              <li class="p-smallColor">
+                <div class="p-smallColor-left">
+                  <h5 class="g-title-quinary">注文数</h5>
+                  <p>100 - 1,000</p>
+                </div>
+                <div class="p-smallColor-right">
+                  <p>
+                    「モノクロ」のみ利用可能。 素材がIPPといって柔らかい手触りの材質になります。
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">加工について</h3>
+          <p class="p-detailColumn-titleSupplement">
+            加工のアリ/ナシを選べます
+          </p>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-detailRow p-detailRow--process">
+            <h4 class="g-title-quaternary p-detailRow-title">角丸</h4>
+            <ul class="p-ProcessList">
+              <li class="p-Process">
+                <div class="p-Process-left">
+                  <div class="p-Process-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/thumb_sm.png)"></div>
+                </div>
+                <div class="p-Process-right">
+                  <h5 class="g-title-quinary">角丸アリ</h5>
+                  <p>世の中で多く見られる形状です</p>
+                </div>
+              </li>
+              <li class="p-Process">
+                <div class="p-Process-left">
+                  <div class="p-Process-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/thumb_sm.png)"></div>
+                </div>
+                <div class="p-Process-right">
+                  <h5 class="g-title-quinary">角丸アリ</h5>
+                  <p>世の中で多く見られる形状です</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="p-detailRow p-detailRow--process">
+            <h4 class="g-title-quaternary p-detailRow-title">ノッチ</h4>
+            <ul class="p-ProcessList">
+              <li class="p-Process">
+                <div class="p-Process-left">
+                  <div class="p-Process-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/thumb_sm.png)"></div>
+                </div>
+                <div class="p-Process-right">
+                  <h5 class="g-title-quinary">角丸アリ</h5>
+                  <p>世の中で多く見られる形状です</p>
+                </div>
+              </li>
+              <li class="p-Process">
+                <div class="p-Process-left">
+                  <div class="p-Process-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/thumb_sm.png)"></div>
+                </div>
+                <div class="p-Process-right">
+                  <h5 class="g-title-quinary">角丸アリ</h5>
+                  <p>世の中で多く見られる形状です</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">印刷と料金について</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-detailRow p-detailRow--color">
+            <h4 class="g-title-quaternary p-detailRow-title">使用する色数</h4>
+            <div class="p-Color">
+              <ul class="p-ColorComment">
+                <li>プリントのデザインに使用する色数のことです。</li>
+                <li>数が増えると基本的に料金が上がります。</li>
+                <li>５色以上扱う場合、写真はフルカラーに該当します。</li>
+              </ul>
+              <div class="p-ColorsWrapper">
+                <ul class="p-Colors">
+                  <li class="p-ColorItem">
+                    <div class="p-ColorItem-thumb"></div>
+                    <p>1色</p>
+                  </li>
+                  <li class="p-ColorItem">
+                    <div class="p-ColorItem-thumb"></div>
+                    <p>2色</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="p-detailRow p-detailRow--color">
+            <h4 class="g-title-quaternary p-detailRow-title">印刷する面数</h4>
+            <p class="p-detailRow-body p-detailRow-body--small">着色する面数に従って料金が変化します</p>
+            <ul class="p-printSideList">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">備考</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-Default">
+            <h4 class="g-title-quaternary">商品について</h4>
+            <p>マジックカット加工付き<br>
+              ※「マジックカット加工」が商標登録されている可能性があるので表現は要相談</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">記載されていない内容でのご注文に関して</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-Default">
+            <h4 class="g-title-quaternary">お問い合わせフォームからご連絡ください</h4>
+            <p>
+              ページに載っていない方法での印刷のご要望はお問い合わせフォームからご連絡ください。<br>
+              例 : 載っていない注文数で発注したい / 特別な形状で見積もりが欲しい
+            </p>
+            <a class="c-textLink p-Default-footer" href="#">お問い合わせはこちら</a>
+          </div>
+        </div>
+      </div>
+      <div class="p-detailColumn">
+        <div class="p-detailColumn-left">
+          <h3 class="g-title-tertiary p-detailColumn-title">表面素材について</h3>
+        </div>
+        <div class="p-detailColumn-right">
+          <div class="p-detailRow p-detailRow--material">
+            <ul class="p-MaterialList">
+              <li class="p-Material">
+                <div class="p-Material-left">
+                  <div class="p-Material-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/material.png)"></div>
+                </div>
+                <div class="p-Material-right">
+                  <h5 class="g-title-quinary">通常素材</h5>
+                  <ul class="p-Material-summaries">
+                    <li>ダンボールそのままの素材です。</li>
+                    <li>全体に色をプリントもでき、コストを抑えられますが、段目が見えるなど完  成度は他と劣ります。</li>
+                    <li>全体に色をプリントもでき、コストを抑えられますが、段目が見えるなど完  成度は他と劣ります。</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="p-Material">
+                <div class="p-Material-left">
+                  <div class="p-Material-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/material.png)"></div>
+                </div>
+                <div class="p-Material-right">
+                  <h5 class="g-title-quinary">通常素材</h5>
+                  <ul class="p-Material-summaries">
+                    <li>ダンボールそのままの素材です。</li>
+                    <li>全体に色をプリントもでき、コストを抑えられますが、段目が見えるなど完  成度は他と劣ります。</li>
+                  </ul>
+                  <a class="c-textLink" href="#">色の一覧を見る</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="p-detailRow p-detailRow--material">
+            <h4 class="g-title-quaternary p-detailRow-title">合紙素材を選んだ時の、表面加工オプション</h4>
+            <p class="p-detailRow-body p-detailRow-body--small">特殊な加工のため、注文の際はお問い合わせ扱いになります。</p>
+            <ul class="p-ProcessList">
+              <li class="p-Process">
+                <div class="p-Process-left">
+                  <div class="p-Process-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/thumb_sm.png)"></div>
+                </div>
+                <div class="p-Process-right">
+                  <h5 class="g-title-quinary">角丸アリ</h5>
+                  <p>世の中で多く見られる形状です</p>
+                </div>
+              </li>
+              <li class="p-Process">
+                <div class="p-Process-left">
+                  <div class="p-Process-thumb"
+                       style="background-image: url(/static/img/dummy/productDetail/thumb_sm.png)"></div>
+                </div>
+                <div class="p-Process-right">
+                  <h5 class="g-title-quinary">角丸アリ</h5>
+                  <p>世の中で多く見られる形状です</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="p-product-footer">
+    <div class="p-product-wrapper">
+      <div class="p-relatedItemBlock">
+        <h4 class="g-title-quaternary p-relatedItems-title">似ている商品</h4>
+        <ul class="p-relatedItemList">
+          <li class="p-relatedItem">
+            <div class="p-relatedItem-thumb"
+                 style="background-image: url(/static/img/dummy/productDetail/related_2.png)"></div>
+            <div class="p-relatedItem-content">
+              <ul class="p-relatedItem-versions">
+                <li></li>
+              </ul>
+              <h5 class="g-title-quinary p-relatedItem-title"><a href="#">アルミ前透明袋 - 圧着あり</a></h5>
+              <p class="p-relatedItem-price">
+                125<span class="p-relatedItem-unit">円 /１袋</span>
+                <span class="p-relatedItem-supplement">1色A4サイズ1,000ロットの場合</span>
+              </p>
+              <ul class="p-relatedItem-tags">
+                <li>ジップ</li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-relatedItem">
+            <div class="p-relatedItem-thumb"
+                 style="background-image: url(/static/img/dummy/productDetail/related_1.png)"></div>
+            <div class="p-relatedItem-content">
+              <ul class="p-relatedItem-versions">
+                <li></li>
+              </ul>
+              <h5 class="g-title-quinary p-relatedItem-title"><a href="#">アルミ前透明袋 - 圧着あり</a></h5>
+              <p class="p-relatedItem-price">
+                125<span class="p-relatedItem-unit">円 /１袋</span>
+                <span class="p-relatedItem-supplement">1色A4サイズ1,000ロットの場合</span>
+              </p>
+              <ul class="p-relatedItem-tags">
+                <li>ジップ</li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-relatedItem">
+            <div class="p-relatedItem-thumb"
+                 style="background-image: url(/static/img/dummy/productDetail/related_2.png)"></div>
+            <div class="p-relatedItem-content">
+              <ul class="p-relatedItem-versions">
+                <li></li>
+              </ul>
+              <h5 class="g-title-quinary p-relatedItem-title"><a href="#">アルミ前透明袋 - 圧着あり</a></h5>
+              <p class="p-relatedItem-price">
+                125<span class="p-relatedItem-unit">円 /１袋</span>
+                <span class="p-relatedItem-supplement">1色A4サイズ1,000ロットの場合</span>
+              </p>
+              <ul class="p-relatedItem-tags">
+                <li>ジップ</li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-relatedItem">
+            <div class="p-relatedItem-thumb"
+                 style="background-image: url(/static/img/dummy/productDetail/related_1.png)"></div>
+            <div class="p-relatedItem-content">
+              <ul class="p-relatedItem-versions">
+                <li></li>
+              </ul>
+              <h5 class="g-title-quinary p-relatedItem-title"><a href="#">アルミ前透明袋 - 圧着あり</a></h5>
+              <p class="p-relatedItem-price">
+                125<span class="p-relatedItem-unit">円 /１袋</span>
+                <span class="p-relatedItem-supplement">1色A4サイズ1,000ロットの場合</span>
+              </p>
+              <ul class="p-relatedItem-tags">
+                <li>ジップ</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+{#  <div class="c-modal p-imageModal">#}
+{#    <div class="p-imageModal-content">#}
+{#      <a class="p-imageModal-close" href="#">#}
+{#        <svg>#}
+{#          <use xlink:href='#icons-cross'/>#}
+{#        </svg>#}
+{#        閉じる</a>#}
+{#      <div class="p-imageModal-wrapper">#}
+{#        <a class="p-imageModal-button p-imageModal-button--left" href="#">#}
+{#          <svg>#}
+{#            <use xlink:href='#icons-arrow_down'></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#        <img src="{% static 'img/dummy/productDetail/thumb_md.png' %}" alt="">#}
+{#        <a class="p-imageModal-button p-imageModal-button--right" href="#">#}
+{#          <svg>#}
+{#            <use xlink:href='#icons-arrow_down'></use>#}
+{#          </svg>#}
+{#        </a>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% render_bundle 'productDetail' %}
+{% endblock %}

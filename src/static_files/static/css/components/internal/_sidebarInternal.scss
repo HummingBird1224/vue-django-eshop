@@ -1,0 +1,33 @@
+.c-sidebarInternal {
+  .c-sidebarContents {
+    padding: 8px 48px 8px 32px;
+    width: 100%;
+  }
+
+  .c-sidebarSection {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .c-sidebarSectionTitle {
+    padding: 8px;
+    font-size: 8px;
+    font-family: "Helvetica";
+    font-weight: bold;
+  }
+
+  .c-sidebarSectionContents {
+    width: 100%;
+  }
+
+  .c-sidebarSectionItem {
+    font-weight: bold;
+    font-size: 12px;
+    border-bottom: 1px solid #DADBDD;
+    color: $color-text-black;
+
+    &.is-active {
+      border-bottom: 2px solid #548689;
+    }
+  }
+}

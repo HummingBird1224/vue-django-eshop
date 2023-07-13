@@ -1,0 +1,19 @@
+{% load static %}
+
+<header class="c-headerInternal">
+  <div class="c-headerContents">
+    <div class="c-headerLeft">
+      <h1 class="g-title-primary c-headerLogo">
+        <a href="{% url 'internal:order_list' %}" class="c-logoContainer">
+          <svg class="logo-mark">
+            <use xlink:href='#icons-logo_mark'/>
+          </svg>
+        </a>
+        <div class="c-headerTitle"> DASHBOARD </div>
+      </h1>
+    </div>
+    <div class="c-headerLogout">
+      <a href="{% url 'account_logout' %}">ログアウト</a>
+    </div>
+  </div>
+</header>

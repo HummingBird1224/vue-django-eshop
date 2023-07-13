@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% load render_bundle from webpack_loader %}
+{% block title %}カート | canal{% endblock %}
+{% block titleog %}カート | canal{% endblock %}
+
+{% block content %}
+  <div>
+    <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+    <div
+      id="js-cart"
+      data-static-url="{% static_url %}"
+      data-csrf-token="{{ csrf_token }}"
+    ></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'cart' %}
+{% endblock %}
+

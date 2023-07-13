@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %}注文履歴 | オリジナルパッケージ印刷のcanal{% endblock %}
+{% block titleog %}注文履歴 | オリジナルパッケージ印刷のcanal{% endblock %}
+{% block metades %}
+  canalはブランドと印刷のプロをつなぐオリジナルパッケージ印刷のプラットフォームです。全国の印刷会社をネットワーク化することで、最適な印刷方法で平均20%のコストダウンを実現し、オリジナルパッケージを最短で即日発注できます。平袋やダンボール、化粧箱、紙袋などオリジナルパッケージはcanalにお任せください。
+{% endblock %}
+
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+  <div class="p-order">
+
+    <div
+      id="js-order-list"
+      data-static-url="{% static_url %}"
+    ></div>
+
+    {% if request.GET.uploaded %}
+      <div
+        id="js-uploaded-modal"
+      ></div>
+    {% endif %}
+
+    {% if 'confirmed' in message.tags %}
+      <div
+        id="js-completed-modal"
+      ></div>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'orders' %}
+{% endblock %}
+

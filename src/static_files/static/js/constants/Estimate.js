@@ -1,0 +1,1 @@
+export const SMALL_LOT_QUANTITY_THRESHOLD = 3000;

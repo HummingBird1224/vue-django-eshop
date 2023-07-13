@@ -1,0 +1,544 @@
+{% extends "internal/base.html" %}
+{% load humanize %}
+{% load static %}
+
+{% block content %}
+  <a href="{% url 'internal:order_list' %}" class="backButton">
+    <span class="backButtonArrow"><</span>
+    <span class="backButtonText">戻る</span>
+  </a>
+
+  <div class="breadcrumbsInternal">
+    <div class="breadcrumbsItem">ホーム</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">ORDERS</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">注文一覧</div>
+  </div>
+
+  <div class="orderInternal">
+    <div class="orderInternalDetail">
+      <div class="userName">{{ object.order.user.get_fullname }} 様</div>
+      <div class="refCodeContainer">
+        <span class="refCodeTitle">注文番号</span> <span class="refCode">{{ object.ref_code }}</span>
+      </div>
+      <div class="sectionTitle">注文したパッケージ一覧</div>
+        <div class="orderMeta">
+          <div class="container">
+            <div class="thumbnail">
+            <img src="{{ object.product.get_thumbnail_url }}">
+          </div>
+          <div class="title">
+            <p>{{ object.product_name }}</p>
+            <div class="statusBatch {{ object.internal_state }}">
+              {{ object.internal_state_display }}
+            </div>
+          </div>
+          <div class="content">
+            <div class="item">
+              <div class="itemTitle">推定納期</div>
+              <div class="itemContent">{{ object.delivery.shipping_date_display }}</div>
+            </div>
+            <div class="item">
+              <div class="itemTitle">お届け日</div>
+              <div class="itemContent">{{ object.delivery.delivery_date_display }}</div>
+            </div>
+            <div class="item">
+              <div class="itemTitle">注文時間</div>
+              <div class="itemContent">{{ object.created_at }}</div>
+            </div>
+          </div>
+          <div class="formButton">
+            {% if object.payment != 'cancelled' %}
+            <input type="submit" value="保存する" class="formSubmit clickable" name="order_item_form" form="order_item_form">
+            {% endif %}
+
+            {% with 'pending confirmed' as list %}
+            {% if object.payment in list.split %}
+              <button class="formCancel js-cancel-modal-open clickable" type="button">キャンセルする</button>
+              <div class="cancelModal js-cancel-modal">
+                <div class="cancelModalBg js-cancel-modal-close"></div>
+                <div class="cancelModalContent">
+                  <p class="cancelModalMessage">
+                    この注文を<strong>キャンセル</strong>しますか？
+                  </p>
+                  <div class="cancelModalButtonContainer">
+                    <form action="" name="order_item_cancel_form" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <button class="cancelModalButton no js-cancel-modal-close" type="button">いいえ</button>
+                      <input type="submit" value="はい" class="cancelModalButton yes" name="order_item_cancel_form">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+      <div class="sectionContent">
+        <form action="" name="order_item_form" method="post" enctype="multipart/form-data" id="order_item_form">
+          {% csrf_token %}
+          <div class="row">
+            <div class="rowTitle">ステータス</div>
+            <div class="rowContent">
+              <div class="statusUpdate">
+                {% if object.internal_state == 'cancelled' %}
+                  キャンセルされています
+                {% else %}
+                  <div class="progressContainer">
+                    <div class="stateData" data-current-state="{{ current_state }}"></div>
+                    {{ form.state }}
+
+                    <div class="progressItem" data-state="0">
+                      <div class="progressTitle">未入稿</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+
+                    <div class="progressLine"></div>
+
+                    <div class="progressItem" data-state="1">
+                      <div class="progressTitle">確認中</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+
+                    <div class="progressResubmissionContainer">
+                      <div class="progressLine" style="width: 200px"></div>
+                      <div class="progressResubmissionContainerUnder">
+                        <div class="progressLineUnderLeft"></div>
+                        <div class="progressItem resubmission" data-state="2">
+                          <svg class="progressBatch js-state-update resubmission clickable">
+                            <use xlink:href="#icons-check_done" class="done" />
+                            <use xlink:href="#icons-check_done" class="current" />
+                            <use xlink:href="#icons-check_notyet" class="notyet" />
+                          </svg>
+                          <div class="progressTitle resubmission">再入稿依頼</div>
+                        </div>
+                        <div class="progressLineUnderRight"></div>
+                      </div>
+                    </div>
+
+                    <div class="progressItem" data-state="3">
+                      <div class="progressTitle">確認済</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+
+                    <div class="progressLine"></div>
+
+                    <div class="progressItem" data-state="4">
+                      <div class="progressTitle">承認済</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+
+                    <div class="progressLine"></div>
+
+                    <div class="progressItem" data-state="5">
+                      <div class="progressTitle">印刷中</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+
+                    <div class="progressLine"></div>
+
+                    <div class="progressItem" data-state="6">
+                      <div class="progressTitle">発送済</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+
+                    <div class="progressLine"></div>
+
+                    <div class="progressItem" data-state="7">
+                      <div class="progressTitle">配達済</div>
+                      <svg class="progressBatch js-state-update clickable">
+                        <use xlink:href="#icons-check_done" class="done" />
+                        <use xlink:href="#icons-check_done" class="current" />
+                        <use xlink:href="#icons-check_notyet" class="notyet" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="guide" data-guide-state="0">
+                      <p><strong>【未入稿】</strong></p>
+                      <p>
+                        ・入稿されるのを待ちましょう。このステータスから時間が経っていたら連絡してみましょう。
+                      </p>
+                    </div>
+                    <div class="guide" data-guide-state="1">
+                      <p><strong>【確認中】</strong></p>
+                      <p>
+                        ・入稿されたデータを確認しましょう。
+                      </p>
+                    </div>
+                    <div class="guide" data-guide-state="2">
+                      <p><strong>【再入稿依頼】</strong></p>
+                      <p>
+                        ・再入稿のポイントをコメントで書きましょう
+                      </p>
+                    </div>
+                    <div class="guide" data-guide-state="3">
+                      <p><strong>【確認済】</strong></p>
+                      <p>
+                        ・データ入稿が完了しました。印刷会社の手配しましょう
+                      </p>
+                    </div>
+                    <div class="guide" data-guide-state="5">
+                      <p><strong>【印刷中】</strong></p>
+                      <p>
+                        ・手配した印刷会社の名前を記入して、手配を完了させましょう。
+                      </p>
+                    </div>
+                    <div class="guide" data-guide-state="6">
+                      <p><strong>【発送済】</strong></p>
+                      <p>
+                        ・トラッキングコードがあれば入力して、発送済に変更しましょう。
+                      </p>
+                    </div>
+                    <div class="guide" data-guide-state="7">
+                      <p><strong>【配達済】</strong></p>
+                      <p>
+                        ・配達を完了して、全ての工程を完了させます。
+                      </p>
+                    </div>
+                  </div>
+                {% endif %}
+                <div class="comment">
+                  {{ form.comment }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="rowTitle">発注/配達関係</div>
+            <div class="rowContent formDelivery">
+              <div class="formContainer">
+                <div class="formLabel"><label for="id_company">配送会社</label></div>
+                <div class="formInput">
+                  {{ form.company }}
+                </div>
+              </div>
+              <div class="formContainer">
+                <div class="formLabel"><label for="id_tracking_code">配達トラッキングコード</label></div>
+                <div class="formInput">
+                  {{ form.tracking_code }}
+                </div>
+              </div>
+              <div class="formContainer">
+                <input type="checkbox" id="js-own-delivery"><label for="js-own-delivery">自社配送</label>
+              </div>
+              <div class="formContainer">
+                <div class="formLabel"><label for="id_shipping_date">発送日</label></div>
+                <div class="formInput">
+                  {{ form.shipping_date }}
+                </div>
+              </div>
+              <div class="formContainer">
+                <div class="formLabel"><label for="id_delivery_date">お届け日</label></div>
+                <div class="formInput">
+                  {{ form.delivery_date }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="rowTitle">入稿データ</div>
+            <div class="rowContent">
+              <div class="js-data-url" data-data-url="{{ data_url }}"></div>
+              <div class="dataUpload">
+                {{ form.data }}
+              </div>
+              <iframe class="js-data-preview dataPreview" src="" width="1000" height="600"></iframe>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="sectionTitle">催促メール送信</div>
+      <div class="orderMeta">
+        <div class="promptButton">
+          <button class="formPrompt js-draftprompt-modal-open clickable" type="button">入稿催促</button>                
+            <div class="promptModal js-draftprompt-modal">
+              <div class="promptModalBg js-draftprompt-modal-close"></div>
+              <div class="promptModalContent">
+                <p class="promptModalMessage">
+                  入稿催促メールを送りますか？
+                </p>
+                <div class="promptModalButtonContainer">
+                  <form action="" name="order_item_draftprompt_form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <button class="promptModalButton no js-draftprompt-modal-close" type="button">いいえ</button>
+                    <input type="submit" value="はい" class="promptModalButton yes" name="order_item_draftprompt_form">
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          <button class="formPrompt js-payprompt-modal-open clickable" type="button">振込催促</button>
+            <div class="promptModal js-payprompt-modal">
+              <div class="promptModalBg js-payprompt-modal-close"></div>
+              <div class="promptModalContent">
+                <p class="promptModalMessage">
+                  振込催促メールを送りますか？
+                </p>
+                <div class="promptModalButtonContainer">
+                  <form action="" name="order_item_payprompt_form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <button class="promptModalButton no js-payprompt-modal-close" type="button">いいえ</button>
+                    <input type="submit" value="はい" class="promptModalButton yes" name="order_item_payprompt_form">
+                  </form>
+              </div>
+            </div>
+        </div>
+        <div class="content">
+          <div class="item">
+            <div class="itemTitle">入稿催促前回送信</div>
+            <div class="itemContent">{{ object.draftprompt_edited_at|default_if_none:"---" }}</div>
+          </div>
+          <div class="item">
+            <div class="itemTitle">振込催促前回送信</div>
+            <div class="itemContent">{{ object.payprompt_edited_at|default_if_none:"---" }}</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sectionTitle">注文詳細の情報</div>
+      <div class="sectionContent">
+        <div class="row">
+          <div class="rowTitle">会社名</div>
+          <div class="rowContent">{{ object.order.user.company_name }}</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">名前</div>
+          <div class="rowContent">{{ object.order.user.name }}</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">郵便番号</div>
+          <div class="rowContent">{{ object.delivery.postal_code }}</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">県</div>
+          <div class="rowContent">{{ object.delivery.prefecture }}</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">住所</div>
+          <div class="rowContent">{{ object.delivery.get_address_with_prefecture }}</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">電話番号</div>
+          <div class="rowContent">{{ object.delivery.tel }}</div>
+        </div>
+      </div>
+
+      <div class="sectionTitle">注文金額の詳細</div>
+      <div class="sectionContent">
+        <div class="row">
+          <div class="rowTitle">金額</div>
+          <div class="rowContent">{{ object.product_total|intcomma }} 円</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">木型代</div>
+          <div class="rowContent">{{ object.mold_price|intcomma }} 円</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">版代</div>
+          <div class="rowContent">{{ object.plate_price|intcomma }} 円</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">消費税</div>
+          <div class="rowContent">{{ object.tax|intcomma }} 円</div>
+        </div>
+        <div class="row">
+          <div class="rowTitle">合計</div>
+          <div class="rowContent">{{ object.total|intcomma }} 円</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initial setup
+    $(function() {
+      const state = Number(($('.stateData').data('current-state')));
+      updateGuide(state);
+      updateCommentForm(state);
+      updateProgress(state);
+
+      const url = $('.js-data-url').data('data-url');
+      if (url) updatePreview(url);
+
+      // 自社配送の場合はチェック入れる
+      const $companyForm = $('#id_company');
+      if ($companyForm.val() === '福岡パッケージ株式会社') {
+        $('#js-own-delivery').prop('checked', true);
+        updateOwnDeliveryOn();
+      }
+    });
+
+    // 保存するボタン
+    $('.js-state-update').on('click', function () {
+      const state = $(this).closest('.progressItem').data('state');
+      updateProgress(state);
+      updateGuide(state);
+      updateCommentForm(state);
+    });
+
+    // 自社配送の場合はチェックボタン
+    $('#js-own-delivery').change(function () {
+      if ($(this).prop('checked')) {
+        updateOwnDeliveryOn();
+      } else {
+        updateOwnDeliveryOff();
+      }
+    });
+
+    $('#id_data').change(function(e) {
+      const url = window.URL.createObjectURL(e.target.files[0]);
+      updatePreview(url);
+    });
+
+    // キャンセル確認モーダル
+    $('.js-cancel-modal-open').on('click', function () {
+      $('.js-cancel-modal').css({display: 'block'});
+    });
+
+    // キャンセル確認モーダルを閉じる
+    $('.js-cancel-modal-close').on('click', function () {
+      $('.js-cancel-modal').css({display: 'none'});
+    });
+
+    // 入稿催促確認モーダル
+    $('.js-draftprompt-modal-open').on('click', function () {
+      $('.js-draftprompt-modal').css({display: 'block'});
+    });
+
+    // 入稿催促確認モーダルを閉じる
+    $('.js-draftprompt-modal-close').on('click', function () {
+      $('.js-draftprompt-modal').css({display: 'none'});
+    });
+
+    // 振込催促確認モーダル
+    $('.js-payprompt-modal-open').on('click', function () {
+      $('.js-payprompt-modal').css({display: 'block'});
+    });
+
+    // 振込催促確認モーダルを閉じる
+    $('.js-payprompt-modal-close').on('click', function () {
+      $('.js-payprompt-modal').css({display: 'none'});
+    });
+
+
+    // ファイルプレビュー
+    const updatePreview = function (url) {
+      const req = new XMLHttpRequest();
+      req.open("GET", url, true);
+      req.responseType = "blob";
+      req.onload = function () {
+        const $dataPreview = $('.js-data-preview');
+        if (this.status === 200) {
+          $dataPreview.css({display: 'block'});
+          const blobURL = window.URL.createObjectURL(new Blob([this.response], {type: 'application/pdf'}));
+          $dataPreview.attr('src', blobURL);
+        } else {
+          $dataPreview.css({display: 'none'});
+        }
+      };
+      req.send();
+    };
+
+    const updateGuide = function (state) {
+      $('.guide').each(function (index, element) {
+        $(element).css({display: 'none'});
+        if (Number($(element).data('guide-state')) === state) {
+          $(element).css({display: 'block'});
+        }
+      })
+    };
+
+    const updateCommentForm = function (state) {
+      if (state === 2) {
+        $('.comment').css({display: 'block'});
+      } else {
+        $('.comment').css({display: 'none'});
+      }
+    };
+
+    const updateProgress = function (state) {
+      $('#id_state').val(state);
+
+      $('.progressContainer').find('.progressItem').each(function (index, e) {
+        const $item = $(e);
+        const $title = $item.find('.progressTitle').first();
+        const $batch = $item.find('.progressBatch').first();
+        const $doneIcon = $batch.find('.done').first();
+        const $currentIcon = $batch.find('.current').first();
+        const $notyetIcon = $batch.find('.notyet').first();
+
+        $title.removeClass('done current notyet');
+        $doneIcon.addClass('noShow');
+        $currentIcon.addClass('noShow');
+        $notyetIcon.addClass('noShow');
+
+        const item_state = Number($item.data('state'));
+
+        if (item_state < state) {
+          $title.addClass('done');
+          $batch.addClass('done');
+          $doneIcon.removeClass('noShow');
+        } else if (item_state === state) {
+          $title.addClass('current');
+          $batch.addClass('current');
+          $currentIcon.removeClass('noShow');
+        } else if (item_state > state) {
+          $title.addClass('notyet');
+          $batch.addClass('notyet');
+          $notyetIcon.removeClass('noShow');
+        }
+      })
+    };
+
+    // 自社配送への切り替え
+    const updateOwnDeliveryOn = function () {
+      const $companyForm = $('#id_company');
+      const $trackingCodeForm = $('#id_tracking_code');
+      $companyForm.val('福岡パッケージ株式会社');
+      $companyForm.attr('readonly', true);
+      $companyForm.css({cursor: 'not-allowed'});
+    };
+
+    // 配送先を自社から他者へ切り替え
+    const updateOwnDeliveryOff = function () {
+      const $companyForm = $('#id_company');
+      const $trackingCodeForm = $('#id_tracking_code');
+      $companyForm.val('');
+      $companyForm.attr('readonly', false);
+      $companyForm.css({cursor: 'auto'});
+      $trackingCodeForm.val('');
+      $trackingCodeForm.attr('readonly', false);
+      $trackingCodeForm.css({cursor: 'auto'});
+    };
+  </script>
+{% endblock %}

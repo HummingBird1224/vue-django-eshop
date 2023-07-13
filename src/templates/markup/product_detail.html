@@ -1,0 +1,1333 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}商品詳細（マークアップ）【canal】{% endblock %}
+{% block titleog %}商品詳細（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+<div class="p-product">
+  <div class="p-product-wrapper">
+    <header class="p-product-header">
+      <ol class="p-Breadcrumb">
+        <li class="p-Breadcrumb-text"><a href="#">ホーム</a></li>
+        <li class="p-Breadcrumb-icon">
+          <svg>
+            <use xlink:href='#icons-arrow_down'></use>
+          </svg>
+        </li>
+        <li class="p-Breadcrumb-text"><a href="#">ダンボール</a></li>
+        <li class="p-Breadcrumb-icon">
+          <svg>
+            <use xlink:href='#icons-arrow_down'></use>
+          </svg>
+        </li>
+        <li class="p-Breadcrumb-text">簡易N式箱</li>
+      </ol>
+    </header>
+    <main class="p-product-main">
+      <section class="p-product-form">
+        <div class="p-product-formLeft">
+          <ul class="p-ProductThumbList">
+            <li
+                    class="p-ProductThumb is-current"
+                    style="background-image: url()"
+            ></li>
+            <li
+                    class="p-ProductThumb"
+                    style="background-image: url()"
+            ></li>
+            <li
+                    class="p-ProductThumb"
+                    style="background-image: url()"
+            ></li>
+            <li
+                    class="p-ProductThumb"
+                    style="background-image: url()"
+            ></li>
+          </ul>
+          <div
+                  class="p-ProductImage"
+                  style="background-image: url()"
+          >
+          </div>
+        </div>
+        <div class="p-product-formRight">
+          <div class="p-ProductInfo">
+            <h2 class="g-title-secondary p-ProductInfo-title">簡易N式箱</h2>
+            <p class="p-ProductInfo-description">
+              上蓋が差込式で、箱の左右にはベロ(フラップ)が付いています。
+              左右の縁を内側に折り返して壁が二重になりますので、上からの圧力や横からの衝撃にも強い構造です。
+            </p>
+            <ul class="p-ProductInfo-detailList">
+              <li class="p-ProductInfo-detail">
+                <h3 class="g-title-tertiary">
+                  <span class="p-ProductInfo-detailIconWrapper">
+                    <svg class="p-ProductInfo-detailIcon p-ProductInfo-detailIcon--time">
+                      <use xlink:href="#icons-access_time"></use>
+                    </svg>
+                  </span>
+                  <span class="p-ProductInfo-detailTitle">納期の目安</span>
+                </h3>
+                <p class="p-ProductInfo-detailBody">通常：データ確定後1ヶ月/リピート3週間</p>
+              </li>
+              <li class="p-ProductInfo-detail">
+                <h3 class="g-title-tertiary">
+                  <span class="p-ProductInfo-detailIconWrapper">
+                    <svg class="p-ProductInfo-detailIcon p-ProductInfo-detailIcon--note">
+                      <use xlink:href="#icons-event_note"></use>
+                    </svg>
+                  </span>
+                  <span class="p-ProductInfo-detailTitle">最小注文数</span>
+                </h3>
+                <p class="p-ProductInfo-detailBody">50</p>
+              </li>
+              <li class="p-ProductInfo-detail">
+                <h3 class="g-title-tertiary">
+                  <span class="p-ProductInfo-detailIconWrapper">
+                    <svg class="p-ProductInfo-detailIcon p-ProductInfo-detailIcon--shuttle">
+                      <use xlink:href="#icons-airport_shuttle"></use>
+                    </svg>
+                  </span>
+                  <span class="p-ProductInfo-detailTitle">送料</span>
+                </h3>
+                <p class="p-ProductInfo-detailBody">無料キャンペーン中</p>
+              </li>
+            </ul>
+          </div>
+
+          {#          <div class="p-ProductContact">#}
+          {#            <div class="p-ProductContact-content">#}
+          {#              <h3 class="g-title-tertiary p-ProductContact-title">#}
+          {#                <svg>#}
+          {#                  <use xlink:href="#icons-textsms"></use>#}
+          {#                </svg>この商品はお問い合わせで相談してからの発注になります#}
+          {#              </h3>#}
+          {#              <p class="p-ProductContact-body">内容によっては変更をご相談する部分があるかもしれません</p>#}
+          {#              <a class="p-ProductContact-cta c-btn c-btn--primary" href="#">#}
+          {#                 注文のお問い合わせへ#}
+          {#              </a>#}
+          {#            </div>#}
+          {#          </div>#}
+
+          <div class="p-ProductForm">
+            <div class="p-productSelect">
+              <header class="p-productSelect-header">
+                <h3 class="g-title-tertiary p-productSelect-title">印刷に使用する色数</h3>
+                <a href="#" class="p-productSelect-help">印刷と色について</a>
+              </header>
+              <ul class="p-productSelect-verticalList">
+                <li class="p-productSelect-verticalItem is-current">
+                  <div
+                          class="p-productSelect-verticalThumb"
+                          style="background-image: url('/static/img/product_detail/dummy/vertical_item.png')"
+                  ></div>
+                  <h4 class="g-title-quaternary p-productSelect-verticalTitle">1色</h4>
+                </li>
+                <li class="p-productSelect-verticalItem">
+                  <div
+                          class="p-productSelect-verticalThumb"
+                          style="background-image: url('/static/img/product_detail/dummy/vertical_item.png')"
+                  ></div>
+                  <h4 class="g-title-quaternary p-productSelect-verticalTitle">2色</h4>
+                </li>
+                <li class="p-productSelect-verticalItem">
+                  <div
+                          class="p-productSelect-verticalThumb"
+                          style="background-image: url('/static/img/product_detail/dummy/vertical_item.png')"
+                  ></div>
+                  <h4 class="g-title-quaternary p-productSelect-verticalTitle">3色</h4>
+                </li>
+                <li class="p-productSelect-verticalItem">
+                  <div
+                          class="p-productSelect-verticalThumb"
+                          style="background-image: url('/static/img/product_detail/dummy/vertical_item.png')"
+                  ></div>
+                  <h4 class="g-title-quaternary p-productSelect-verticalTitle">4色</h4>
+                </li>
+              </ul>
+            </div>
+            <div class="p-productSelect">
+              <header class="p-productSelect-header">
+                <h3 class="g-title-tertiary p-productSelect-title">注文数</h3>
+              </header>
+              <ul class="p-productSelect-horizontalList">
+                <li class="p-productSelect-horizontalItem is-current">
+                  <h4 class="g-title-quaternary">
+                    <span class="p-productSelect-horizontalRadio"></span>
+                    <span class="p-productSelect-horizontalTitle">1,000</span>
+                  </h4>
+
+                  <p class="p-productSelect-horizontalPrice">
+                    4,890<span class="p-productSelect-horizontalPriceUnit">円</span>
+                  </p>
+                </li>
+                <li class="p-productSelect-horizontalItem">
+                  <h4 class="g-title-quaternary">
+                    <span class="p-productSelect-horizontalRadio"></span>
+                    <span class="p-productSelect-horizontalTitle">1,000</span>
+                  </h4>
+
+                  <p class="p-productSelect-horizontalPrice">
+                    4,890<span class="p-productSelect-horizontalPriceUnit">円</span>
+                  </p>
+                </li>
+                <li class="p-productSelect-horizontalItem">
+                  <h4 class="g-title-quaternary">
+                    <span class="p-productSelect-horizontalRadio"></span>
+                    <span class="p-productSelect-horizontalTitle">1,000</span>
+                  </h4>
+
+                  <p class="p-productSelect-horizontalPrice">
+                    4,890<span class="p-productSelect-horizontalPriceUnit">円</span>
+                  </p>
+                </li>
+                <li class="p-productSelect-horizontalItem">
+                  <h4 class="g-title-quaternary">
+                    <span class="p-productSelect-horizontalRadio"></span>
+                    <span class="p-productSelect-horizontalTitle">1,000</span>
+                  </h4>
+
+                  <p class="p-productSelect-horizontalPrice">
+                    4,890<span class="p-productSelect-horizontalPriceUnit">円</span>
+                  </p>
+                </li>
+                <li class="p-productSelect-horizontalItem">
+                  <h4 class="g-title-quaternary">
+                    <span class="p-productSelect-horizontalRadio"></span>
+                    <span class="p-productSelect-horizontalTitle">1,000</span>
+                  </h4>
+
+                  <p class="p-productSelect-horizontalPrice">
+                    4,890<span class="p-productSelect-horizontalPriceUnit">円</span>
+                  </p>
+                </li>
+                <li class="p-productSelect-horizontalItem">
+                  <h4 class="g-title-quaternary">
+                    <span class="p-productSelect-horizontalRadio"></span>
+                    <span class="p-productSelect-horizontalTitle">1,000</span>
+                  </h4>
+
+                  <p class="p-productSelect-horizontalPrice">
+                    4,890<span class="p-productSelect-horizontalPriceUnit">円</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="p-productSelect">
+              <header class="p-productSelect-header">
+                <h3 class="g-title-tertiary p-productSelect-title">印刷する面の数</h3>
+                <a href="#" class="p-productSelect-help">面数と値段について</a>
+              </header>
+              <ul class="p-productSelect-ModalList">
+                <li class="p-productSelect-ModalInfo">
+                  <p>外面 : 2つ</p>
+                  <a class="c-btn" href="#">選択する</a>
+                </li>
+                <li class="p-productSelect-ModalInfo">
+                  <p>内面 : -</p>
+                  <a class="c-btn" href="#">選択する</a>
+                </li>
+              </ul>
+            </div>
+            <footer class="p-ProductFooter">
+              <div class="p-ProductPrice">
+                <ul class="p-ProductPrice-detailList">
+                  <li class="p-ProductPrice-detailItem">
+                    <span class="p-ProductPrice-detailTitle">商品</span>
+                    <span class="p-ProductPrice-detailBody">15,000<span
+                            class="p-ProductPrice-detailUnit">円</span></span>
+                  </li>
+                  <li class="p-ProductPrice-detailItem">
+                    <span class="p-ProductPrice-detailTitle">商品</span>
+                    <span class="p-ProductPrice-detailBody">15,000<span
+                            class="p-ProductPrice-detailUnit">円</span></span>
+                  </li>
+                  <li class="p-ProductPrice-detailItem">
+                    <span class="p-ProductPrice-detailTitle">商品</span>
+                    <span class="p-ProductPrice-detailBody">15,000<span
+                            class="p-ProductPrice-detailUnit">円</span></span>
+                  </li>
+                </ul>
+                <div class="p-ProductPrice-main">
+                  <span class="p-ProductPrice-totalTitle">合計</span>
+                  <div class="p-ProductPrice-totalContent">
+                    <span class="p-ProductPrice-totalBody">64,000</span>
+                    <span class="p-ProductPrice-totalUnit">円（税込）</span>
+                    <span class="p-ProductPrice-unitBody">50</span>
+                    <span class="p-ProductPrice-unitUnit">円</span>
+                    <span class="p-ProductPrice-unitPer">/箱</span>
+                  </div>
+                </div>
+                <a class="p-ProductFooter-submit" href="#">購入へ</a>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </section>
+      <section class="p-product-usage">
+        <h2 class="p-product-sectionTitle">利用例</h2>
+        <div class="p-Slider">
+          <ul class="p-UsageList">
+            <li class="p-Usage">
+              <a href="#">
+                <div
+                        class="p-Usage-thumb"
+                        style="background-image: url('/static/img/product_detail/dummy/usage.png')"
+                ></div>
+                <div class="p-Usage-content">
+                  <div
+                          class="p-Usage-icon"
+                          style="background-image: url('/static/img/product_detail/dummy/usage_logo.png')"
+                  ></div>
+                  <h3 class="g-title-tertiary p-Usage-name">株式会社xxxxx</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-Usage">
+              <a href="#">
+                <div
+                        class="p-Usage-thumb"
+                        style="background-image: url('/static/img/product_detail/dummy/usage.png')"
+                ></div>
+                <div class="p-Usage-content">
+                  <div
+                          class="p-Usage-icon"
+                          style="background-image: url('/static/img/product_detail/dummy/usage_logo.png')"
+                  ></div>
+                  <h3 class="g-title-tertiary p-Usage-name">株式会社xxxxx</h3>
+                </div>
+              </a>
+            </li>
+            <li class="p-Usage">
+              <a href="#">
+                <div
+                        class="p-Usage-thumb"
+                        style="background-image: url('/static/img/product_detail/dummy/usage.png')"
+                ></div>
+                <div class="p-Usage-content">
+                  <div
+                          class="p-Usage-icon"
+                          style="background-image: url('/static/img/product_detail/dummy/usage_logo.png')"
+                  ></div>
+                  <h3 class="g-title-tertiary p-Usage-name">株式会社xxxxx</h3>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <a class="p-Slider-button p-Slider-button--left" href="#">
+            <svg>
+              <use xlink:href='#icons-arrow_down'></use>
+            </svg>
+          </a>
+          <a class="p-Slider-button p-Slider-button--right" href="#">
+            <svg>
+              <use xlink:href='#icons-arrow_down'></use>
+            </svg>
+          </a>
+        </div>
+      </section>
+      <section class="p-product-template">
+        <h2 class="p-product-sectionTitle">入稿テンプレート</h2>
+        <div class="p-product-templateContent">
+          <div class="p-product-templateLeft">
+            <div
+                    class="p-TemplateThumb"
+                    style="background-image: url('/static/img/product_detail/dummy/template.png')"
+            >
+            </div>
+          </div>
+          <div class="p-product-templateRight">
+            <ul class="p-TemplateList">
+              <li class="p-Template">
+                <div class="p-Template-content">
+                  <h3 class="g-title-tertiary p-Template-title">オリジナルサイズ用テンプレート</h3>
+                  <p class="p-Template-body">自由にサイズを選択できます</p>
+                </div>
+                <a class="p-Template-link c-textLink" href="#">テンプレートをダウンロード</a>
+              </li>
+              <li class="p-Template">
+                <div class="p-Template-content">
+                  <h3 class="g-title-tertiary p-Template-title">A4<span class="p-Template-attribute">メール便サイズ</span></h3>
+                  <p class="p-Template-body">(9.2 x 9.2 x 2.5 cm)</p>
+                </div>
+                <a class="p-Template-link c-textLink" href="#">テンプレートをダウンロード</a>
+              </li>
+              <li class="p-Template">
+                <div class="p-Template-content">
+                  <h3 class="g-title-tertiary p-Template-title">A5 メール便サイズ</h3>
+                  <p class="p-Template-body">(23.1 x 14 x 8 cm)</p>
+                </div>
+                <a class="p-Template-link c-textLink" href="#">テンプレートをダウンロード</a>
+              </li>
+              <li class="p-Template">
+                <div class="p-Template-content">
+                  <h3 class="g-title-tertiary p-Template-title">60サイズ</h3>
+                </div>
+                <a class="p-Template-link c-textLink" href="#">テンプレートをダウンロード</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="p-product-interview">
+        <h2 class="p-product-sectionTitle">オーナーインタビュー</h2>
+        <ul class="p-InterviewList">
+          <li class="p-Interview">
+            <a href="#">
+              <div
+                      class="p-Interview-thumb"
+                      style="background-image: url('/static/img/product_detail/dummy/interview.png')"
+              ></div>
+              <div class="p-Interview-content">
+                <div
+                        class="p-Interview-icon"
+                        style="background-image: url('/static/img/product_detail/dummy/usage_logo.png')"
+                ></div>
+                <h3 class="g-title-tertiary p-Interview-title">インタビューのタイトルインタビューのタイトルインタビューのタイトル</h3>
+                <p class="p-Interview-body">株式会社xxxxx</p>
+              </div>
+            </a>
+          </li>
+          <li class="p-Interview">
+            <a href="#">
+              <div
+                      class="p-Interview-thumb"
+                      style="background-image: url('/static/img/product_detail/dummy/interview.png')"
+              ></div>
+              <div class="p-Interview-content">
+                <div
+                        class="p-Interview-icon"
+                        style="background-image: url('/static/img/product_detail/dummy/usage_logo.png')"
+                ></div>
+                <h3 class="g-title-tertiary p-Interview-title">インタビューのタイトルインタビューのタイトルインタビューのタイトル</h3>
+                <p class="p-Interview-body">株式会社xxxxx</p>
+              </div>
+            </a>
+          </li>
+          <li class="p-Interview">
+            <a href="#">
+              <div
+                      class="p-Interview-thumb"
+                      style="background-image: url('/static/img/product_detail/dummy/interview.png')"
+              ></div>
+              <div class="p-Interview-content">
+                <div
+                        class="p-Interview-icon"
+                        style="background-image: url('/static/img/product_detail/dummy/usage_logo.png')"
+                ></div>
+                <h3 class="g-title-tertiary p-Interview-title">インタビューのタイトルインタビューのタイトルインタビューのタイトル</h3>
+                <p class="p-Interview-body">株式会社xxxxx</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="p-product-spec">
+        <h2 class="p-product-sectionTitle">商品仕様</h2>
+        <ul class="p-SpecList">
+          <li class="p-Spec">
+            <h3 class="g-title-tertiary p-Spec-title">厚さ</h3>
+            <p class="p-Spec-body">1.2mm</p>
+          </li>
+          <li class="p-Spec">
+            <h3 class="g-title-tertiary p-Spec-title">印刷方法</h3>
+            <p class="p-Spec-body">XXXX印刷</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  {#      <div class="c-modal p-Modal">#}
+  {#        <div class="c-modal-content p-Modal-content">#}
+  {#          <header class="p-Modal-header">#}
+  {#            <h3 class="g-title-tertiary p-Modal-title">サイズの選択</h3>#}
+  {#            <a class="p-Modal-close" href="#">#}
+  {#              <svg><use xlink:href='#icons-cross'/></svg>#}
+  {#            </a>#}
+  {#          </header>#}
+  {#          <div class="p-Modal-main p-Modal-main--form">#}
+  {#            <div class="p-Modal-mainLeft">#}
+  {#              <div class="p-Modal-selectionWrapper">#}
+  {#                <h4 class="g-title-quaternary p-Modal-selectionTitle">サイズを選択しましょう</h4>#}
+  {#                <ul class="p-Modal-selections">#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--radio is-active">#}
+  {#                    <span class="p-Modal-selectionIcon"></span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--radio">#}
+  {#                    <span class="p-Modal-selectionIcon"></span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox is-active">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                  <li class="p-Modal-selection p-Modal-selection--checkbox">#}
+  {#                    <span class="p-Modal-selectionIcon">#}
+  {#                      <svg><use xlink:href='#icons-check'/></svg>#}
+  {#                    </span>#}
+  {#                    <span class="p-Modal-selectionLabel">オリジナルサイズ</span>#}
+  {#                  </li>#}
+  {#                </ul>#}
+  {#              </div>#}
+  {#            </div>#}
+  {#            <div class="p-Modal-mainRight">#}
+  {#              <div#}
+  {#                      class="p-Modal-selectionThumb"#}
+  {#                      style="background-image: url('/static/img/product_detail/dummy/selection_img.png')"#}
+  {#              >#}
+  {#              </div>#}
+  {#              <div class="p-Modal-selectionInfo">#}
+  {#                <p>60サイズ (29 x 18.5 x 7 cm)</p><span>内寸 28.5 x 18 x 6.5 cm</span>#}
+  {#              </div>#}
+  {#              <div class="p-Modal-selectionForm">#}
+  {#                <h4 class="g-title-quaternary">サイズを入力</h4>#}
+  {#                <div class="p-Modal-selectionInputs">#}
+  {#                  <div class="c-form-item p-sizeForm-col">#}
+  {#                    <input type="text" class="c-form-input p-sizeForm-input" value="" onkeyup="this.setAttribute('value', this.value);">#}
+  {#                    <label for="" class="c-form-label p-sizeForm-label">#}
+  {#                      長さ#}
+  {#                    </label>#}
+  {#                    <span class=" p-sizeForm-unit">mm</span>#}
+  {#                  </div>#}
+  {#                  <div class="c-form-item p-sizeForm-col">#}
+  {#                    <input type="text" class="c-form-input p-sizeForm-input" value="" onkeyup="this.setAttribute('value', this.value);">#}
+  {#                    <label for="" class="c-form-label p-sizeForm-label">#}
+  {#                      長さ#}
+  {#                    </label>#}
+  {#                    <span class=" p-sizeForm-unit">mm</span>#}
+  {#                  </div>#}
+  {#                  <div class="c-form-item p-sizeForm-col">#}
+  {#                    <input type="text" class="c-form-input p-sizeForm-input" value="" onkeyup="this.setAttribute('value', this.value);">#}
+  {#                    <label for="" class="c-form-label p-sizeForm-label">#}
+  {#                      長さ#}
+  {#                    </label>#}
+  {#                    <span class=" p-sizeForm-unit">mm</span>#}
+  {#                  </div>#}
+  {#                </div>#}
+  {#              </div>#}
+  {#            </div>#}
+  {#          </div>#}
+  {#          <footer class="p-Modal-footer">#}
+  {#            <a class="p-Modal-cancel c-textLink c-textLink--black" href="#">キャンセル</a>#}
+  {#            <a class="p-Modal-submit" href="#">このサイズにする</a>#}
+  {#          </footer>#}
+  {#        </div>#}
+  {#      </div>#}
+
+  {#  <div class="c-modal p-Modal">#}
+  {#    <div class="c-modal-content p-Modal-content">#}
+  {#      <header class="p-Modal-header">#}
+  {#        <h3 class="g-title-tertiary p-Modal-title">印刷と色について</h3>#}
+  {#        <a class="p-Modal-close" href="#">#}
+  {#          <svg>#}
+  {#            <use xlink:href='#icons-cross'/>#}
+  {#          </svg>#}
+  {#        </a>#}
+  {#      </header>#}
+  {#      <div class="p-Modal-main p-Modal-main--help">#}
+  {#        <div class="p-Modal-section">#}
+  {#          <div class="p-Modal-sectionLeft">#}
+  {#            <h4 class="g-title-quaternary">印刷と料金について</h4>#}
+  {#          </div>#}
+  {#          <div class="p-Modal-colorPrice">#}
+  {#            <div class="p-ModalSummary">#}
+  {#              <h5 class="g-title-quinary p-ModalSummary-title">印刷に使用する色数で料金が変化します</h5>#}
+  {#              <ul class="p-ModalSummary-contents">#}
+  {#                <li>・印刷に利用する色は『ダンボールでの印刷色の選択について』をご覧ください</li>#}
+  {#                <li>・色数が増えると基本的に料金が上がります</li>#}
+  {#                <li>・５色以上扱う場合、写真はフルカラーに該当します。</li>#}
+  {#              </ul>#}
+  {#            </div>#}
+  {#            <ul class="p-ColorPriceList">#}
+  {#              <li class="p-ColorPrice">#}
+  {#                <div#}
+  {#                        class="p-ColorPrice-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/color_price.png')"#}
+  {#                ></div>#}
+  {#                <div class="p-ColorPrice-contents">#}
+  {#                  <h6 class="g-title-quinary">1色</h6>#}
+  {#                </div>#}
+  {#              </li>#}
+  {#              <li class="p-ColorPrice">#}
+  {#                <div#}
+  {#                        class="p-ColorPrice-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/color_price.png')"#}
+  {#                ></div>#}
+  {#                <div class="p-ColorPrice-contents">#}
+  {#                  <h6 class="g-title-quinary">1色</h6>#}
+  {#                </div>#}
+  {#              </li>#}
+  {#            </ul>#}
+  {#          </div>#}
+  {#        </div>#}
+  {#        <div class="p-Modal-section">#}
+  {#          <div class="p-Modal-sectionLeft">#}
+  {#            <h4 class="g-title-quaternary">印刷と料金について</h4>#}
+  {#          </div>#}
+  {#          <div class="p-Modal-materialColor">#}
+  {#            <ul class="p-MaterialColorList">#}
+  {#              <li class="p-MaterialColor">#}
+  {#                <div#}
+  {#                        class="p-MaterialColor-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/material_color.png')"#}
+  {#                ></div>#}
+  {#                <div class="p-MaterialColor-contents">#}
+  {#                  <h6 class="g-title-quinary">使用可能な色があります</h6>#}
+  {#                  <p>合紙ならどんな色の印刷でも可能です。</p>#}
+  {#                </div>#}
+  {#              </li>#}
+  {#              <li class="p-MaterialColor">#}
+  {#                <div#}
+  {#                        class="p-MaterialColor-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/material_color.png')"#}
+  {#                ></div>#}
+  {#                <div class="p-MaterialColor-contents">#}
+  {#                  <h6 class="g-title-quinary">どんな色でもOK</h6>#}
+  {#                  <p>合紙ならどんな色の印刷でも可能です。</p>#}
+  {#                </div>#}
+  {#              </li>#}
+  {#            </ul>#}
+  {#          </div>#}
+  {#        </div>#}
+  {##}
+  {#        <div class="p-Modal-section">#}
+  {#          <div class="p-Modal-sectionLeft">#}
+  {#            <h4 class="g-title-quaternary">両面の印刷が可能です</h4>#}
+  {#          </div>#}
+  {#          <div class="p-Modal-printArea">#}
+  {#            <ul class="p-PrintAreaList">#}
+  {#              <li class="p-PrintArea">#}
+  {#                <div#}
+  {#                        class="p-PrintArea-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/print_area.png')"#}
+  {#                ></div>#}
+  {#              </li>#}
+  {#              <li class="p-PrintArea">#}
+  {#                <div#}
+  {#                        class="p-PrintArea-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/print_area.png')"#}
+  {#                ></div>#}
+  {#              </li>#}
+  {#            </ul>#}
+  {#          </div>#}
+  {#        </div>#}
+  {##}
+  {#        <div class="p-Modal-section">#}
+  {#          <div class="p-Modal-sectionLeft">#}
+  {#            <h4 class="g-title-quaternary">印刷可能な範囲</h4>#}
+  {#          </div>#}
+  {#          <div class="p-Modal-printRect">#}
+  {#            <ul class="p-PrintRectList">#}
+  {#              <li class="p-PrintRect">#}
+  {#                <div#}
+  {#                        class="p-PrintRect-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/print_rect.png')"#}
+  {#                ></div>#}
+  {#                <div class="p-PrintRect-contents">#}
+  {#                  <p>端から5mmの余白を開ける必要があり、その部分は印刷ができません。</p>#}
+  {#                </div>#}
+  {#              </li>#}
+  {#            </ul>#}
+  {#          </div>#}
+  {#        </div>#}
+  {##}
+  {#        <div class="p-Modal-section">#}
+  {#          <div class="p-Modal-sectionLeft">#}
+  {#            <h4 class="g-title-quaternary">2つから選択できます</h4>#}
+  {#          </div>#}
+  {#          <div class="p-Modal-paperBoxMaterial">#}
+  {#            <ul class="p-PaperBoxMaterialList">#}
+  {#              <li class="p-PaperBoxMaterial">#}
+  {#                <div#}
+  {#                        class="p-PaperBoxMaterial-thumb"#}
+  {#                        style="background-image: url('/static/img/product_detail/dummy/paperbox_material.png')"#}
+  {#                ></div>#}
+  {#                <div class="p-PaperBoxMaterial-contents">#}
+  {#                  <h6 class="g-title-quinary">普通生地(カードB)</h6>#}
+  {#                  <ul>#}
+  {#                    <li>・標準の生地です。特にこだわりがない場合はこの生地になります。</li>#}
+  {#
+  <li>・全体に色をプリントもでき、コストを抑えられますが、段目が見えるなど完  成度は他と劣ります。</li>
+  #}
+  {#                  </ul>#}
+  {#
+</div>#}
+{#              </li>#}
+{#
+<li class="p-PaperBoxMaterial">#}
+  {#
+  <div
+          #}
+          {# class="p-PaperBoxMaterial-thumb" #}
+          {# style="background-image: url('/static/img/product_detail/dummy/paperbox_material.png')" #}
+          {#></div>
+  #}
+  {#
+  <div class="p-PaperBoxMaterial-contents">#}
+    {# <h6 class="g-title-quinary">普通生地(カードB)</h6>#}
+    {#
+    <ul>#}
+      {#
+      <li>・標準の生地です。特にこだわりがない場合はこの生地になります。</li>
+      #}
+      {#
+      <li>・全体に色をプリントもでき、コストを抑えられますが、段目が見えるなど完  成度は他と劣ります。</li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">材質の選択</h4>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-flatBagMaterial">#}
+    {# <h5 class="g-title-quinary p-Modal-flatBagMaterialTitle">手触りや光沢の違いで、高級感の違いが生まれます</h5>#}
+    {##}
+    {#
+    <ul class="p-FlatBagMaterialList">#}
+      {#
+      <li class="p-FlatBagMaterial">#}
+        {#
+        <div
+                #}
+                {# class="p-FlatBagMaterial-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/flatbag_material.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-FlatBagMaterial-contents">#}
+          {# <h6 class="g-title-quinary">通常</h6>#}
+          {# <p>光沢のあるアルミ素材。ガシガシした手触りに。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-FlatBagMaterial">#}
+        {#
+        <div
+                #}
+                {# class="p-FlatBagMaterial-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/flatbag_material.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-FlatBagMaterial-contents">#}
+          {# <h6 class="g-title-quinary">通常</h6>#}
+          {# <p>光沢のあるアルミ素材。ガシガシした手触りに。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-FlatBagMaterial">#}
+        {#
+        <div
+                #}
+                {# class="p-FlatBagMaterial-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/flatbag_material.png')" #}
+                {#></div>
+        #}
+        {#
+        <div class="p-FlatBagMaterial-contents">#}
+          {# <h6 class="g-title-quinary">通常</h6>#}
+          {# <p>光沢のあるアルミ素材。ガシガシした手触りに。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">材質の選択</h4>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-cardBoardMaterial">#}
+    {#
+    <ul class="p-CardBoardMaterialList">#}
+      {#
+      <li class="p-CardBoardMaterial">#}
+        {#
+        <div class="p-CardBoardMaterial-main">#}
+          {#
+          <div
+                  #}
+                  {# class="p-CardBoardMaterial-thumb" #}
+                  {# style="background-image: url('/static/img/product_detail/dummy/cardboard_material.png')" #}
+                  {#>
+          </div>
+          #}
+          {#
+          <div class="p-CardBoardMaterial-contents">#}
+            {# <h6 class="g-title-quinary">通常</h6>#}
+            {#
+            <ul>#}
+              {#
+              <li>・ダンボールそのままの通常素材です。</li>
+              #}
+              {#
+              <li>・コストを抑えられますが、段目が見えるなど完成度は他と劣ります。</li>
+              #}
+              {#
+            </ul>
+            #}
+            {#
+          </div>
+          #}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-CardBoardMaterial">#}
+        {#
+        <div class="p-CardBoardMaterial-main">#}
+          {#
+          <div
+                  #}
+                  {# class="p-CardBoardMaterial-thumb" #}
+                  {# style="background-image: url('/static/img/product_detail/dummy/cardboard_material.png')" #}
+                  {#>
+          </div>
+          #}
+          {#
+          <div class="p-CardBoardMaterial-contents">#}
+            {# <h6 class="g-title-quinary">通常</h6>#}
+            {#
+            <ul>#}
+              {#
+              <li>・ダンボールそのままの通常素材です。</li>
+              #}
+              {#
+              <li>・コストを抑えられますが、段目が見えるなど完成度は他と劣ります。</li>
+              #}
+              {#
+            </ul>
+            #}
+            {#
+          </div>
+          #}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-CardBoardMaterial">#}
+        {#
+        <div class="p-CardBoardMaterial-main">#}
+          {#
+          <div
+                  #}
+                  {# class="p-CardBoardMaterial-thumb" #}
+                  {# style="background-image: url('/static/img/product_detail/dummy/cardboard_material.png')" #}
+                  {#>
+          </div>
+          #}
+          {#
+          <div class="p-CardBoardMaterial-contents">#}
+            {# <h6 class="g-title-quinary">通常</h6>#}
+            {#
+            <ul>#}
+              {#
+              <li>・ダンボールそのままの通常素材です。</li>
+              #}
+              {#
+              <li>・コストを抑えられますが、段目が見えるなど完成度は他と劣ります。</li>
+              #}
+              {#
+            </ul>
+            #}
+            {#
+          </div>
+          #}
+          {#
+        </div>
+        #}
+        {#
+        <div class="p-CardBoardMaterial-supplement">#}
+          {# <h6 class="g-title-quinary">※表面加工オプションが選べます</h6>#}
+          {# <p>特殊な加工のため、注文の際はお問い合わせ扱いになります。</p>#}
+          {##}
+          {#
+          <ul class="p-CardBoardMaterial-processList">#}
+            {#
+            <li class="p-CardBoardMaterial-process">#}
+              {#
+              <div
+                      #}
+                      {# class="p-CardBoardMaterial-processThumb" #}
+                      {#
+                      style="background-image: url('/static/img/product_detail/dummy/cardboard_material_process.png')"
+                      #}
+                      {#>
+              </div>
+              #}
+              {#
+              <div class="p-CardBoardMaterial-processContents">#}
+                {# <h6 class="g-title-quinary">マットニス</h6>#}
+                {# <p>基本的に合紙はこの加工を使います</p>#}
+                {#
+              </div>
+              #}
+              {#
+            </li>
+            #}
+            {#
+            <li class="p-CardBoardMaterial-process">#}
+              {#
+              <div
+                      #}
+                      {# class="p-CardBoardMaterial-processThumb" #}
+                      {#
+                      style="background-image: url('/static/img/product_detail/dummy/cardboard_material_process.png')"
+                      #}
+                      {#></div>
+              #}
+              {#
+              <div class="p-CardBoardMaterial-processContents">#}
+                {# <h6 class="g-title-quinary">マットニス</h6>#}
+                {# <p>基本的に合紙はこの加工を使います</p>#}
+                {#
+              </div>
+              #}
+              {#
+            </li>
+            #}
+            {#
+          </ul>
+          #}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">印刷する面数が増えるほど、 料金は上がります</h4>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-printNum">#}
+    {# <p>着色する面数に従って料金が変化します。面数のイメージは画像をご覧ください。<br>※図のサイズ感はイメージです。</p>#}
+    {#
+    <ul class="p-PrintNumList">#}
+      {#
+      <li class="p-PrintNum">#}
+        {#
+        <div
+                #}
+                {# class="p-PrintNum-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/print_num.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">2つから選択できます</h4>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-paperProcess">#}
+    {#
+    <ul class="p-PaperProcessList">#}
+      {#
+      <li class="p-PaperProcess">#}
+        {#
+        <div
+                #}
+                {# class="p-PaperProcess-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/paper_process.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-PaperProcess-contents">#}
+          {# <h5 class="g-title-quinary">標準加工（OPニス）</h5>#}
+          {# <p>標準の加工です。こだわりがない場合はこれがオススメです。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-PaperProcess">#}
+        {#
+        <div
+                #}
+                {# class="p-PaperProcess-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/paper_process.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-PaperProcess-contents">#}
+          {# <h5 class="g-title-quinary">標準加工（OPニス）</h5>#}
+          {# <p>標準の加工です。こだわりがない場合はこれがオススメです。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">加工の選択</h4>#}
+    {# <p>加工のアリ/ナシを選べます</p>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-flatBagProcess">#}
+    {#
+    <ul class="p-FlatBagProcessTypeList">#}
+      {#
+      <li class="p-FlatBagProcessType">#}
+        {# <h5 class="g-title-quinary">角丸</h5>#}
+        {#
+        <ul class="p-FlatBagProcessList">#}
+          {#
+          <li class="p-FlatBagProcess">#}
+            {#
+            <div
+                    #}
+                    {# class="p-FlatBagProcess-thumb" #}
+                    {# style="background-image: url('/static/img/product_detail/dummy/flatbag_process.png')" #}
+                    {#>
+            </div>
+            #}
+            {#
+            <div class="p-FlatBagProcess-contents">#}
+              {# <h6 class="g-title-quinary">角丸アリ</h6>#}
+              {# <p>世の中で多く見られる形状です</p>#}
+              {#
+            </div>
+            #}
+            {#
+          </li>
+          #}
+          {#
+          <li class="p-FlatBagProcess">#}
+            {#
+            <div
+                    #}
+                    {# class="p-FlatBagProcess-thumb" #}
+                    {# style="background-image: url('/static/img/product_detail/dummy/flatbag_process.png')" #}
+                    {#>
+            </div>
+            #}
+            {#
+            <div class="p-FlatBagProcess-contents">#}
+              {# <h6 class="g-title-quinary">角丸アリ</h6>#}
+              {# <p>世の中で多く見られる形状です</p>#}
+              {#
+            </div>
+            #}
+            {#
+          </li>
+          #}
+          {#
+        </ul>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-FlatBagProcessType">#}
+        {# <h5 class="g-title-quinary">角丸</h5>#}
+        {#
+        <ul class="p-FlatBagProcessList">#}
+          {#
+          <li class="p-FlatBagProcess">#}
+            {#
+            <div
+                    #}
+                    {# class="p-FlatBagProcess-thumb" #}
+                    {# style="background-image: url('/static/img/product_detail/dummy/flatbag_process.png')" #}
+                    {#></div>
+            #}
+            {#
+            <div class="p-FlatBagProcess-contents">#}
+              {# <h6 class="g-title-quinary">角丸アリ</h6>#}
+              {# <p>世の中で多く見られる形状です</p>#}
+              {#
+            </div>
+            #}
+            {#
+          </li>
+          #}
+          {#
+          <li class="p-FlatBagProcess">#}
+            {#
+            <div
+                    #}
+                    {# class="p-FlatBagProcess-thumb" #}
+                    {# style="background-image: url('/static/img/product_detail/dummy/flatbag_process.png')" #}
+                    {#></div>
+            #}
+            {#
+            <div class="p-FlatBagProcess-contents">#}
+              {# <h6 class="g-title-quinary">角丸アリ</h6>#}
+              {# <p>世の中で多く見られる形状です</p>#}
+              {#
+            </div>
+            #}
+            {#
+          </li>
+          #}
+          {#
+        </ul>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">2つから選択できます</h4>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-bottom">#}
+    {#
+    <ul class="p-BottomList">#}
+      {#
+      <li class="p-Bottom">#}
+        {#
+        <div
+                #}
+                {# class="p-Bottom-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/bottom.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-Bottom-contents">#}
+          {# <h5 class="g-title-quinary">標準加工（OPニス）</h5>#}
+          {# <p>標準の加工です。こだわりがない場合はこれがオススメです。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-Bottom">#}
+        {#
+        <div
+                #}
+                {# class="p-Bottom-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/bottom.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-Bottom-contents">#}
+          {# <h5 class="g-title-quinary">標準加工（OPニス）</h5>#}
+          {# <p>標準の加工です。こだわりがない場合はこれがオススメです。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{##}
+{#
+<div class="p-Modal-section">#}
+  {#
+  <div class="p-Modal-sectionLeft">#}
+    {# <h4 class="g-title-quaternary">2つから選択できます</h4>#}
+    {#
+  </div>
+  #}
+  {#
+  <div class="p-Modal-specialProcess">#}
+    {#
+    <ul class="p-SpecialProcessList">#}
+      {#
+      <li class="p-SpecialProcess">#}
+        {#
+        <div
+                #}
+                {# class="p-SpecialProcess-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/special_process.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-SpecialProcess-contents">#}
+          {# <h5 class="g-title-quinary">標準加工（OPニス）</h5>#}
+          {# <p>標準の加工です。こだわりがない場合はこれがオススメです。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+      <li class="p-SpecialProcess">#}
+        {#
+        <div
+                #}
+                {# class="p-SpecialProcess-thumb" #}
+                {# style="background-image: url('/static/img/product_detail/dummy/special_process.png')" #}
+                {#>
+        </div>
+        #}
+        {#
+        <div class="p-SpecialProcess-contents">#}
+          {# <h5 class="g-title-quinary">標準加工（OPニス）</h5>#}
+          {# <p>標準の加工です。こだわりがない場合はこれがオススメです。</p>#}
+          {#
+        </div>
+        #}
+        {#
+      </li>
+      #}
+      {#
+    </ul>
+    #}
+    {#
+  </div>
+  #}
+  {#
+</div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

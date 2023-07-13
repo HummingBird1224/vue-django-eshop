@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}商品一覧（マークアップ）【canal】{% endblock %}
+{% block titleog %}商品一覧（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  <div class="p-products">
+    <div class="p-products-main">
+      <nav class="p-productsNav">
+        <div class="p-productsNavCategory">
+          <h3 class="g-title-tertiary">カテゴリから探す</h3>
+          <ul class="p-productsNavCategory-list">
+            <li class="p-productsNavCategory-item is-current">
+              <input id="category-menu-check1" class="category-menu-check" type="checkbox">
+              <label for="category-menu-check1">
+                <div>
+                  <img src="/static/img/icon_flat_bag.png"/>
+                  <span>平袋</span>
+                </div>
+                <div class="menuArrow"></div>
+              </label>
+              <ul class="p-productsNavCategory-items">
+                <li class="p-productsNavCategory-itemTags is-current-tag">
+                  <a>すべて</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小ロット印刷</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>インナー袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>スタンド袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小分け袋</a>
+                </li>
+              </ul>
+            </li>
+            <li class="p-productsNavCategory-item">
+              <input id="category-menu-check2" class="category-menu-check" type="checkbox">
+              <label for="category-menu-check2">
+                <div>
+                  <img src="/static/img/icon_cardboard.png"/>
+                  <span>箱 - ダンボール</span>
+                </div>
+                <div class="menuArrow"></div>
+              </label>
+              <ul class="p-productsNavCategory-items">
+                <li class="p-productsNavCategory-itemTags is-current-tag">
+                  <a href="#">すべて</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小ロット印刷</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>インナー袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>スタンド袋</a>
+                </li>
+                <li class="p-productsNavCategory-itemTags">
+                  <a>小分け袋</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-productsNavCategory">
+          <h3 class="g-title-tertiary">ユースケースから探す</h3>
+          <ul class="p-productsNavCategory-list">
+            <li class="p-productsNavCategory-item">
+              <a href="#">
+                <img src="/static/img/icon_hanger.png"/>ファッション
+              </a>
+            </li>
+            <li class="p-productsNavCategory-item">
+              <a href="#">
+                <img src="/static/img/icon_supplement.png"/>サプリメント
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="p-productsMain">
+        <div class="p-productsCategoryHeader--new">
+          <h1>
+            <img src="/static/img/product_category/paperbox/category_paperbox_all.png" class="p-productsCategoryHeader--new-headerImage">
+            紙器
+          </h1>
+          <ul class="p-ProductsDescriptionList">
+            <li class="p-ProductsDescription">
+              <img src="/static/img/product_category/header/dollar.svg">
+              <h3>版代や木型代について</h3>
+              <div>版代等、費用がかかります</div>
+            </li>
+            <li class="p-ProductsDescription">
+              <img src="/static/img/product_category/header/timer.svg">
+              <h3>納期について</h3>
+              <div>入稿が完了すると決定します</div>
+            </li>
+            <li class="p-ProductsDescription">
+              <img src="/static/img/product_category/header/shipping.svg">
+              <h3>パッケージが届くまでの流れ</h3>
+              <div>購入→入稿のステップ</div>
+            </li>
+          </ul>
+          <hr>
+        </div>
+        <ul class="p-ProductGenreList">
+          <li class="p-ProductGenre">
+            <h3 class="g-title-tertiary p-ProductGenre-title">紙器</h3>
+            <span>化粧品などの内箱として最もよく使われる形状です</span>
+            <h4 class="p-ProductGenreTags">
+              <span>
+                注文数100～
+              </span>
+              <span>
+                <span class="p-ProductGenreTags-partition">/</span>
+                フルカラー印刷ができます
+              </span>
+              <span>
+                <span class="p-ProductGenreTags-partition">/</span>
+                オリジナルサイズ可能
+              </span>
+            </h4>
+            <div class="p-ProductListWrapper">
+              <ul class="p-ProductList--new">
+                <li class="p-Product--new">
+                  <div class="p-ProductThumb">
+                    <ul class="p-ProductTags p-ProductTags--new">
+                      <li>小ロット</li>
+                      <li>カンタン入稿</li>
+                    </ul>
+                    <a href="/catalog/paperbox/folding-carton/">
+                      <img src="/media/products/products/folding-carton/cover/folding-carton_hover.jpg">
+                    </a>
+                  </div>
+                  <div class="p-ProductDescriptionWrapper">
+                    <h4 class="g-title-quaternary p-ProductTitle">
+                      <a href="/catalog/paperbox/folding-carton/">B式組み立て底</a>
+                    </h4>
+                    <p class="p-ProductBody">
+                      46円 / 1箱 (版代等別)
+                    </p>
+                    <p class="p-ProductInfo">
+                      納期: データ確定後2週間
+                    </p>
+                    <p class="p-ProductInfo">
+                      色数: フルカラー
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <a href="https://docs.google.com/forms/d/1YO31XLGTYHRW7E8Bpe8pZmDCeUudCvf0oMuPFNTvVLk/viewform">
+          <footer class="p-products-footer">
+            <div class="p-products-footer-contactDescription">
+              <h3 class="g-title-tertiary">お求めの商品が見当たらない場合</h3>
+              <h4 class="g-title-quaternary">見積もり依頼・問い合わせをする</h4>
+              <p>ご希望の材質・形状のパッケージをフォームからお問い合わせください。</p>
+            </div>
+            <div class="p-products-footer-contactIcon">
+              <img src="/static/img/arrow_24.png"/>
+            </div>
+          </footer>
+        </a>
+      </section>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

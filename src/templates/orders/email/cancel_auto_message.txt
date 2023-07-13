@@ -1,0 +1,102 @@
+{% load humanize %}
+{% autoescape off %}
+{{ user.get_fullname }}様
+
+
+こんにちは、パッケージ印刷のcanalです。
+
+本メールは、お客様の以下のご注文のキャンセルに関する自動配信メールです。
+
+注文商品番号： {{ orderitem.ref_code }}の注文は、
+
+{{ expiry_date|date:"Y年n月j日" }}までにデータのチェックが済まされておりませんでしたので、
+
+当社規定によりキャンセルとさせて頂きました。
+
+再度ご注文される際はcanalをご利用ください。
+
+引き続きcanalをよろしくお願いいたします。
+
+https://canal.ink/
+
+■キャンセル内容
+
+────────────────────────────────
+
+○注文商品番号　{{ orderitem.ref_code }}
+[商　品]　{{ orderitem.product.name }}
+[仕　様]　{{ orderitem.size_str }}
+[部　数]　{{ orderitem.quantity|intcomma }}部
+[単　価]　{{ orderitem.prices.unit_price }}円
+[料　金]　{{ orderitem.prices.total|intcomma }}円
+[返金額]　{{ refund|intcomma }}円
+
+
+{% if  orderitem.order.get_order_items|length != 0 %}
+■キャンセル後のご注文情報
+
+────────────────────────────────
+
+[注文番号] {{ orderitem.order.ref_code }}
+[注 文 日] {{ orderitem.order.created_at|date:"Y年n月j日" }}
+[注文商品数] {{ orderitem.order.get_order_items|length }}
+[お支払い方法] クレジットカード
+[お支払い金額] {{ orderitem.order.total|intcomma }}円
+
+内訳:
+{% for item in orderitem.order.get_order_items %}
+[{{ item.ref_code }}] 商品代金：{{ item.subtotal|intcomma }}円
+{% endfor %}
+
+お支払合計金額:　{{ orderitem.order.get_subtotal|intcomma }}円
+
+消費税: {{ orderitem.order.tax_total|intcomma }}円
+
+ご請求合計金額:　{{ orderitem.order.total|intcomma }}円
+
+■注文商品情報
+
+────────────────────────────────
+
+{% for item in orderitem.order.get_order_items %}
+○注文商品番号　{{ item.ref_code }}
+[商　品]　{{ item.product.name }}
+[仕　様]　{{ item.size_str }}
+{% for key, value in item.render_extra_info.items  %}
+　　　　  {{ key }}: {{ value }}
+{% endfor %}
+[出荷予定日]　受付日確定から25日以内
+[部　数]　{{ item.quantity|intcomma }}部
+[単　価]　{{ item.prices.unit_price }}円
+[料　金]　{{ item.prices.total|intcomma }}円
+{% endfor %}
+
+[お 届 け 先] {{ item.delivery.postal_code }} {{ item.delivery.get_full_address }}　{{ item.delivery.get_full_name }}様
+[出　荷　元]　福岡パッケージ株式会社
+{% endif %}
+
+
+◆ご登録情報◆　（マイページにログインする際に必要です）
+
+[メールアドレス]　info@canal.ink
+
+今後ともcanalをよろしくお願いいたします。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+＜＜困ったこと、ご相談などございましたら、お気軽にご連絡ください＞＞
+
+本メールは配信専用メールアドレスから配信しております。
+
+ご返信いただいても確認できませんので、
+
+お問い合わせやキャンセルのお手続きは、こちらよりご確認くださいませ。
+
+https://docs.google.com/forms/d/e/1FAIpQLSebh80a69mJ_TwNzt_MhIjeCrz4xkhOGmk00tf1SbToB3P81w/viewform
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+メールマガジンの配信設定は以下より変更可能でございます。
+
+変更をご希望の際は下記より設定お願いいたします。
+{% endautoescape %}

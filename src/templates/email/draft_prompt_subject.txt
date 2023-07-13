@@ -1,0 +1,1 @@
+【canal】データ入稿のお願い - ご注文番号：{{ orderitem.ref_code }}

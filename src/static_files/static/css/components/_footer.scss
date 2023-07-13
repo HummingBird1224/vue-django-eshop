@@ -1,0 +1,93 @@
+.c-footer {
+  background-color: #08181A;
+  min-width: 1200px;
+  min-width: auto;
+  padding: 60px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  @include mq {
+    min-width: 0;
+    align-items: start;
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .c-footerLeft {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    @include mq {
+      flex-direction: column;
+    }
+  }
+
+  .c-footerNavigation {
+    display: flex;
+    justify-content: space-between;
+
+    @include mq {
+      flex-direction: column;
+    }
+  }
+
+  .c-footerMiniLogo {
+    width: 40px;
+    margin-right: 30px;
+
+    @include mq {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .c-footerNavigationList {
+    position: relative;
+    margin: 10px 20px;
+    display: inline-table;
+    padding-top: 2rem;
+    padding-left: 10px;
+
+    @include mq {
+      margin: 0;
+      padding-top: 0;
+    }
+
+    h4 {
+      top: -1rem;
+      left: 0;
+      position: absolute;
+      color: #fff;
+
+      @include mq {
+        position: unset;
+      }
+    }
+  }
+
+  .c-footerNavigationItem {
+    margin-right: 15px;
+
+    a {
+      line-height: 1;
+      color: $color-text-gray;
+      font-size: 12px;
+    }
+  }
+
+  .c-footerRight {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .c-footerCopyright {
+    margin-bottom: 10px;
+    @include f-text-sm;
+    line-height: 1;
+    color: #999999;
+  }
+}

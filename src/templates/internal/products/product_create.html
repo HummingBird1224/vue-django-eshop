@@ -1,0 +1,18 @@
+{% extends "internal/base.html" %}
+{% load humanize %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+<div>
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div
+    id="js-internal-product-create"
+    data-static-url="{% static_url %}"
+  ></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'internalProductCreate' %}
+{% endblock %}

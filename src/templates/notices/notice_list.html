@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %} お知らせ | canal{% endblock %}
+{% block titleog %} お知らせ | canal{% endblock %}
+
+
+{% block content %}
+<div id="csrf-token" data-token="{{ csrf_token }}"></div>
+<div class="p-notice">
+  <div
+      id="js-notice-list"
+      data-static-url="{% static_url %}"
+    ></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'noticeList' %}
+{% endblock %}

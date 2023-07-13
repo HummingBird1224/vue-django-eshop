@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'futara';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./../../webfonts/futura.ttf')  format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/**
+ * font-family.
+ */
+$fontFamily: -apple-system, helvetica, 'Hiragino Kaku Gothic Pro', meiryo, sans-serif;
+$fontFamily-jp: 'Hiragino Kaku Gothic Pro', sans-serif;
+$fontFamily-en: -apple-system, helvetica, sans-serif;
+
+
+/**
+ * font-size.
+ */
+$fontSize-lg: 1.6rem;
+$fontSize-md: 1.4rem;
+$fontSize-sm: 1.2rem;
+$fontSize-xs: 1rem;
+
+$fontSize-h1: 4rem;
+$fontSize-h2: 3.2rem;
+$fontSize-h3: 2.4rem;
+$fontSize-h4: 2rem;
+$fontSize-h5: 1.6rem;
+
+/**
+ * letter-spacing.
+ */
+$letterSpacing: .08rem;
+$letterSpacing-h: .1rem;
+
+/**
+  line-height.
+ */
+$lineHeight-lg: 3.2rem;
+$lineHeight-md: 2.8rem;
+$lineHeight-sm: 2rem;
+$lineHeight-xs: 1.4rem;
+
+$lineHeight-h1: 5.6rem;
+$lineHeight-h2: 4rem;
+$lineHeight-h3: 3.2rem;
+$lineHeight-h4: 2.4rem;
+$lineHeight-h5: 2.4rem;
+
+/**
+  mixin.
+ */
+@mixin f-text-lg {
+  font-size: $fontSize-lg;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight-lg;
+}
+
+@mixin f-text-md {
+  font-size: $fontSize-md;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight-md;
+}
+
+@mixin f-text-sm {
+  font-size: $fontSize-sm;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight-sm;
+}
+
+@mixin f-text-xs {
+  font-size: $fontSize-xs;
+  letter-spacing: $letterSpacing;
+  line-height: $lineHeight-xs;
+}
+
+@mixin f-text-h1 {
+  font-size: $fontSize-h1;
+  font-weight: bold;
+  letter-spacing: $letterSpacing-h;
+  line-height: $lineHeight-h1;
+}
+
+@mixin f-text-h2 {
+  font-size: $fontSize-h2;
+  font-weight: bold;
+  letter-spacing: $letterSpacing-h;
+  line-height: $lineHeight-h2;
+}
+
+@mixin f-text-h3 {
+  font-size: $fontSize-h3;
+  font-weight: bold;
+  letter-spacing: $letterSpacing-h;
+  line-height: $lineHeight-h3;
+}
+
+@mixin f-text-h4 {
+  font-size: $fontSize-h4;
+  font-weight: bold;
+  letter-spacing: $letterSpacing-h;
+  line-height: $lineHeight-h4;
+}
+
+@mixin f-text-h5 {
+  font-size: $fontSize-h5;
+  font-weight: bold;
+  letter-spacing: $letterSpacing-h;
+  line-height: $lineHeight-h5;
+}

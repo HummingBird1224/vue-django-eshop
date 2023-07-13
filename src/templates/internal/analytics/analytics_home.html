@@ -1,0 +1,47 @@
+{% extends "internal/base.html" %}
+{% load humanize %}
+{% load static %}
+
+{% block content %}
+  <div class="p-internalAnalytics">
+    <div class="p-internalAnalytics-wrapper">
+      <div class="p-internalAnalytics-content">
+        <div class="p-internalAnalytics-section">
+          <div class="p-internalAnalytics-section-header">
+            <h3 class="g-title-tertiary">ユーザー</h3>
+          </div>
+          <div class="p-internalAnalytics-section-content">
+            <table>
+              <tr>
+                <td>住所登録済みユーザー数</td>
+                <td>：{{ num_use_with_address }}</td>
+              </tr>
+              <tr>
+                <td>総ユーザー数</td>
+                <td>：{{ num_user }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <hr>
+        <div class="p-internalAnalytics-section">
+          <div class="p-internalAnalytics-section-header">
+            <h3 class="g-title-tertiary">注文</h3>
+          </div>
+          <div class="p-internalAnalytics-section-content">
+            <table>
+              <tr>
+                <td>支払い完了済み注文数</td>
+                <td>：{{ num_completed_orders }}</td>
+              </tr>
+              <tr>
+                <td>総注文数</td>
+                <td>：{{ num_orders }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

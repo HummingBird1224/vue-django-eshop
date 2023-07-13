@@ -1,0 +1,463 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}データ入稿（マークアップ）【canal】{% endblock %}
+{% block titleog %}データ入稿（マークアップ）【canal】{% endblock %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+
+  <div class="p-draft">
+    <div class="p-draftWrapper">
+      <a class="p-draftPageBack" href="#">
+      <div class="p-draftPageBack-icon">
+        <svg>
+          <use xlink:href='#icons-arrow_forward'/>
+        </svg>
+      </div>
+      <span class="p-draftPageBack-text">戻る</span>
+    </a>
+
+    <header class="p-draftHeader">
+      <h2 class="g-title-secondary">データ入稿</h2>
+
+      <div class="p-draftHeaderNotice">
+        <a class="c-textLink" href="">データの作成方法についてはこちら</a>
+      </div>
+    </header>
+
+    <div class="p-draftMain">
+      <div class="p-draftMainContainer">
+        <div class="p-Product">
+          <div class="p-ProductThumb"
+                style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg)"></div>
+          <div class="p-ProductInfo">
+            <h5 class="g-title-quinary">なんたらかんたら袋</h5>
+
+            <div class="p-ProductDetail">
+              <div class="p-ProductDetail-row">
+                <div class="p-ProductDetail-column">
+                  <h6 class="g-title-quinary">サイズ</h6>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+                <div class="p-ProductDetail-column">
+                  <h6 class="g-title-quinary">サイズ</h6>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+              </div>
+              <div class="p-ProductDetail-row">
+                <div class="p-ProductDetail-column">
+                  <h6 class="g-title-quinary">サイズ</h6>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+                <div class="p-ProductDetail-column">
+                  <h6 class="g-title-quinary">サイズ</h6>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+              </div>
+              <div class="p-ProductDetail-row">
+                <div class="p-ProductDetail-column">
+                  <h6 class="g-title-quinary">サイズ</h6>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+                <div class="p-ProductDetail-column">
+                  <h6 class="g-title-quinary">サイズ</h6>
+                  <p>240cm×300cm×3cm</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- <div class="p-File">
+          <div class="p-UploadInfo-detail">
+            <div class="p-UploadInfo-file">
+              <img src="/static/img/icon_file_sm.png"/>
+              <p>
+                anoma_logo_package.ai
+              </p>
+            </div>
+            <a class="c-textLink" href="#">データを確認する</a>
+          </div>
+        </div>
+
+        <div class="p-File-checkResult">
+          <h5 class="g-title-quinary">
+            <svg class="error">
+              <use xlink:href='#icons-warning'/>
+            </svg>
+            チェック結果：データに不備が見つかりました。
+          </h5>
+
+                    <p class="notice">
+                      <span>※</span>
+                      弊社では印刷を行えるかどうかを確認しています。<br>
+           誤字・脱字・デザインに関する部分はお客様でお願い致します。
+                    </p> -->
+
+{#          <p>以下の項目を修正して、データを再入稿しましょう。</p>#}
+{#          <a class="c-textLink" href="#">データの作成方法についてはこちら</a>#}
+{##}
+{#          <ul class="p-File-checkResultList">#}
+{#            <li class="c-form-item">#}
+{#              <label class="c-form-checkbox">#}
+{#                <input class="c-form-checkboxInput" type="checkbox">#}
+{#                <span class="c-form-checkboxMark">#}
+{#                <i class="material-icons">done</i>#}
+{#              </span>#}
+{#                作成したデータが注文するサイズとズレていました#}
+{#              </label>#}
+{#            </li>#}
+{#            <li class="c-form-item">#}
+{#              <label class="c-form-checkbox">#}
+{#                <input class="c-form-checkboxInput" type="checkbox">#}
+{#                <span class="c-form-checkboxMark">#}
+{#                <i class="material-icons">done</i>#}
+{#              </span>#}
+{#                作成したデータが注文するサイズとズレていました#}
+{#              </label>#}
+{#            </li>#}
+{#          </ul>#}
+
+      </div>
+      <div class="p-UploadInfo-draftModeSwitch">
+        <div class="enabledSelection">
+          <span>カンタン入稿</span>
+        </div>
+        <div class="disabledSelection">
+          <span>自分でデータ作成して入稿</span>
+        </div>
+      </div>
+          <div class="p-draftEasyInput">
+      <h4 class="g-title-quaternary">カンタン入稿</h4>
+      <span>画像データをアップロードするだけで入稿データを作成する方法です。</span>
+      <div class="p-draftEasyInput-Container">
+        <img src="/static/img/dummy/detailPage_apparel08_top.jpg" class="p-draft-CategoryImage">
+        <div class="p-draftDescriptionWrapper">
+          <h5 class="g-title-quinary">入稿データ内容</h5>
+          <div class="p-draftInputInfoContainer">
+            <div class="p-draftInputInfoLabelWrapper">
+              <h6 class="g-title-quinary">印刷面数</h6>
+              <span><strong>2</strong>面</span>
+            </div>
+            <div class="p-draftInputInfoLabelWrapper">
+              <h6 class="g-title-quinary">印刷面数</h6>
+              <span><strong>2</strong>面</span>
+            </div>
+          </div>
+          <div class="p-draftInputInfoContainer">
+            <div class="p-draftInputInfoLabelWrapper">
+              <h6 class="g-title-quinary">印刷面数</h6>
+              <span><strong>2</strong>面</span>
+            </div>
+            <div class="p-draftInputInfoLabelWrapper">
+              <h6 class="g-title-quinary">印刷面数</h6>
+              <span><strong>2</strong>面</span>
+            </div>
+          </div>
+          <div class="p-draftInputDataLinkButton">
+            <span>データ作成へ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-draftOrder">
+      <h4 class="g-title-quaternary">注文した商品</h4>
+
+      <div class="p-draftOrderDetail">
+        <div class="p-draftOrderThumb"
+             style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg);">
+        </div>
+        <div class="p-draftOrderInfo">
+          <div class="p-draftOrderBody">
+            <h5 class="g-title-quinary"><a class="c-textLink" href="#">なんたらかんたら袋</a></h5>
+
+            <div class="p-draftOrderBody-rowContainer">
+                      <div class="p-draftOrderBody-row">
+                        <div class="p-draftOrderBody-info">
+                          <h6 class="g-title-quinary">サイズ</h6>
+                          <p>240cm×300cm×3cm</p>
+                        </div>
+
+                        <div class="p-draftOrderBody-info">
+                          <h6 class="g-title-quinary">デザイン</h6>
+                          <p>カシューナッツ</p>
+                        </div>
+
+                        <div class="p-draftOrderBody-info">
+                          <h6 class="g-title-quinary">出荷予定日</h6>
+                          <p>受付日確定から7日以内</p>
+                        </div>
+                      </div>
+
+                      <div class="p-draftOrderBody-row">
+                        <div class="p-draftOrderBody-info">
+                          <h6 class="g-title-quinary">注文数</h6>
+                          <p>4,000組</p>
+                        </div>
+
+                        <div class="p-draftOrderBody-info">
+                          <h6 class="g-title-quinary">注文商品番号</h6>
+                          <p>1234567890</p>
+                        </div>
+                      </div>
+                    </div>
+          </div>
+
+          <p class="p-draftOrderPrice">45,000<span>円</span></p>
+        </div>
+      </div>
+    </div>
+    <section class="p-HowTo">
+      <header class="p-HowToHeader">
+        <span>How To</span>
+        <h3 class="g-title-tertiary">データの作成方法について</h3>
+      </header>
+      <ol class="p-HowToList">
+        <li class="p-HowToSection p-HowToSection--1">
+          <div class="p-HowToSectionWrapper">
+            <p class="p-HowToSectionNo">1. </p>
+          <div class="p-HowToSectionContent">
+            <h4 class="g-title-quaternary">データ作成ガイドをチェックしよう</h4>
+            <div class="p-HowToBody">
+              <p>
+                データ作成時の注意事項を解説しています。<br>
+                ルールが存在するので初めての方はチェックしてデータ作成をはじめましょう。
+                <small>現在注文してい商品 : 平袋</small>
+              </p>
+              <a class="c-btn u-sp-none" href="#">平袋のデータチェックガイドを見る</a>
+            </div>
+          </div>
+          </div>
+          <a class="c-btn u-pc-none" href="#">平袋のデータチェックガイドを見る</a>
+        </li>
+        <li class="p-HowToSection p-HowToSection--2">
+          <div class="p-HowToSectionWrapper">
+          <p class="p-HowToSectionNo">2. </p>
+          <div class="p-HowToSectionContent">
+            <h4 class="g-title-quaternary">テンプレートをダウンロードしよう</h4>
+            <div class="p-HowToBody">
+              <p>
+                データ作成時に仕様できるテンプレートをダウンロードしましょう。<br>
+                ガイド線など引かれた状態で使用できます。
+              </p>
+            </div>
+            <div class="p-HowToTemplate">
+              <div class="p-HowToTemplate-thumb">
+                <img src="/static/img/flat_bag_template.png"/>
+              </div>
+              <div class="p-HowToTemplate-info">
+                <h5 class="g-title-quinary">平袋テンプレート</h5>
+                <ul class="p-HowToTemplate-versions">
+                  <li>
+                    <h6 class="g-title-quinary">対応バージョン :</h6>
+                    <p>
+                      Adobe Ilustrator：8.0J / 9.0J / 10.0J / CS / CS2 / CS3 / CS4 / CS5 / <br class="u-sp-none">
+                      CS6 / CC（2017まで）
+                    </p>
+                  </li>
+                </ul>
+                <ul class="p-HowToTemplate-data">
+                  <li>
+                    <p>
+                      <img src="/static/img/icon_illustrator.png"/>
+                      Illustrator テンプレートデータ
+                    </p>
+                    <a class="c-btn" href="#">ダウンロード</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+{#      <div class="c-modal">#}
+{#        <div class="p-draftModal p-draftModal--upload">#}
+{#          <header class="p-draftModalHeader">#}
+{#            <h2 class="g-title-secondary">作成したデータをアップロード</h2>#}
+{#            <a href="#">#}
+{#              <svg>#}
+{#                <use xlink:href='#icons-cross'/>#}
+{#              </svg>#}
+{#            </a>#}
+{#          </header>#}
+{##}
+{#          <div class="p-ModalUpload">#}
+{#            <div class="p-ModalUpload-left">#}
+{#              <h3 class="g-title-tertiary">アップ前に、データのチェックエリストをご活用ください</h3>#}
+{#              <ul>#}
+{#                <li class="c-form-item">#}
+{#                  <label class="c-form-checkbox">#}
+{#                    <input class="c-form-checkboxInput" type="checkbox">#}
+{#                    <span class="c-form-checkboxMark">#}
+{#                      <i class="material-icons">done</i>#}
+{#                    </span>#}
+{#                    作成したデータは注文する商品サイズと合っていますか？#}
+{#                  </label>#}
+{#                </li>#}
+{##}
+{#                <li class="c-form-item">#}
+{#                  <label class="c-form-checkbox">#}
+{#                    <input class="c-form-checkboxInput" type="checkbox">#}
+{#                    <span class="c-form-checkboxMark">#}
+{#                      <i class="material-icons">done</i>#}
+{#                    </span>#}
+{#                    カラーモードはCMYKになっていますか？#}
+{#                  </label>#}
+{#                </li>#}
+{##}
+{#                <li class="c-form-item">#}
+{#                  <label class="c-form-checkbox">#}
+{#                    <input class="c-form-checkboxInput" type="checkbox">#}
+{#                    <span class="c-form-checkboxMark">#}
+{#                      <i class="material-icons">done</i>#}
+{#                    </span>#}
+{#                    フルカラー（CMYK）印刷以外の場合、印刷する色数や加工別に色の置き換えは済んでいますか？#}
+{#                  </label>#}
+{#                </li>#}
+{##}
+{#                <li class="c-form-item">#}
+{#                  <label class="c-form-checkbox">#}
+{#                    <input class="c-form-checkboxInput" type="checkbox">#}
+{#                    <span class="c-form-checkboxMark">#}
+{#                      <i class="material-icons">done</i>#}
+{#                    </span>#}
+{#                    リンクされた配置画像など、必要なデータは揃っていますか？#}
+{#                  </label>#}
+{#                </li>#}
+{##}
+{#                <li class="c-form-item">#}
+{#                  <label class="c-form-checkbox">#}
+{#                    <input class="c-form-checkboxInput" type="checkbox">#}
+{#                    <span class="c-form-checkboxMark">#}
+{#                      <i class="material-icons">done</i>#}
+{#                    </span>#}
+{#                    文字はアウトライン化されていますか？#}
+{#                  </label>#}
+{#                </li>#}
+{##}
+{#                <li class="c-form-item">#}
+{#                  <label class="c-form-checkbox">#}
+{#                    <input class="c-form-checkboxInput" type="checkbox">#}
+{#                    <span class="c-form-checkboxMark">#}
+{#                      <i class="material-icons">done</i>#}
+{#                    </span>#}
+{#                    紙の端にかかるデザインの場合、塗り足しは3mmありますか？#}
+{#                  </label>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
+{##}
+{#            <div class="p-ModalUpload-right">#}
+{#              <div class="p-UploadField-icons">#}
+{#                <img src="/static/img/icon_ai_file.png"/>#}
+{#                <img src="/static/img/icon_pdf_file.png"/>#}
+{#              </div>#}
+{##}
+{#              <p>ファイルをドラッグ&ドロップ</p>#}
+{#              <a class="c-textLink" href="#">#}
+{#                <svg>#}
+{#                  <use xlink:href='#icons-upload'/>#}
+{#                </svg>#}
+{#                クリックしてアップロード#}
+{#              </a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+
+{#       <div class="c-modal">#}
+{#         <div class="p-draftModal p-draftModal--check">#}
+{#           <header class="p-draftModalHeader">#}
+{#             <h2 class="g-title-secondary">データ、ご注文内容、配送先をご確認ください</h2>#}
+{#             <a href="#">#}
+{#               <svg>#}
+{#                 <use xlink:href='#icons-cross'/>#}
+{#               </svg>#}
+{#             </a>#}
+{#           </header>#}
+{##}
+{#           <div class="p-ModalCheck">#}
+{#             <div class="p-ModalOrder">#}
+{#               <h4 class="g-title-quaternary">注文した商品</h4>#}
+{##}
+{#               <div class="p-ModalOrderInfo">#}
+{#                 <h5 class="g-title-quinary"><a class="c-textLink" href="">なんたらかんたら袋</a></h5>#}
+{#                 <div class="p-draftOrderDetail">#}
+{#              <div class="p-draftOrderThumb" style="background-image: url(https://enjoynet.co.jp/icon/icon_menherachan03_04.jpg);"></div>#}
+{#               <div class="p-draftOrderInfo">#}
+{#                 <div class="p-draftOrderBody">#}
+{#                   <div class="p-draftOrderBody-rowContainer">#}
+{#                      <div class="p-draftOrderBody-row">#}
+{#                        <div class="p-draftOrderBody-info">#}
+{#                          <h6 class="g-title-quinary">サイズ</h6>#}
+{#                          <p>240cm×300cm×3cm</p>#}
+{#                        </div>#}
+{##}
+{#                        <div class="p-draftOrderBody-info">#}
+{#                          <h6 class="g-title-quinary">デザイン</h6>#}
+{#                          <p>カシューナッツ</p>#}
+{#                        </div>#}
+{##}
+{#                        <div class="p-draftOrderBody-info">#}
+{#                          <h6 class="g-title-quinary">出荷予定日</h6>#}
+{#                          <p>受付日確定から7日以内</p>#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{#                      <div class="p-draftOrderBody-row">#}
+{#                        <div class="p-draftOrderBody-info">#}
+{#                          <h6 class="g-title-quinary">注文数</h6>#}
+{#                          <p>4,000組</p>#}
+{#                        </div>#}
+{##}
+{#                        <div class="p-draftOrderBody-info">#}
+{#                          <h6 class="g-title-quinary">注文商品番号</h6>#}
+{#                          <p>1234567890</p>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#          </div>#}
+{#                 </div>#}
+{#                 <p class="p-draftOrderPrice">45,000<span>円</span></p>#}
+{#               </div>#}
+{#             </div>#}
+{#               </div>#}
+{#             </div>#}
+{##}
+{#             <div class="p-ModalDeliverTo">#}
+{#        <h4 class="g-title-quaternary">お届け先情報</h4>#}
+{#        <p>#}
+{#          タクミ カイ (takumikai) <br>#}
+{#          〒154-0005 東京都世田谷区391 Ellis Stree Kodaira#}
+{#        </p>#}
+{#      </div>#}
+{##}
+{#      <div class="p-ModalData">#}
+{#        <h4 class="g-title-quaternary">入稿データ</h4>#}
+{#        <p>#}
+{#          anoma_logo_package.ai#}
+{#          <span>#}
+{#            <svg><use xlink:href='#icons-arrow_forward'/></svg>#}
+{#          </span>#}
+{#        </p>#}
+{#      </div>#}
+{##}
+{#      <div class="p-ModalCta">#}
+{#        <p>入稿完了後、canal運営がデータをチェックして、最終データの確定となります</p>#}
+{#        <a class="c-btn c-btn--green" href="#">注文を完了する</a>#}
+{#      </div>#}
+{#           </div>#}
+{#         </div>#}
+       </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

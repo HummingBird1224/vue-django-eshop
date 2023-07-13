@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}アカウント{% endblock %}
+{% block titleog %}アカウント{% endblock %}
+
+{% block content %}
+<div class="p-account">
+  <header class="p-account-title">
+    <h1>
+      会員情報を変更&#x1F4DD;
+    </h1>
+  </header>
+  <main class="p-account-main">
+    <div class="p-account-wrapper">
+      <div class="p-account-message">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="p-partsList-item p-account-message-m">
+          <p class="c-btn">{{ message }}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <form class="p-account-form" method="POST" action="{% url 'account_update' %}" class="">{% csrf_token %}
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+          <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-email" name="email" type="text" class="c-form-input" required="" value="{{ object.email }}" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-email" class="c-form-label">
+            メールアドレス
+          </label>
+          <p class="c-form-error">メールアドレスを入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-name" name="name" type="text" class="c-form-input" required="" value="{{ object.name }}" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-name" class="c-form-label">
+            ご担当者名
+          </label>
+          <p class="c-form-error">お名前を入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-company" name="company_name" type="text" class="c-form-input" value="{% if object.company_name %}{{ object.company_name }}{% endif %}" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-company" class="c-form-label">
+            貴社名（任意）
+          </label>
+          <p class="c-form-error">貴社名を入力してください</p>
+        </div>
+        <div class="p-account-form-item c-form-item">
+          <input id="signup-url" name="url" type="text" class="c-form-input" value="{% if object.url %}{{ object.url }}{% endif %}" onkeyup="this.setAttribute('value', this.value);">
+          <label for="signup-url" class="c-form-label">
+            サイトURL（任意）
+          </label>
+          <p class="c-form-error">サイトURLを入力してください</p>
+        </div>
+
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <div class="p-account-form-item c-form-item">
+          <button class="c-btn c-btn--primary">変更を保存する</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

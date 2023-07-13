@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}
+  {% if parent_category.slug == 'product_category' %}
+  商品区分の事例紹介| オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'printing_method'  %}
+  印刷方法の事例紹介| オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'shape'  %}
+  形状の事例紹介| オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'material'  %}
+  形状の事例紹介| オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'usage'  %}
+  用途の事例紹介| オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'processing'  %}
+  加工の事例紹介| オリジナルパッケージ印刷のcanal
+  {% elif parent_category.slug == 'sustainability'  %}
+  環境配慮の事例紹介| オリジナルパッケージ印刷のcanal
+  {% else %}
+  事例紹介 | オリジナルパッケージ印刷のcanal
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="p-products">
+    <div
+      id="js-casestudy-list"
+      data-parent-category-slug="{{parent_category.slug}}"
+      data-category-slug="{{category.slug}}"
+      data-category-name="{{category.name}}"
+      data-tag-name="{{tag.name}}"
+      data-static-url="{% static_url %}"
+    ></div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'casestudyList' %}
+{% endblock %}

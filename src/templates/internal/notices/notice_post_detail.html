@@ -1,0 +1,92 @@
+{% extends "internal/base.html" %}
+{% load humanize %}
+{% load static %}
+
+{% block content %}
+  <a href="{% url 'internal:notice_post_list' %}" class="backButton">
+    <span class="backButtonArrow"><</span>
+    <span class="backButtonText">戻る</span>
+  </a>
+
+  <div class="breadcrumbsInternal">
+    <div class="breadcrumbsItem">ホーム</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">NOTICE POSTS</div>
+    <div class="breadcrumbsArrow">></div>
+    <div class="breadcrumbsItem">お知らせ投稿詳細</div>
+  </div>
+
+  <div class="orderInternal">
+    <div class="orderInternalDetail">
+      <div class="sectionTitle">投稿</div>        
+        <form method="post">
+        {% csrf_token %}
+        <div class="orderMeta">
+          <div class="container">
+            <!--<div class="thumbnail">
+            <img src="{{ object.product.get_thumbnail_url }}">-->
+            <div class="content">
+              <div class="item">
+                <div class="itemTitle">作成日時</div>
+                <div class="itemContent">{{ object.created_at }}</div>
+              </div>
+              <div class="item">
+                <div class="itemTitle">最終編集日時</div>
+                <div class="itemContent">{{ object.last_edited_at }}</div>
+              </div>
+              <div class="item">
+                <div class="itemTitle">公開日時</div>
+                <div class="itemContent">{{ object.published_at|default_if_none:"非公開" }}</div>
+              </div>
+            </div>
+            <div class="formButton">
+              <input type="submit" value="保存する" name="notice_action" class="formSubmit clickable">
+            </div>
+            <div class="formButton">
+              <input type="submit" value="公開する" name="notice_action" class="formSubmit clickable">
+            </div>
+          </div>
+        </div>
+        <div class="sectionContent">
+            <div class="row">
+              <div class="rowTitle">お知らせ投稿の編集</div>
+              <div class="rowContent formDelivery">
+                  <div class="formContainer">
+                    <div class="formLabel"><label for="id_post_title">お知らせ投稿タイトル</label></div>
+                    <div class="formInput">
+                      {{ form.post_title }}
+                    </div>
+                  </div>
+                  <div class="formContainer">
+                    <div class="formLabel"><label for="id_category">お知らせカテゴリー</label></div>
+                    <div class="formSelect">
+                      {{ form.category }}
+                      <div class="selectArrow"></div>
+                    </div>
+                  </div>
+                  <div class="formContainer">
+                    <div class="formLabel"><label for="id_text">投稿内容</label></div>
+                    <div class="formInput postContent">
+                      {{ form.text }}
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // キャンセル確認モーダル
+    $('.js-cancel-modal-open').on('click', function () {
+      $('.js-cancel-modal').css({display: 'block'});
+    });
+
+    // キャンセル確認モーダルを閉じる
+    $('.js-cancel-modal-close').on('click', function () {
+      $('.js-cancel-modal').css({display: 'none'});
+    });
+  </script>
+{% endblock %}

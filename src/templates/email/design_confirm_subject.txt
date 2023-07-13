@@ -1,0 +1,1 @@
+【canal】入稿データの承認が完了しました！ - ご注文番号：{{ orderitem.ref_code }}

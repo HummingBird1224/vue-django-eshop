@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %}マイデザイン | canal{% endblock %}
+{% block titleog %}マイデザイン | canal{% endblock %}
+{% load render_bundle from webpack_loader %}
+
+{% block content %}
+  <div id="csrf-token" data-token="{{ csrf_token }}"></div>
+  <div
+    id="js-mydesign"
+    data-static-url="{{ static_url }}"
+  >
+  </div>
+
+{% endblock %}
+
+{% block javascript %}
+  {% render_bundle 'myDesign' %}
+{% endblock %}
+
