@@ -88,3 +88,5 @@ Loginでは、
 ### Cart/Orderに関して
 cartはsession中に`cart`というキーでIDを保存している。
 orderはsession中に`order`というキーで注文番号が保存されている。
+
+////////////
