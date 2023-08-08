@@ -21,7 +21,7 @@ from products.serializers import ProductCategorySerializer
 # Create your views here.
 class CaseStudyList1View(TemplateView):
     """商品一覧
-    カテゴリとユースケースがある
+    カテゴリとユースケースがある //aaaaa
     """
 
     template_name = 'casestudies/casestudy_list.html'
